@@ -9,7 +9,8 @@ dotenv_path = Path(__file__).parent / ".env"
 load_dotenv(dotenv_path=dotenv_path)
 
 # Setup OpenAI client
-client = OpenAI()
+import streamlit as st
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Your fine-tuned model ID
 FINE_TUNED_MODEL = "ft:gpt-4o-mini-2024-07-18:university-of-mary-washington::AaxgQQAe"  # Update if needed

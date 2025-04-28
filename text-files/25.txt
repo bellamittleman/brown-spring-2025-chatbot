@@ -1,0 +1,257 @@
+The National Security Beneﬁts of Reallocating
+Federal Spectrum for 5G
+Photo: Peter Heckmeier/Adobe Stock
+Report by Clete Johnson
+Published July 14, 2023
+ Available Downloads
+Download the Full Report 86kb
+The United States faces a large and growing gap with China in radio frequency
+spectrum allocated for 5G wireless communications, particularly mid-band spectrum3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 1/11bands licensed for wide-area coverage, which constitute the primary arteries of the 5G
+economy and the broader global ecosystem of wireless connectivity. This gap
+threatens core U.S. national security interests, and China’s spectrum strategy is
+deliberately seeking to exploit it in order to advance its own interests. To address this
+licensed spectrum shortage as technology advances and industry develops more
+products and services that rely on spectrum, the United States needs to move urgently
+to allocate more mid-band spectrum for licensed commercial 5G use. If it does not do
+so, the U.S. spectrum shortage will hinder technological innovation and give China an
+open path to global leadership in the connected future of the twenty-ﬁrst century,
+threatening the economic and national security of the United States. 
+Providing more licensed mid-band spectrum for 5G will require a carefully
+coordinated eﬀort to develop eﬀective coexistence mechanisms or potentially relocate
+certain users of this spectrum, which provides ideal characteristics for 5G
+deployment. The U.S. government and industry have successfully undertaken this
+challenge before. Reallocating or otherwise transitioning spectrum for the purpose of
+achieving the most eﬀective and eﬃcient use of that spectrum will be indispensable
+for U.S. security interests, as the country needs a vibrant technology economy to
+counter autocratic governments that seek to undermine free market democratic
+governance. Reallocation requires careful and intentional coordination between
+government and industry to ensure that incumbent users have the resources they
+need for continued operation of critical government systems, and that new users have
+the certainty necessary to invest in new products and services that rely on their new
+licensed spectrum rights. Reallocation requires coherent government processes and a
+carefully planned transition with industry, and experience has shown that this is
+possible.
+The 5G Spectrum Shortage in the United States Threatens U.S. Security
+Interests
+The United States is becoming vulnerable as a “spectrum island” by not allocating
+suﬃcient mid-band spectrum for 5G. As discussed in the ﬁrst paper in this series, the
+allocation of licensed spectrum is a strategic issue that is core to U.S. economic
+strength and technological innovation—and also to U.S. security because commercial
+strength is the foundation of national security, both in peace and war. The3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 2/11extraordinary scale, capacity, and dynamic technological innovation of the United
+States and its allied industrial base have been the country’s greatest strength for over a
+century, and it was indispensable to victories in World War II and the Cold War for the
+United States and its allies. This will also be the case in the twenty-ﬁrst century, in
+which the key strategic security question is whether the United States and its market
+democratic allies will set the world’s course, or if China, Russia, and other
+authoritarian regimes will predominate.
+[T]he United States needs to move urgently to allocate more mid-band spectrum
+for licensed commercial 5G use. If it does not do so, the U.S. spectrum shortage
+will hinder technological innovation and give China an open path to global
+leadership in the connected future of the twenty-ﬁrst century, threatening the
+economic and national security of the United States. 
+Most of the crucial emerging technologies necessary for sustained U.S. leadership are
+being developed by the private sector. Spectrum allocations shape markets
+domestically and internationally and aﬀect the pace and scope of innovation of these
+technologies. China knows this and is seeking dominance in every key technology
+sector in the world; China’s spectrum strategy for 5G is central to its long-term
+strategic plans. The ubiquitously connected society driven largely by 5G wireless
+broadband will provide connected and autonomous vehicles, connected warehouses
+and logistics, and remote sensors in every sector. This connectivity will capture
+exponentially more digital data than has ever existed in history, expanding the
+capabilities of artiﬁcial intelligence (AI), advanced analytics, and cyber capabilities
+beyond anything imaginable today. This will be a crucial national security domain for
+both autocracies and market democracies in the twenty-ﬁrst century. 
+In line with this strategy, China has already allocated a signiﬁcant amount of mid-band
+spectrum to commercial 5G. In ﬁve years, China is expected to lead the world, with up
+to 1160 megahertz (MHz) of mid-band spectrum available for commercial 5G. Further,
+China is aligning with other countries to harmonize their spectrum allocations with its
+own. Countries that harmonize spectrum gain larger market shares for equipment3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 3/11designed to use speciﬁc frequencies and beneﬁt from greater and more versatile
+performance. China knows this and is acting accordingly. China’s recent international
+advocacy leading up to the World Radiocommunications Conference (WRC) indicates
+that it will support the harmonization of 1490 MHz of spectrum for potential new 5G
+use; the United States is supporting nearly 80 percent less.
+This is a potential long-term national security catastrophe. If the United States does
+not lead in 5G-enabled innovations, China will—and the repercussions would be dire.
+As the United States demonstrated through the advances that resulted from its world-
+leading deployment of 4G LTE, countries that invest in the next generation of wireless
+communications, including by allocating the necessary spectrum for commercial uses,
+will reap strategic advantages from the resulting technological innovations and
+economic dynamism. In particular, 5G will dramatically impact industries as wide-
+ranging as healthcare, energy, transportation, law enforcement, e-commerce,
+logistics, and education.
+China’s government recognizes this fact and correctly sees global technological
+leadership as a lever of strategic security. Consider the threat to the United States of a
+TikTok or Huawei equivalent “national champion” dominating every key sector of the
+global economy—including those related to weapons and force projection, such as
+quantum computing, AI, and cyber operations. There are no weapons, technology
+bans, or mitigation possibilities that could adequately defend U.S. security interests in
+such a scenario.
+Despite the grave national security implications of China’s potential lead in 5G, the
+United States faces an acute shortage of crucial mid-band licensed spectrum, the most
+valuable spectrum for 5G. Experts expect that the United States will have a substantial
+deﬁcit of 400 MHz by 2027 and 1400 MHz by 2032. China has allocated over 70
+percent more licensed mid-band spectrum for 5G than the United States. This mid-
+band gap gives China a free competitive advantage in industries that are vital to future
+U.S. technology leadership and thus to U.S. security interests. If this spectrum
+shortage is not addressed, the United States will cede the future to China, hindering
+U.S. innovation in essential industries that use wireless technologies, including
+robotics, cloud computing, biotechnologies, and military communications, logistics,
+and weapons systems. 3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 4/11Key U.S. allies also are allocating more licensed spectrum for 5G, recognizing that this
+is essential to drive large-scale 5G deployments. The United States is hundreds of
+megahertz behind countries such as Japan, the United Kingdom, and South Korea in
+providing licensed spectrum for 5G. As the next paper in this series will detail, many
+U.S. allies currently have commercial 5G operations in the lower 3 gigahertz (GHz)
+band, including allies that host U.S. military bases or purchase U.S. defense
+equipment systems that operate in that range. In short, there is no reason for the
+United States to lag behind China.
+Consider the threat to the United States of a TikTok or Huawei equivalent
+“national champion” dominating every key sector of the global economy . . .
+There are no weapons, technology bans, or mitigation possibilities that could
+adequately defend U.S. security interests in such a scenario.
+With this drastic spectrum shortage looming, the United States urgently needs to ﬁnd
+more spectrum for commercial 5G use. Since government users have been allocated
+61 percent of the lower mid-band spectrum (compared to less than 10 percent for
+licensed commercial users), it will be necessary to ﬁnd opportunities for coordinated,
+full-power licensed use for wide-area coverage—including eﬀective coexistence
+mechanisms or, in some cases, relocating federal users to other bands—in order for
+the United States to have suﬃcient spectrum to lead the 5G world. To defend and
+advance its national security interests, the United States must reallocate spectrum for
+commercial use. This strategic security need to address the spectrum shortage is most
+acute in licensed commercial spectrum for wide-area deployments that are the
+lifeblood of the mobile ecosystem and central to the collective and growing demand
+for ubiquitous high-performance networks. 
+Reallocation Requires Planning and Coordination—and Provides
+Funding to Advance Federal Agency Missions
+Eﬀectively reallocating spectrum requires coherent government processes to provide
+certainty to new users and an orderly transition to incent and support coexistence or
+relocation of incumbent users. Certainty promotes investments, as companies can be3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 5/11conﬁdent that the resources they invest in licensed spectrum will not be wasted due
+to changes in the rights to use that spectrum. 
+The United States has a history of successfully reallocating spectrum to make more
+eﬀective or eﬃcient use of frequency bands. Past reallocations show that all parties
+involved beneﬁt when the U.S. government (1) makes discerning decisions to open
+spectrum to commercial licensed use, (2) applies proceeds from license auctions to
+ﬁnancially support government agencies in the transition, and (3) carefully
+coordinates across agencies and pertinent industry stakeholders. U.S. government
+agencies beneﬁt from upgraded equipment, companies beneﬁt from expanded access
+to spectrum for innovative uses, and the American people beneﬁt from a more
+prosperous and innovative economy. This is the well-worn path that is required now
+to defend and advance U.S. security interests in the twenty-ﬁrst century.
+U.S. law has a tried-and-true statutory vehicle for ensuring that auction proceeds
+beneﬁt any federal agencies that must relocate to other spectrum bands or upgrade
+their equipment. Nearly two decades ago, Congress passed the Commercial Spectrum
+Enhancement Act (CSEA), which created the Spectrum Relocation Fund (SRF), the
+mechanism to provide funds for costs associated with agencies relocating to new
+bands or adopting new technologies. The SRF is funded by auction revenues and
+ensures revenues will support federal agency relocations, with the CSEA requiring
+proceeds from any auction to be at least 110 percent of the total estimated relocation
+costs. The CSEA also provides certainty for auction winners and a streamlined process
+for funding agencies’ relocations, as well as oversight and transparency regarding how
+these funds are being used. Previously, auction winners had to negotiate with federal
+agencies regarding the costs to relocate and timelines for moving from the auctioned
+band. Now, federal agencies need to provide a timeline and estimated costs.
+Additionally, pursuant to subsequent amendments to the CSEA, these estimated costs
+can include costs for planning, system upgrades, and research and development, and
+agencies are paid immediately after an auction. Additionally, these subsequent
+amendments provide new mechanisms to fund eﬃciency improvements that allow for
+coordinated coexistence in certain spectrum bands rather than full relocation of
+incumbents to other bands.3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 6/11History shows that reallocation can work if the federal government leads and
+collaborates with commercial stakeholders. The Advanced Wireless Services (AWS-1)
+auction in 2006 was an overwhelming success in coordination across 12 federal
+agencies, including the National Aeronautics and Space Administration and the
+Departments of Agriculture, Interior, and Energy. With $13.7 billion in revenue and a
+return on investment of over 775 percent, revenues easily exceeded the CSEA
+minimum and provided ample funding for agencies to upgrade to digital systems and
+IP-based communications systems. The National Telecommunications and
+Information Administration (NTIA) and Oﬃce of Management and Budget ensured
+that agencies successfully implemented transition plans and addressed unforeseen
+challenges. In this particular case, costs for relocation came in at $400 million over
+the initial agency estimates, but the SRF was suﬃciently funded to cover those
+unexpected agency costs.
+In several other relocation experiences, the initial estimates were actually far higher
+than the ultimate SRF outlays needed to fund relocation. For instance, in 2014 and
+2015, with over $41.3 billion in revenue, the AWS-3 auction brought in a return on
+investment of over 700 percent. This auction required relocation and coordination
+with 16 federal agencies and more than 100 diﬀerent federal wireless systems.
+Through NTIA leadership and collaboration with commercial stakeholders, the
+government overcame challenges such as accommodating federal uses of the band
+where relocation would have been cost prohibitive or impossible. Further, the costs of
+relocation following the AWS-3 auction have been approximately half of NTIA’s
+original estimates.
+More recently, the Department of Defense agreed to relocate from the 3.45–3.55 GHz
+band in 2020 in favor of commercial use to advance the deployment of 5G in the
+United States. The result was $21.8 billion for the U.S. government and over 100 MHz
+available for auction winners (and the American people) to use. Deployment is early
+in the process, and coordination between the private sector and government has
+followed similar paths to processes for the AWS bands, with unique considerations for
+the novel Cooperative Planning Areas and Periodic Use Areas. In some cases, this may
+include coexistence mechanisms that allow certain government systems to remain in
+the band based on coordinated sharing arrangements.3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 7/11The AWS and 3.45 GHz models show that collaboration between the private sector
+and government can create mutual beneﬁts. Federal agencies, including the
+Department of Defense, can maintain and in many cases upgrade or otherwise
+advance their vital operations, while commercial providers can build out their 5G
+networks nationwide to drive U.S. technological leadership worldwide.
+Coherent Government Processes Are Needed for Orderly Reallocation
+The United States needs coherent government processes for reallocation to ensure
+that spectrum is used to best advance U.S. economic and national security interests. It
+is important for the U.S. government’s two spectrum regulators—the Federal
+Communications Commission (FCC) for commercial spectrum and NTIA for federal
+spectrum—to be the ultimate decisionmakers, and NTIA should serve as the central
+agency to represent federal government interests. When diﬀerent government
+agencies are not on the same page, deployment can be delayed, government and
+private resources can be unnecessarily spent, and allocation decisions that impact
+U.S. economic and national security can be hindered.
+First and most fundamentally, Congress needs to restore the FCC’s spectrum auction
+authority, a groundbreaking approach to eﬃcient spectrum allocation that brought
+the Nobel Prize in Economic Sciences to the economists who developed the concept.
+In March of this year, Congress allowed the FCC’s authority to auction spectrum lapse
+for the ﬁrst time since the ﬁrst authorization three decades ago. Without this general
+authority, the FCC cannot schedule necessary auctions to overcome the U.S. spectrum
+shortage. As long as this lapse continues, it creates an impassable roadblock to
+catching up to China in allocating valuable 5G spectrum; while the United States lacks
+a mechanism to allocate spectrum, China will continue to advance 5G along the
+deployment path that its authoritarian government has laid out, with global
+technology domination in mind. In the immediate near term, as FCC chairwoman
+Jessica Rosenworcel recently noted in congressional testimony, if the U.S. negotiating
+team goes to the WRC in October without auction authority, it will undermine U.S.
+credibility in negotiations, both for issues on the table this year and also for setting the
+agenda for WRC 2027.3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 8/11Second, as the federal government’s halting process in C-band showed, a fragmented
+process can cause confusion and delay the deployment of 5G services. The C-band
+auction raised record numbers, with wireless providers collectively paying over $80
+billion for licenses. However, divides within the federal government—including
+approval from the FCC and NTIA but questions about safety issues from the Federal
+Aviation Administration—delayed the launch of 5G. The Interdepartment Radio
+Advisory Committee (IRAC), composed of representatives from federal agencies with
+spectrum interests that help NTIA manage federal use of spectrum, is an essential tool
+to develop a coherent and uniﬁed government spectrum policy. The IRAC plays an
+important role in advising NTIA of government interests and distributing information
+across aﬀected agencies in the context of FCC proceedings on commercial use of
+spectrum. These interagency processes are critical to U.S. leadership in 5G. After
+years of engagement across the agencies and their regulated industries, wireless
+companies are now expected to operate with temporary and minimal restrictions
+while the aviation industry addresses its concerns regarding older aircraft equipment.
+Still, these delays reinforce the importance of NTIA serving as the voice of the
+executive branch in its recommendations to the FCC on commercial spectrum.
+Third, stakeholders should work together collaboratively to make spectrum
+reallocation work. In a wireless world, spectrum allocations need to have room to take
+advantage of technological innovations. Reallocation can be a win-win when
+incumbent users are provided the resources to succeed, and new users are provided
+the certainty and spectrum necessary for technological innovation and to implement
+new uses. The process should not be rigid, as every reallocation, band, and system is
+diﬀerent. Reallocation can be guided and organized to beneﬁt all parties, so long as all
+parties come to the table transparently and with an eye to mutual beneﬁt and
+advancing the interests of the United States, rather than a zero-sum game with distinct
+losers and winners.
+Commercial Licensed Spectrum for 5G Is Indispensable to U.S. Security
+Interests
+Will the future consist of freedom and innovation promoted by market democracies
+such as the United States and its allies or surveillance and control imposed by
+autocratic governments such as China? The U.S. role in advancing commercial3/5/25, 10:36 AM The National Security Beneﬁts of Reallocating Federal Spectrum for 5G
+https://www.csis.org/analysis/national-security-beneﬁts-reallocating-federal-spectrum-5g 9/11

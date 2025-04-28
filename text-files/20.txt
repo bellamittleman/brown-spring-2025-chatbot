@@ -1,0 +1,1086 @@
+IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 1
+  
+Abstract—This paper considers opportunistic primary-
+secondary spectrum sharing when the primary is a ro tating 
+radar.  A secondary device is allowed to transmit w hen its 
+resulting interference will not exceed the radar’s tolerable level, 
+in contrast to current approaches that prohibit sec ondary 
+transmissions if radar signals are detected at any time.  We 
+consider the case where an OFDMA based secondary sy stem 
+operates in non-contiguous cells, as might occur wi th a 
+broadband hotspot service, or a cellular system tha t uses 
+spectrum shared with radar to supplement its dedica ted 
+spectrum.  It is shown that even fairly close to a radar, extensive 
+secondary transmissions are possible, although with  some 
+interruptions and fluctuations as the radar rotates .  For example, 
+at 27% of the distance at which secondary transmiss ions will not 
+affect the radar, on average, the achievable second ary data rates 
+in down- and upstream are around 100% and 63% of th e one 
+that will be achieved in dedicated spectrum, respec tively.  
+Moreover, extensive secondary transmissions are sti ll possible 
+even at different values of key system parameters, including cell 
+radius, transmit power, tolerable interference leve l, and radar 
+rotating period.  By evaluating quality of service,  it is found that 
+spectrum shared with radar could be used efficientl y for 
+applications such as non-interactive video on deman d, peer-to-
+peer file sharing, file transfers, and web browsing , but not for 
+applications such as real-time transfers of small f iles and VoIP. 
+ 
+Index Terms — Coexistent, Cooperative, Opportunistic, 
+OFDMA, Primary-secondary spectrum sharing, Radar 
+I.  INTRODUCTION  
+RIMARY -SECONDARY  spectrum sharing can substantially 
+alleviate spectrum scarcity [1].  Radars could be a  good 
+candidate for the primary systems in spectrum shari ng because 
+they operate in a large amount of spectrum.  For ex ample, in 
+the US over 1.7 GHz of spectrum from 225 MHz to 3.7   GHz 
+“involves radar and/or radionavigation infrastructu re," [2] and 
+ 
+Manuscript received January 5, 2012; revised June 3 , 2012.  This work was 
+supported by the Fundação para a Ciência e a Tecnol ogia (Portuguese 
+Foundation for Science and Technology) through the Carnegie Mellon - 
+Portugal Program under Grant SFRH/ BD/33594/2008.   
+R. Saruthirathanaworakun is a Ph.D. student in the Carnegie Mellon – 
+Portugal program, with Department of Engineering and  Public Policy, 
+Carnegie Mellon University, Pittsburgh, PA 15213 US A, and with Instituto 
+Superior Técnico – Technical University of Lisbon, Portugal (phone: (+351) 
+218-418-199; fax: (+351) 218-418-291; e-mail: rsarut hi@andrew.cmu.edu). 
+J.M. Peha is with the Dept. of Engineering and Publ ic Policy and the Dept. 
+of Electrical and Computer Engineering, Carnegie Me llon University (e-mail: 
+peha@cmu.edu).  
+L.M. Correia is with Instituto Superior Técnico/Ins tituto de 
+Telecomunicações – Technical University of Lisbon (e -mail: 
+luis.correia@lx.it.pt). around 1.1 GHz of this 1.7 GHz is used by fixed lan d-based 
+radars in non-military applications [3].  
+This paper considers opportunistic sharing where a 
+secondary device can transmit only when its transmi ssions 
+will not cause harmful interference , i.e., interference that 
+causes noticeable service disruption to the primary  [4].  
+Currently, there are some bands in which radars are  
+protected from harmful interference by granting the m 
+exclusive rights to operate in a given area and fre quency band, 
+and other bands (e.g., at 5 GHz) in which radars sh are 
+spectrum with unlicensed devices that can transmit only if 
+they are so far from any radar that the radar is un detectable 
+[5].  Both of these are white space  approaches to primary-
+secondary sharing, where secondary wireless systems  are 
+allowed to operate in frequency bands and geographi c regions 
+that are found to be entirely “unused” by any prima ry system.  
+In contrast, with the gray space sharing  [6] considered in this 
+paper, a secondary device is allowed to transmit ne ar a radar, 
+but only when and with a transmit power that will n ot cause 
+harmful interference.  The maximum transmit power o f 
+secondary devices changes over time, based on the b ehavior of 
+the primary system.  We have previously used this a pproach to 
+prevent a secondary spectrum user from causing harm ful 
+interference to a primary user, when the primary wa s a cellular 
+system [7].  Dynamic power control has long been us ed to 
+control devices within a single communication syste m, e.g., a 
+cellular network, but here it is used to allow syst ems under 
+different administrative control to share spectrum in a 
+primary-secondary arrangement.  
+We investigate how much the secondary system can 
+transmit with this different sharing concept, by co nsidering 
+sharing with a rotating radar.  Examples of these r adars 
+include applications in weather operating in [2.7, 3.0] GHz, 
+Air Traffic Control (ATC) in [2.7, 2.9] GHz, and ot her 
+surveillance in [0.42, 0.45] GHz and [2.7, 3.5] GHz  [3].  With 
+a rotating main beam, the radar antenna gain seen b y the fixed 
+secondary device varies, hence, there will be perio ds of time 
+when the link loss (including antenna gains and pat h loss) 
+between the device and the radar is high enough so that the 
+device can transmit successfully, without causing h armful 
+interference to the radar.  This sharing can be eit her 
+cooperative  (through explicit coordination between the 
+secondary device and the primary system) or coexistent  
+(without coordination) [1]. 
+The case where a secondary system operates in non-Opportunistic Sharing between Rotating Radar 
+and Cellular 
+Rathapon Saruthirathanaworakun, Student Member, IEEE , Jon M. Peha, Fellow, IEEE , and  
+Luis M. Correia, Senior Member, IEEE   
+PIEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 2
+adjacent cells is considered; two examples are a se condary 
+system providing broadband hotspots, and a cellular  system 
+using shared spectrum when a traffic surge temporar ily 
+exceeds what can be supported in dedicated spectrum .. 
+Only a few previous studies have addressed spectrum  
+sharing with a rotating radar.  Marcus qualitativel y discussed 
+the possibility in [8]; Wang et al. [9], and later Rahman and 
+Karlsson [10], analyzed coexistent sharing quantita tively, but 
+only when a device is far enough that its transmiss ions will not 
+cause harmful interference even in the radar’s main  beam, as 
+occurs in 5 GHz band.  Instead, the proposed sharin g makes 
+use of the varying link loss between the radar and a secondary 
+device, hence, a device may transmit at a closer di stance to the 
+radar, but with some interruptions and fluctuations  in 
+transmissions as the radar rotates.  
+We quantify the extent of secondary transmissions, and 
+characterize the effect of interruptions and fluctu ations on 
+secondary transmissions.  Performance is analyzed f or six 
+applications from the four classes of services [11] : 1) Voice-
+over-IP (VoIP, conversational ), 2) non-interactive video on 
+demand ( streaming ), 3) Peer-to-Peer file sharing (P2P, 
+background ), 4) automatic meter reading (e.g., electricity 
+meter reading, background ), 5) file transfer ( interactive , with 
+traffic in both up- and downstreams), and 6) web br owsing 
+(interactive , with traffic mostly in downstream).   
+The sharing scenario is described in Section II.  T he power 
+level that a secondary device will be allowed to tr ansmit and 
+the resulting SINR (Signal to Interference plus Noi se Ratio) 
+are derived in Section III.  Parameters used to eva luate 
+performance of the sharing, numerical results, and conclusions 
+are discussed in Sections IV, V, and VI, respective ly. 
+II.  SPECTRUM SHARING SCENARIO  
+To quantify the overall extent of secondary transmi ssions, a 
+canonical case is considered where there is one rad ar, one 
+secondary Base Station (BS), and one secondary Mobi le 
+Terminal (MT), as shown in Fig. 1. The BS is /G740/Gbcb/Gbd7/Gb3>/Gbbb/Gbcc  away 
+from the radar, and the MT is /G740/Gbbb/Gbcc/Gb3>/Gbc6/Gbcd  from the BS.  Both BS 
+and MT are called secondary devices (SDs). 
+  
+ 
+Figure 1 - Sharing Scenario. 
+ 
+The radar uses the same antenna for transmission an d 
+reception.  The radar’s main beam rotates, hence, t he radar’s 
+radiation pattern seen by an SD, depends on the ang le between 
+its main beam and the SD.  The rotation can be eith er 
+mechanical as when a radar antenna rotates, or elec tronic as 
+when phased array is used.  The radar transmits a s eries of 
+pulses with constant power, and detects echoes from  its 
+surroundings [12]. We assume that the SD knows either the instantaneou s 
+antenna gain of the radar together with the expecte d value of 
+path loss between itself and the radar, or the summ ation of the 
+two, and that the SD can remain synchronized with t he main 
+beam rotation.  The instantaneous path loss may dif fer from 
+the expected value due to fading and other factors.   The SD 
+can determine this loss in a variety of ways, depen ding on the 
+sharing approach and type of radar.  For example, f or a typical 
+ATC radar (rotating horizontally with a constant sp eed), in a 
+sharing scheme based only on coexistence, the SD ma y 
+combine any a priori knowledge of the radar with ob servations 
+over numerous rotations to determine the periodic p attern of 
+the expected link loss, which includes antenna gain s of the 
+secondary device and the radar, and the expected pa th loss.  
+Alternatively, some observations can be replaced by  
+cooperative sharing, which allows the radar to expl icitly 
+inform SDs about patterns.  The situation is more c omplicated 
+with a weather radar, which scans in both horizonta l and 
+vertical planes at a speed that may change when a s torm is 
+approaching [13], or a tracking radar, which may su ddenly 
+change the direction of its main beam in response t o a target’s 
+movements.  Cooperative schemes are more useful in such 
+cases.  With or without cooperation, the SD should stop 
+transmitting, and resynchronize if the monitored ro tation 
+pattern appears to change unexpectedly.  The possib ility of 
+synchronization errors is beyond the scope of this paper.  
+A radar insidiously misdetects targets if the inter ference 
+level is high enough to disrupt its echo receptions  [14].  To 
+protect radars from harmful interference, a maximum  in-band 
+Interference-to-Noise Ratio (INR) is defined (e.g.,  by [13]) 
+below which the radar’s detection performance is la rgely 
+unaffected, and INR must be kept below this limit w ith 
+sufficiently high probability.  Many radar systems are used in 
+applications that affect people’s lives, so prevent ing harmful 
+interference in these cases is especially important .  For 
+example, recently in the UK there has been discussi on on the 
+risk of inadvertent interference to aviation radars  operating in 
+the 2.7 GHz band from LTE operating in 2.6 GHz [15] .  
+We assume that the secondary system uses Orthogonal  
+Frequency Division Multiple Access (OFDMA), which i s used 
+in wireless communication systems such as LTE.  How ever, 
+the proposed sharing model could be applicable to o ther 
+secondary systems as well.  The proposed sharing mo del 
+assumes that: 1) Some information of the radar, suc h as pulse 
+power, rotating period, and tolerable interference level, is 
+known to the secondary system (these parameters rar ely 
+change over time); 2) The secondary system: a) uses  Time 
+Division Duplex (TDD), b) will use as much availabl e 
+bandwidth as possible, c) can always transmit signa ling traffic 
+without causing harmful interference to a radar (th is could 
+easily happen, e.g., if signaling is transmitted in  a frequency 
+band different from the one shared with the radar).  
+There are additional assumptions on the secondary 
+applications: 1) signaling traffic is negligible, 2 ) time used to 
+transfer data within networks (i.e., network delay)  is negligible 
+compared to the time used to transfer the data betw een MT 
+and BS, 3) MTs using video on demand have enough me mory 
+IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 3
+for buffering, and a constant streaming rate is use d. 
+III.  SECONDARY MAXIMUM ALLOWABLE TRANSMIT POWER 
+AND ACHIEVABLE SINR   
+An SD determines its maximum allowable transmit pow er, 
+/G73×/Gbcc,/Gbe0/Gbd4/Gbeb , from the radar’s tolerable level /G7×b/Gbe7/Gbe×/Gbd>  (which is known to 
+the SD,  assumption 1 in Section II), and the expec ted link loss 
+between itself and the radar, which varies dependin g on 
+azimuthal angle between the radar’s main beam and t he 
+device, /G7ee.  When one secondary transmitter is using as much 
+bandwidth as possible (assumption 2), from /G7×b/Gbe7/Gbe×/Gbd> , the SD at 
+distance /G740/Gbcb/Gbd7/Gb3>/Gbcc from a radar can determine /G73×/Gbcc,/Gbe0/Gbd4/Gbeb  as 
+ 
+/G73×/Gbcc,/Gbe0/Gbd4/Gbeb /G1×3a/G7ee,/G740/Gbcb/Gbd7/Gb3>/Gbcc/G1×3b= /G749/G745/G74a/Gd5c/Gb35
+/Gbc6/Gcde/Gbc×/Gcd>/Gcda/Gcd7 
+/Gbc5/Gd×4/Gcd7,/Gcc3/Gcc>/Gc37/Gcc4/G1×3a/Gc1d,/Gbd7/Gcc3/Gcc>/Gc37/Gcc4/G1×3b,/G73×/Gbcc,/Gbd8/Gbe4/Gbe0/Gbe7_/Gbe0/Gbd4/Gbeb /Gd60,   (1)      
+ 
+where /G73×/Gbcc,/Gbd8/Gbe4/Gbe0/Gbe7_/Gbe0/Gbd4/Gbeb  is the SD’s transmit power limit, and 
+/G7×e/Gd×4/Gbd>,/Gbcb/Gbd7/Gb3>/Gbcc/G1×3a/G7ee,/G740/Gbcb/Gbd7/Gb3>/Gbcc/G1×3b is the link loss, between the radar and the 
+transmitter, that the transmitter expects.  As disc ussed in 
+Section II, there are various ways that an SD can d etermine  
+/G7×e/Gd×4/Gbd>,/Gbcb/Gbd7/Gb3>/Gbcc , e.g., when coexistent sharing is employed, /G7×e/Gd×4/Gbd>,/Gbcb/Gbd7/Gb3>/Gbcc  
+could be estimated during a start-up phase by avera ging over 
+repeated samples of instantaneous link loss between  the radar 
+and the SD.  Margin /G7×>/Gbe6 provides interference protection for 
+any difference between the instantaneous path loss and the one 
+expected by the SD, including differences from sign al fading 
+and from any measurement error during the start-up phase.  
+When the difference from the expected path loss is high, to 
+keep the probability of harmful interference at a p articular 
+small level, a higher margin will be needed; this h igher margin 
+will result in more conservative extent of secondar y 
+transmissions.  Even with an adequate margin, gray space 
+sharing inherently introduces some risks that are n ot presented 
+with white-space sharing, e.g., the power control m echanisms 
+in a secondary system might be hacked and made to i nterfere 
+with the primary system, or some system bug might c ause a 
+secondary transmitter to inaccurately calculate /G73×/Gbcc,/Gbe0/Gbd4/Gbeb .  To 
+mitigate the effects of interference in such cases,  a new 
+approach to regulation and governance is required, which is 
+beyond the scope of this paper, but discussed in [6 ], [16]. 
+From (1), it is possible to calculate SDs’ SINR, /G7e9/Gbcc, which 
+will in turn determine achievable data rates.  This  calculation 
+is based on the conservative assumption that the ti me between 
+radar pulses during which the secondary will not ex perience 
+interference from the radar (which is typically les s than 1 ms 
+[13]) can be neglected.  When a secondary transmitt er and 
+receiver are /G740/Gbcb/Gbd7/Gb3>/Gbcd/Gbd1  and /G740/Gbcb/Gbd7/Gb3>/Gbcb/Gbd1  away from the radar, and the 
+secondary transmitter and receiver are /G740/Gbcd/Gbd1/Gb3>/Gbcb/Gbd1  apart, /G7e9/Gbcc is 
+ 
+/G7e9/Gbcc/G1×3a/G7ee,/G740/Gbcb/Gbd7/Gb3>/Gbcd/Gbd1 ,/G740/Gbcb/Gbd7/Gb3>/Gbcb/Gbd1 ,/G740/Gbcd/Gbd1/Gb3>/Gbcb/Gbd1 /G1×3b=/Gbc5/Gcd7,/Gcc4/G1×3a/Gbd7/Gcc5/Gcc9/Gc37/Gcc3/Gcc9 /G1×3b×/Gbc9/Gcc4,/Gcd8/Gccc/Gce3 /G1×3a/Gc1d,/Gbd7/Gcc3/Gcc>/Gc37/Gcc5/Gcc9 /G1×3b
+/Gbe1/Gcc4/Gbd0/Gcc4/Gb3e/Gbc5/Gcd7,/Gcc3/Gcc>/Gc37/Gcc4/G1×3a/Gc1d,/Gbd7/Gcc3/Gcc>/Gc37/Gcc3/Gcc9 /G1×3b×/Gbc9/Gcc3/Gcc> 
+                                                              (2) 
+ 
+where /G7×e/Gbd>,/Gbcc/G1×3a/G740/Gbcd/Gbd1/Gb3>/Gbcb/Gbd1 /G1×3b is link loss between the secondary 
+transmitter-receiver pair, /G74a/Gbcc is background noise power 
+spectral density at the secondary receiver, and /G739/Gbcc is a secondary bandwidth per user. 
+IV.  PARAMETERS FOR EVALUATING THE EXTENT OF 
+SECONDARY TRANSMISSIONS  
+The parameters used to evaluate the performance of 
+spectrum sharing with radar are: 1) secondary data rate, /G734/Gbd5,/Gbcc,  
+calculated from /G7e9/Gbcc; 2) fraction of time that the SD can achieve 
+a required data rate /G734/Gbd5,/Gbe5/Gbd8/Gbe4 ; and 3) statistics and distribution of 
+time that /G734/Gbd5,/Gbcc< /G734/Gbd5,/Gbe5/Gbd8/Gbe4 , i.e., interrupted time . 
+From the SINR in (2), the resulting /G734/Gbd5,/Gbcc/G1×3a/G7e9/Gbcc/G1×3b is calculated 
+using a set of equations, obtained from regression analyses on 
+3GPP data [17].  The data are obtained assuming 1) an urban 
+or suburban environments with fairly small cell and  low delay 
+spread (i.e., Extended Pedestrian A channel model);  2) a very 
+low speed user (i.e., 5-Hz Doppler frequency); and 3) Multiple 
+Input Multiple Output 2×2  in both up- and down-streams.  
+The resulting /G734/Gbd5,/Gbcc/G1×3a/G7e9/Gbcc/G1×3b will be the maximum rate obtained 
+among QPSK, 16QAM, and 64QAM modulation schemes.  
+From (2), /G734/Gbd5,/Gbcc varies periodically, and is a function of 
+/G7ee, /G740/Gbcb/Gbd7/Gb3>/Gbcd/Gbd1 , /G740/Gbcb/Gbd7/Gb3>/Gbcb/Gbd1 , and /G740/Gbcd/Gbd1/Gb3>/Gbcb/Gbd1 .  For a given /G734/Gbd5,/Gbe5/Gbd8/Gbe4 , the 
+interrupted time together with its statistics, and the fraction of 
+time that /G734/Gbd5,/Gbcc≥ /G734/Gbd5,/Gbe5/Gbd8/Gbe4 , /G74c/Gbcb/Gccd,/Gcc4/Gbb9/Gbcb/Gccd,/Gcdd/Gcd0/Gcdc , in a rotating cycle is: 
+ 
+/G74c/Gbcb/Gccd,/Gcc4/Gbb9/Gbcb/Gccd,/Gcdd/Gcd0/Gcdc =/G3c3/G1×4×/Gc1b/Gcc3/Gccd,/Gcc4/Gcb1/Gcc3/Gccd,/Gcdd/Gcd0/Gcdc,/Gcd4/G1×43 ∀/Gcd4
+/Gbcd/Gcc3/Gcc>  ,                            (3) 
+ 
+where /G7ec/Gbcb/Gccd,/Gcc4/Gbb9/Gbcb/Gccd,/Gcdd/Gcd0/Gcdc,/Gcd4 is the /G745-th period (in a rotating cycle) that 
+/G734/Gbd5,/Gbcc≥ /G734/Gbd5,/Gbe5/Gbd8/Gbe4 , and /G736/Gbcb/Gbd7  is the rotating period.  
+Different service classes require different quality  
+measurements [11].  For the considered applications , different 
+parameters are used to evaluate performance: 1) VoI P requires 
+a symmetric constant data rate /G734/Gbd5,/Gbc>/Gbe×/Gbc×/Gbc9  in both up- and 
+downstreams, and an interrupted time /G7ec/Gbc>/Gbe×/Gbc×/Gbc9  lower than an 
+acceptable level; 2) Video on demand initially requ ires an 
+average downstream rate over a rotating cycle /G734/Gbd5,/Gbcc/Gd×4/Gd×4/Gd×4/Gd×4/Gd×4 larger than 
+the constant streaming rate /G734/Gbd5,/Gbc>/Gbdc/Gbd7/Gbd8/Gbe× ; as a buffer is used to 
+maintain streaming continuity,  the probability tha t the buffer 
+will be empty is also evaluated; 3) P2P, file trans fer, web 
+browsing, and meter reading, require no minimum dat a rate. , 
+For P2P and file transfers, achievable data rate is  an 
+appropriate measure.  For an interactive applicatio n like web 
+browsing, webpage download time is our measure. 
+For VoIP, samples of /G7ec/Gbc>/Gbe×/Gbc×/Gbc9  across a rotating cycle, and its 
+distribution, were obtained from instantaneous seco ndary data 
+rate and /G734/Gbd5,/Gbc>/Gbe×/Gbc×/Gbc9 .  As VoIP is bi-directional, instantaneous 
+secondary data rate for VoIP is the minimum of the up- and 
+downstream values. 
+For video on demand, given the amount of data neede d for 
+initial buffering, /G738/Gbd5/Gbd9_/Gbdc/Gbe1/Gbdc/Gbe7 , the amount of data buffered at time /G750 
+after streaming starts (or resumes) /G738/Gbd5/Gbd9 /G1×3a/G750,/G750/Gbe6/Gbe7 /G1×3b is 
+ 
+/G738/Gbd5/Gbd9 /G1×3a/G750,/G750/Gbe6/Gbe7 /G1×3b= /G738/Gbd5/Gbd9_/Gbdc/Gbe1/Gbdc/Gbe7 +/G5ec/G734/Gbd5,/Gbcc,/Gbbd/G1×3a/G750/G11>1/G1×3b/Gbe7
+/Gbe7/G11>×/Gb40/Gbe7/Gcde/Gcd> /G740/G750/G11>1−/G734/Gbd5,/Gbc>/Gbdc/Gbd7/Gbd8/Gbe× ,   (4) 
+ 
+where /G734/Gbd5,/Gbcc,/Gbbd/G1×3a/G750/G11>1/G1×3b is the instantaneous downstream secondary IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 4
+data rate, and /G750/Gbe6/Gbe7  is the streaming starting time. 
+From (4), for a given start time /G750/Gbe6/Gbe7,/Gbdc, one can determine if 
+and when the buffer would be empty.  Based on multi ple 
+values of /G750/Gbe6/Gbe7,/Gbdc across a rotating cycle, the probability that the 
+buffer will be empty, i.e., probability of interrup tions, /G74c/Gbdc/Gbe1/Gbe7/Gbe5/Gbe3 , 
+during streaming can be obtained from: 
+ 
+/G74c/Gbdc/Gbe1/Gbe7/Gbe5/Gbe3 =/G3c3/G1×3e/Gbe9/Gcd4/G1×3>/Gcb>/Gcd>/Gcde/Gcd> 
+/Gcd4/Gc38/Gc×d
+/Gbc7/Gcd>/Gcde/Gcd>  ,                                     (5) 
+ 
+where /G75×/Gbdc is a binary variable that equals 1 if /G738/Gbd5/Gbd9  = 0, and 0 
+otherwise.  /G730/Gbe7/Gcde/Gcd>  is the total number of /G750/Gbe6/Gbe7,/Gbdc considered.  Note 
+that video on demand operates when /G734/Gbd5,/Gbcc/Gd×4/Gd×4/Gd×4/Gd×4/Gd×4> /G734/Gbd5,/Gbc>/Gbdc/Gbd7/Gbd8/Gbe× , hence, if 
+/G738/Gbd5/Gbd9 /Gd6b/G750,/G750/Gbe6/Gbe5/Gbe7,/Gbdc/Gd6> ≠ 0  in a rotating cycle, it will never go to zero 
+during streaming.  
+For P2P, file transfer, web browsing, and meter rea ding, a 
+wide range of file sizes is transferred.  Because s econdary 
+transmissions can be interrupted, files of differen t sizes 
+experience different perceived data rates /G734/Gbd5,/Gbcc,/Gbe3/G1×3a/G750/Gbe6/Gbe7 /G1×3b, which 
+depend on when a file is transferred /G750/Gbe6/Gbe7 .  
+ 
+/G734/Gbd5,/Gbcc,/Gbe3/G1×3a/G750/Gbe6/Gbe7 /G1×3b=/Gbc>/Gcd1
+/Gbcd/Gcd1/G1×3a/Gbe7/Gcde/Gcd> /G1×3b ,                   (6) 
+ 
+where /G738/Gbd9 is size of a file, and /G736/Gbd9/G1×3a/G750/Gbe6/Gbe7 /G1×3b is the time that an SD 
+uses to transfer the file, i.e. file transfer time .  Distribution of 
+/G734/Gbd5,/Gbcc,/Gbe3 can be obtained by choosing different /G750/Gbe6/Gbe7 ’s. 
+V.  NUMERICAL RESULTS  
+Parameters used to obtain numerical results are sum marized 
+in Section A.  The performance of secondary transmi ssions 
+averaged across a cell is evaluated in Section B; t his average 
+performance is measured in terms of both mean data rate and 
+percentage of time that a secondary device can tran smit.  
+Performance for video on demand and VoIP are evalua ted in 
+Sections C and D, respectively.  The characteristic s and 
+performance of secondary transmissions for file upl oad- and 
+downloading services are shown in Section E.  We in vestigate 
+sensitivity of these results on important system pa rameters 
+including (secondary) cell radius, radar transmit p ower, radar 
+tolerable interference level, and radar rotating pe riod in 
+Section F.  
+A. Scenario 
+For the radar we assume: a) operating band at 2.8 G Hz with 
+3 MHz bandwidth (ATC radars operate in this band) [ 13]; b) 
+30-m high antenna, uniformly-distributed aperture t ype, with 
+elevation and azimuthal 3-dB beam widths of 4.7 o and 1.4 o, 
+respectively [13], and front-to-back ratio of 38 dB  [12]; c) 
+maximum antenna gain of 33.5 dBi [13], with 5 dB re duction 
+in the horizontal direction because the antenna is up-tilted to 
+reduce ground reflected signals [18]; d) rotating p eriod 
+/G736/Gbcb/Gbd7  = 4.7 s; e) transmit power /G73×/Gbcb/Gbd7  = 0.45 MW [13]; f) INR = -
+10 dB [14], with -106 dBm background noise [13].   
+For the secondary system, we take: a) symmetric TDD ; b) 
+MT and BS with omnidirectional antenna with 0 dBi a nd sectorized one with 18 dBi [19], respectively; c) c ell radius (in 
+a urban or suburban areas) /G734 = 800 m; d) power limit 
+/G73×/Gbcc,/Gbd8/Gbe4/Gbe0/Gbe7_/Gbe0/Gbd4/Gbeb  of the MT and the BS of 23 and 46 dBm, 
+respectively [19]; e) background noise spectral den sity at the 
+receiver, /G74a/Gbcc = -174 dBm/Hz, with 5 dB noise figure [19]. 
+Concerning the applications: the required rate for VoIP 
+/G734/Gbd5,/Gbc>/Gbe×/Gbc×/Gbc9  is 15 kbps [11]; video on demand requires streamin g 
+rate /G734/Gbd5,/Gbc>/Gbdc/Gbd7/Gbd8/Gbe×  of 1.6 Mbps [20], and will initially buffer conten t 
+enough to play for 2 s [21].   
+The ITU-R P.1546 path loss model [22] between the r adar 
+and the secondary system is adopted.  The path loss  model is 
+valid in the frequency range [0.03, 3] GHz, and dis tances in 
+[1, 1 000] km.  Conservatively, flat terrain is ass umed; even 
+though the assumption would result in longer distan ces that 
+the radar and the secondary can affect each other, it will 
+increase interference between the radar and the sec ondary 
+system, and reduce the extent of secondary transmis sions.  For 
+the path loss between a BS and MT, the COST 231 Wal fisch-
+Ikegami model [23] is adopted as follows: a) 1.7-m high MT 
+antenna; b) building height of 15 m; c) 30-m high B S antenna, 
+implying that the cell radius can be up to 1.5 km [ 19].    In the 
+US, a nationwide mean height of a commercial cellul ar tower 
+is around 60 m (the tower portfolio is from a major  US tower 
+company, American Towers [24, Table 1]), hence, 30 m 
+represents a reasonable compromise between an on-to wer 
+antenna and a rooftop one; d) other required parame ters as 
+suggested in [23].   
+Rayleigh fading is assumed in the link between the radar 
+and the MT; as the difference between the height of  radar and 
+that of the MT is typically large, Line of Sight (L oS) between 
+both rarely exists.  The corresponding margin /G7×>/Gbe6, in (1), of 
+8.4 dB is used.  The margin results in a probabilit y of harmful 
+interference less than 0.1% [25], which is less tha n radar’s 
+required misdetection probability of around 1% [26] .  For the 
+link between the radar and the BS, Ricean fading (w ith a K 
+factor of 10 dB, the corresponding margin resulting  in a 
+probability of harmful interference less than 0.1% is around 5 
+dB [25]) is assumed when their separation is less t han an LoS 
+distance, and Rayleigh one is assumed otherwise. (W ith the 
+considered heights of radar and BS, the LoS distanc e is around 
+20.8 km, [27, Chapter 2].)  The difference between 
+instantaneous link loss, and the value expected by a secondary 
+transmitter /G7×e/Gd×4/Gbd>,/Gbcb/Gbd7/Gb3>/Gbcc , as shown in (1), that is due to 
+measurement error, is assumed to be negligible comp ared to 
+the difference due to fading.  
+To evaluate a typical extent of secondary transmiss ions 
+achievable in a cell, data rate and percentage of t ime that a 
+secondary device can transmit, averaged across a ce ll, need to 
+be considered.  Hence, the case when the location o f the 
+secondary user is uniformly located across the cell  is 
+considered.  In contrast, to evaluate the performan ce of 
+sharing for a given application, the location of a secondary 
+user needs to be specified, and the worst case is c onsidered 
+when the user is fixed at the cell edge in the wors t direction, 
+which is toward the radar. 
+For sensitivity analysis, the ranges of parameters considered IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 5
+are: a) cell radius /G734 in [0.2, 1.5] km [19]; b) radar transmit 
+power /G73×/Gbcb/Gbd7  in [0.025, 1.4] MW [13]; c) radar INR in [-13, -
+7] dB, adapted from [14]; d) radar rotating period /G736/Gbcb/Gbd7  in 
+[4, 6] s [13]. 
+B. Overall Performance of Secondary Transmissions  
+Fig. 2 shows the mean secondary data rate over a ro tating 
+cycle, and the fraction of time that an SD can tran smit, as a 
+function of the distance between the BS and the rad ar.  The 
+data rate and the fraction of transmission time are  averaged 
+across the cell.   
+Fig. 2 shows that spectrum shared with a radar can support 
+high average data rates, even when an SD is close t o the radar.  
+Consider the conventional non-opportunistic approac h.  The 
+distance between the BS and the radar that allows t he SD to 
+transmit all the time at the data rate achieved in dedicated 
+spectrum, i.e., system rate limit , is around 400 km (the 
+required separation is around 100 km for downstream , and 
+400 km for upstream). Alternatively, if only the ra dar is to be 
+protected [9], with a 8.4 dB fade margin, the minim um 
+separation is 286 km.  In contrast, by taking advan tage of main 
+beam rotation, significant downstream transmissions  are 
+possible at a fraction of this 400 km distance.  At  50 km from 
+the radar (i.e., just 12.5% of 400 km), in the down stream the 
+SD can transmit almost all the time with an average  rate near 
+the system limit of 10.8 Mbps.  In the upstream, at  19% of 
+400 km, the SD can transmit 90% of the time, with a n average 
+rate around 62.5% of the 8.0 Mbps limit. 
+ 
+(a) Average Secondary Data Rate with 95% Confidence  Interval  
+(b) Percentage of Time that a Secondary Device can T ransmit with 95% 
+Confidence Interval 
+Figure 2 - Extent of Secondary Transmissions vs. Dis tance between a Base 
+Station and a Radar. 
+ 
+Fig. 2 also shows that the secondary system uses sp ectrum 
+more efficiently in the downstream than in the upst ream, in 
+terms of data rate per MHz of spectrum, and fractio n of time 
+that the system can transmit.  If the goal is to ma ximize 
+spectral efficiency, spectrum sharing with radar mi ght be more 
+suitable for applications that have more traffic in  the 
+downstream, which is a typical characteristic of ma ny current 
+applications.  
+C. Performance of Video on Demand 
+One important measure of performance for video on 
+demand is average downstream data rate.  In the pre vious 
+section, we showed that even at small distance from  the radar, 
+the achievable average downstream rate is very clos e to the 
+rate one might get in dedicated spectrum. 
+Another performance measurement is the probability that 
+streaming will be interrupted.  It is found that th is probability 
+is sufficiently low, being unlikely to be a problem .  Even when 
+the average downstream rate /G734/Gbd5,/Gbcc/Gd×4/Gd×4/Gd×4/Gd×4/Gd×4 is only 4% higher than the 
+streaming rate, and the BS is 9.6 km from the radar , with the 
+initial buffering of 2 s the possibility of interru ption is less 
+than 0.001.   (The hypothesis testing on this proba bility used 
+10,000 samples; the resulting p-value is 0.0008; th e result is 
+obtained when the MT is at the cell edge closest to  the radar.)  
+From the assumption on the initial buffering, the a mount of 
+content the application needs to initially buffer f or 1.6 Mbps 
+streaming rate is 400 kB.  With only 3 MHz of spect rum, the 
+transfer time for the initial-buffer content is at most 3 s even at 
+only 9.6 km from the radar.  Graphs are omitted for  brevity. 
+Due to the high achievable average downstream data rate, 
+and the small chance of being interrupted (even wit h only a 
+few seconds of initial buffering, and when the seco ndary is 
+very close to the radar), video on demand is a very  promising 
+application for spectrum that is shared with radar.  
+D. Performance of Voice over IP 
+One important requirement for VoIP is a symmetric d ata 
+rate in both up- and downstreams.  Hence, the asymm etric 0 50 100 150 200 250 300 350 400 450 0246810 12 
+Distance between a Base Station and a Radar [km]Average Secondary Data Rate [Mbps]
+Upstream 
+Downstream 0 50 100 150 200 250 300 350 400 450 010 20 30 40 50 60 70 80 90 100 110 
+Distance between a Base Station and a Radar [km]Percentage of Time that a Secondary Device can Tran smit
+Upstream 
+Downstream IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 6
+data rate, as shown in Fig. 2(a), will limit perfor mance of 
+VoIP.  Moreover, VoIP performance depends on instan taneous 
+data rate, and the application cannot tolerate long  
+interruptions.  In shared spectrum, interruptions s ometimes 
+cause the instantaneous secondary data rate to be m uch lower 
+than the average one, and could be a problem for Vo IP.  
+With a required instantaneous rate of 15 kbps, Fig.  3 shows 
+the probability that the resulting interrupted time  /G7ec/Gbc>/Gbe×/Gbc×/Gbc9  would 
+be less than an acceptable level /G7ec/Gbc>/Gbe×/Gbc×/Gbc9_/Gbd4 (when the user is at the 
+cell edge), as a function of distance of secondary 
+transmissions from a radar; /G7ec/Gbc>/Gbe×/Gbc×/Gbc9_/Gbd4  is taken as 80 and 150 ms 
+[11].  Fig. 3 shows that /G7ec/Gbc>/Gbe×/Gbc×/Gbc9_/Gbd4  is always satisfied beyond 
+70 km from the radar.  Note from Fig. 2(a) that, at  this 
+distance, the average upstream rate is around 5 Mbp s; 
+however, the application can only obtain at least 1 5 kbps 
+instantaneous data rate with the acceptable interru pted time.  
+Compared to VoIP operating in dedicated spectrum, V oIP is 
+relatively inefficient in spectrum shared with rada r, and hence 
+is not attractive for such sharing.  
+E. Performance of File Up- and Downloading 
+As occurs with VoIP, the fluctuations in data rate can also 
+affect performance of file up- and downloading serv ices.  Files 
+with different sizes would experience different ran ges of 
+perceived data rate, defined in Section IV.  The fl uctuation 
+and its implications on applications in this servic e class are 
+investigated, in Sections E-1 and E-2, respectively . 
+ 
+Figure 3 - Possibility that a VoIP Interrupted Time is less an Acceptable Level 
+vs. Distance between a Base Station and a Radar. 
+  
+E-1 Fluctuations in Secondary Perceived Data Rate 
+Fig. 4 shows maximum, mean and minimum perceived 
+downstream data rate of a user at the cell edge as a function of 
+file size.  The results from the upstream show a si milar trend, 
+and thus are omitted.   
+Figure 4 - Perceived Secondary Downstream Data Rate vs. Size of a File. 
+ 
+Fig. 4 shows that a small file would experience a w ider 
+range of perceived data rate than a large one, beca use a small 
+file is more likely to be transferred in less than a rotating 
+period.  Due to sporadic interruptions in transmiss ions, file 
+transfer time, and hence, perceived data rate, woul d highly 
+depend on when the transfer starts.  In contrast, t he 
+fluctuations are unnoticeable and appear the same a s if this 
+were dedicated spectrum when the file size is above  a certain 
+threshold that makes file transfer time much longer  than the 
+rotating period; this threshold is much smaller for  SDs that are 
+closer to the radar.  From Fig. 4, at 4 km from the  radar, the 
+fluctuation in perceived data rate tends to be insi gnificant for 
+any file larger than 100 kB, while at 10 km, the fl uctuation 
+starts to be insignificant for a file larger than 1  MB. 
+Thus, fluctuations in perceived data rate depend on  file size, 
+and distance between an SD and the radar.  As long as radar 
+transmissions still affect secondary transmissions,  these 
+fluctuations will be most noticeable when an SD far  from the 
+radar transfers a small file.  The fluctuations cou ld be a 
+problem for some applications, but not all.  
+ 
+E-2 Implications of the Fluctuations for Various Ap plications 
+We start with P2P and transfers of a large file (e. g., a song 
+which is typically much larger than 1 MB), for whic h the 
+perceived data rate is the typical measure of perfo rmance.  
+P2P is often used for transfers of large files, and  transfers that 
+do not have strict delay requirements.  Because fil e size is 
+large, interruptions in secondary transmissions wou ld have 
+little impact on perceived secondary data rate, as shown in 
+Fig. 4.  Moreover, Fig. 2(a) shows that the SD coul d achieve a 
+high average data rate even close to the radar, hen ce, P2P and 
+transfers of large files could also be promising fo r spectrum 
+sharing, although it might not be quite as promisin g as video 
+on demand, of which traffic is mostly in the downst ream. 
+Guaranteeing high data rates for small files is mor e 
+challenging.  Fig. 5 shows the 1st-percentile and m ean 
+perceived downstream rate (of a user at the cell ed ge) as a 
+function of distance of a BS from the radar. Fig. 5  shows that 
+transferring files with different sizes would exper ience 
+approximately the same mean perceived rate at any d istance 0 10 20 30 40 50 60 70 80 00.2 0.4 0.6 0.8 1
+Distance between a Secondary Base Station and a Rad ar [km]Prob(Interupted Time<Acceptable Level) 
+Acceptable Level = 80 ms 
+Acceptable Level = 150 ms 10 -3 10 -2 10 -1 10 010 110 -2 10 -1 10 010 110 2
+File Size [MB]Perceived Downstream Data Rate [Mbps]Max.
+Mean 
+Min.
+10 km from a Radar 
+4 km from a Radar IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 7
+from the radar.  However, for small files (i.e., sm aller than 
+1 MB), the 1st-percentile perceived rate can be muc h lower 
+than the mean, hence, for transfers of small files,  this could be 
+a problem, if users would not tolerate fluctuations  in perceived 
+data rate.  Thus, such applications would not be su itable for 
+sharing spectrum with radar. Upstream results are s imilar, but 
+are omitted.   
+ 
+Figure 5 - First Percentile, and Mean Perceived Dow nstream Data Rate vs. 
+Distance between a Base Station and a Radar. 
+ 
+There are also applications for which file transfer  time, 
+rather than perceived data rate, is the important p erformance 
+measure.  Although transferring small files, the ap plications 
+would still work well in spectrum shared with radar .  One 
+example is web browsing, since users probably expec t a web 
+page to be retrieved just as quickly, even if it co ntains many 
+more bytes.  Time for downloading a web page is sug gested to 
+be less than 2 to 4 s (with a preferred target of 0 .5 s) [11]. 
+Fig. 5 shows that just beyond 10% of the 286 km dis tance at 
+which secondary transmissions will not affect the r adar, a user 
+downloading a 1 MB web page would experience the 1s t-
+percentile perceived rate of around 8 Mbps.  The 90 th-
+percentile webpage size in 2010 was 660 kB [28], he nce, even 
+with 3 MHz of spectrum, 99% of the time, more than 90% of 
+transfers would experience file transfer time less than 1 s.  For 
+the web pages larger than 1 MB, the file transfer t ime would 
+be less than 1 s; however, this transfer time is no t very 
+different from the one when transmissions occur in dedicated 
+spectrum.  For example, with the 10.8 Mbps downstre am rate 
+limit, the transfer time for a web page larger than  1 MB would 
+be larger than 740 ms.  Thus, quality of service is  good for 
+web browsing even close to the radar. 
+There are also applications that transfer small fil es, but can 
+tolerate interruptions during transmissions, e.g., automatic 
+meter reading.  Generally, the system consists of m any meters 
+installed at users’ premises; each of these devices  
+intermittently transfers a small amount of informat ion, in the 
+order of tens of kB, to an aggregation point.  Beca use 
+significant delays are tolerable, an average amount  of data that 
+can be transferred in a given period is the importa nt 
+performance measure.  As Fig. 2(a) shows that the s econdary 
+system can achieve high average data rate, spectrum  shared with radar would also work well with this applicati on.  
+F. Sensitivity Analysis 
+In this section, we evaluate the sensitivity of the  average 
+extent of secondary transmissions, and fluctuations  in 
+perceived secondary data rate on four important par ameters: 
+secondary cell radius, /G734; radar transmit power, /G73×/Gbcb/Gbd7 ; radar 
+tolerable interference level, i.e., maximum INR); r adar 
+rotating period, /G736/Gbcb/Gbd7 . 
+ 
+F-1 Sensitivity of Average Extent of Secondary Tran smissions 
+Unlike the other parameters considered, changing ra dar 
+rotating period will not change the amount of data an SD can 
+transfer in a given period of time, and thus, it wi ll have no 
+impact on the average extent of secondary transmiss ions.  
+Hence, we will omit these graphical results.  The a verage 
+extent of secondary transmission is calculated acro ss a cell. 
+Fig. 6 shows the average secondary data rate, and t he 
+percentage of time that an SD can transmit for both  up- and 
+downstream, as a function of the cell radius.  Fig.  6 shows 
+that, as expected, the average data rate and percen tage of time 
+that a secondary device can transmit at a given dis tance from 
+the radar decreases with increasing cell radius.  I t is still the 
+case that extensive communications are possible for  a cell that 
+is relatively close to the radar, but for larger ce lls, the cell 
+must be somewhat farther from the radar.  
+Fig. 6(a) shows that in the upstream, at 70 km from  the 
+radar, the average data rate of a cell with 0.8 km radius is 
+around 60% of the system rate limit, as defined in Section V-
+B; 70 km is around 24% of the 286 km distance.  For  a larger 
+cell, with 1.5 km radius, the same level of upstrea m data rate 
+can be achieved at around 100 km from the radar (35 % of 
+286 km).  Moreover, in the downstream, at only 14% of the 
+286 km distance, a cell with 1.5 km radius can achi eve almost 
+100% of the system rate limit.  Hence, the secondar y system 
+can still achieve high data rates close to the rada r, even with a 
+fairly large cell. 
+ 
+(a) Average Secondary Data Rate 0 10 20 30 40 50 60 70 0246810 12 
+Distance between a Base Station and a Radar [km]Perceived Downstream Data Rate [Mbps]1st Percentile 
+Mean 
+1 kB File 500 kB File 1 MB File 10 MB File Mean 
+0.2 0.4 0.6 0.8 1 1.2 1.4 40 50 60 70 80 90 100 
+Cell Radius [km]Average Data Rate [% of Data Rate in Dedicated Spec trum]
+Upstream Downstream 
+40 km from a Radar 
+20 km from a Radar 
+100 km from a Radar 
+70 km from a Radar IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 8
+ 
+(b) Percentage of Time that a Secondary Device can T ransmit 
+Figure 6 - Sensitivity of Extent of Transmissions on  Cell Radius. 
+ 
+Fig. 7 shows the average data rate as a function of  radar 
+transmit power.  Changes in radar transmit power ha ve a 
+similar effect on both data rate and the percentage  of time that 
+an SD can transmit, similar to what we observed wit h changes 
+in cell radius in Fig. 6. Hence, results showing th e percentage 
+of time that an SD can transmit are omitted for bre vity.  
+Fig. 7 shows that the data rate decreases with incr easing 
+transmit power of the radar.  However, high average  data rates 
+close to a radar can still be attained, even when t he radar 
+transmit power is high, if the cell is a bit farthe r from the 
+radar.  For example, in the upstream when the radar  transmit 
+power increases from 0.5 to 1.4  MW, the distance f rom a cell 
+to the radar needs to be increased from around 70 t o 90 km, so 
+that the achievable data rate is still around 60% o f the system 
+rate limit (90 km is still only 31% of 286 km).  In  the 
+downstream, the increase in radar transmit power on ly slightly 
+decreases the average data rate, hence, the seconda ry system 
+can achieve high data rates at fairly short distanc e to a radar 
+transmitting with high power. 
+ 
+Figure 7 - Sensitivity of Average Data Rate on Rada r Transmit Power. 
+ 
+Fig. 8 shows the averaged data rate as a function o f the 
+radar’s tolerable INR.  As expected, the data rate slightly decreases with a more stringent requirement on rada r tolerable 
+interference level, i.e., smaller tolerable INR.  F or example, in 
+the downstream at 20 km from the radar, reducing IN R from -
+10 to -13 dB would decrease the average data rate f rom 93% 
+to 88% of the rate limit.  Note from Fig. 8 that we  see no 
+impact of INR on the average upstream data rate, be cause an 
+SD can transmit with power higher than its equipmen t limit 
+without causing harmful interference to a radar.  H ence, an SD 
+will still transmit at its equipment power limit ev en when the 
+radar tolerable interference level changes; this is  more likely 
+to happen when there are only a few MTs in a cell, as assumed 
+in this scenario.  However, when there are many use rs, we 
+expect that reducing radar’s INR would decrease the  data rate 
+in both up- and downstreams.   
+ 
+Figure 8 - Sensitivity of Average Data Rate on Rada r Tolerable Interference 
+Level. 
+ 
+Similarly to Fig. 6 and Fig. 7, the secondary syste m can still 
+achieve high data rates under more stringent INRs w hen a cell 
+is a bit farther from the radar, e.g., by moving a cell from 20 to 
+only 30 km from the radar, the downstream data rate , for 
+INR = -13 dB, is 96% of the rate limit.  Thus, the secondary 
+system can also achieve high data rates close to th e radar even 
+under radar’s stringent tolerable interference requ irements. 
+In addition, for a typical range of cell radius, tr ansmit power 
+and tolerable interference level of the radar, comp aring Fig. 6, 
+Fig. 7 and Fig. 8 shows that cell radius would rela tively have 
+higher impact on the extent of secondary transmissi ons 
+compared to the other parameters.  For example, at 20 km 
+from the radar, in the downstream, the average data  rate 
+increases from 70% to 99% of the rate limit, when c ell radius 
+decreases from 1.5 to 0.2 km.  At the same distance  from the 
+radar, the average downstream data rate increases f rom 88% to 
+96% of the rate limit, when INR increases from -13 to -7 dB, 
+while the average downstream data rate slightly inc reases 
+from 93% to 94% of the rate limit, when the radar t ransmit 
+power decreases from 1.4 to 0.025 MW.  Hence, at le ast for an 
+ATC radar, if one adjusts design parameters within a range 
+that might be considered reasonable, the extent of secondary 
+transmissions achievable seems to be affected more by the 
+radius of the cell rather than by the transmit powe r and 
+tolerable interference of the radar that the second ary system 0.2 0.4 0.6 0.8 1 1.2 1.4 40 50 60 70 80 90 100 
+Cell Radius [km]Percentage of Time that a Secondary Device can Tran smit
+Upstream Downstream 
+40 km from a Radar 
+20 km from a Radar 
+100 km from a Radar 
+70 km from a Radar 
+0 0.2 0.4 0.6 0.8 1 1.2 1.4 40 50 60 70 80 90 100 
+Radar Transmit Power [MW]Average Data Rate [% of Data Rate in Dedicated Spec trum]
+Upstream Downstream, 20 km from a Radar 
+90 km from a Radar 
+70 km from a Radar -13 -12 -11 -10 -9 -8 -7 60 65 70 75 80 85 90 95 100 
+Radar Tolerable Interference to Noise Ratio (INR) [ dB]Average Data Rate [% of Data Rate in Dedicated Spec trum]
+Downstream 
+Upstream, 70 km from a Radar 20 km from a Radar 30 km from a Radar IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 9
+will share spectrum with.  
+ 
+F-2 Sensitivity of Fluctuations in Perceived Second ary Data 
+Rate 
+Fig. 9 shows fluctuations in perceived data rate as  a 
+function of file size: in the upstream at 70 km fro m the radar, 
+and in the downstream at 20 km.  The fluctuations i n 
+perceived data rate are evaluated for a user at the  edge of a cell 
+in the direction toward the radar.  It is seen, fro m Section V-E, 
+that when radar transmissions still affect transmis sions of the 
+secondary system, the farther away from the radar, the higher 
+fluctuations in perceived data a secondary user wou ld 
+experience.  At 70 km from the radar for upstream a nd at 
+20 km for downstream, secondary transmissions are s till 
+highly affected by the radar; Fig. 2 shows that the  increasing 
+rate (i.e., slope) of the extent of secondary trans missions with 
+distance from the cell to the radar starts to decre ase after 
+around 70 and 20 km for up- and downstreams, respec tively. 
+Fig. 9(a) shows that, as expected, a user in a smal ler cell 
+would experience higher fluctuations in perceived d ata rate 
+than that in a larger cell.  However, the increase in fluctuations 
+in perceived data rate with decreasing cell radius will not be a 
+problem, as a user uploading large files (i.e., lar ger than 
+1 MB) would still experience insignificant fluctuat ions even 
+when the cell radius is as small as 200 m.  For the  
+downstream, Fig. 9(b) shows that at only 20 km from  the 
+radar, a user downloading large files would also ex perience 
+insignificant fluctuations in perceived data rate e ven when the 
+cell radius is 200 m.  Hence, a user transferring a  large file 
+would still experience insignificant fluctuations i n perceived 
+data rate even in a small cell.  
+ 
+(a) Upstream  
+(b) Downstream 
+Figure 9 - Sensitivity of Perceived Secondary Data Rate on Secondary Cell 
+Radius. 
+ 
+The effect of the other parameters (including trans mit 
+power, INR, and rotating period) on the fluctuation s in 
+downstream perceived data rate are similar to the e ffect of cell 
+radius as shown in Fig. 9(b), hence, the results on  fluctuations 
+of perceived data rate in the downstream are omitte d.  For the 
+upstream, Fig. 10 shows the perceived data rate as a function 
+of file size when (a) the radar transmit powers are  0.025, 0.45, 
+and 1.4 MW, (b) INR is -13, -10, and -7 dB, and (c)  the 
+rotating periods are 4, 4.7, and 6 s; the results a re from a cell 
+70 km away from the radar.  Fig. 10 shows that chan ges in 
+these three parameters have only marginal impact on  the 
+fluctuations in data rate perceived when files larg er than 1 MB 
+are uploaded.  Hence, when one adjusts these parame ters 
+within this reasonable range, a user transferring a  large file 
+would still experience insignificant fluctuations i n perceived 
+data rate.  Note from Fig. 10(b) that, as we can ex pect from 
+the sensitivity analysis on average extent of secon dary 
+transmissions, when a small number of users are ass umed in a 
+cell, changing radar INR would have no impact on th e 
+fluctuations in upstream perceived data rate.   
+ 
+(a) on Radar Transmit Power 10 -3 10 -2 10 -1 10 010 110 -2 10 -1 10 010 110 2
+File Size [MB]Perceived Upstream Data Rate [Mbps]Max.
+Mean 
+Min. R = 0.2 km 
+R = 0.8 km 
+R = 1.5 km 10 -3 10 -2 10 -1 10 010 110 -1 10 010 110 2
+File Size [MB]Perceived Downstream Data Rate [Mbps]Max.
+Mean 
+Min.
+R = 0.2, 0.8, and 1.5 km 
+10 -3 10 -2 10 -1 10 010 110 -2 10 -1 10 010 1
+File Size [MB]Perceived Upstream Data Rate [Mbps]Max.
+Mean 
+Min.PRd = 0.025 MW 
+PRd = 0.45 MW PRd = 1.4 MW IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 10  
+ 
+(b) on Radar Tolerable Interference to Noise Ratio (INR) 
+ 
+(c) on Radar Rotating Period 
+Figure 10 - Sensitivity of Perceived Secondary Data  Rate in the Upstream. 
+ 
+VI.  CONCLUSIONS  
+We study opportunistic primary-secondary spectrum 
+sharing with a rotating radar.  A secondary device is allowed 
+to transmit as long as the resulting interference d oes not 
+exceed the tolerable level of the radar.  The secon dary system 
+considered provides communications in non-contiguou s cells 
+around the radar. 
+This paper considers sharing between a radar and a cell, as 
+might be appropriate if the secondary system provid es 
+broadband hotspots, or is a cellular system utilizi ng the shared 
+spectrum when traffic temporarily exceeds the capac ity of its 
+dedicated spectrum.  The model will be extended to multiple 
+cells and radars in future work.  Unlike existing m odels of 
+sharing with radar, the proposed model allows secon dary 
+devices to adjust to variations in radar antenna ga in as the 
+radar’s main beam rotates, thereby making extensive  
+secondary transmissions possible, although with som e 
+interruptions and fluctuations.  Thus, sharing spec trum with 
+rotating radar is a promising option to alleviate s pectrum 
+scarcity.  Additional technical and governance mech anisms 
+are needed, e.g. to address interference from malfu nctioning devices [6], [16]. 
+It is also found that the secondary system will uti lize 
+spectrum more efficiently in the downstream than in  the 
+upstream, where efficiency may be measured in data rate per 
+MHz of spectrum as compared to what can be achieved  in 
+dedicated spectrum, and fraction of time that a sec ondary 
+device can transmit.  Hence, spectrum sharing with radar 
+would be more appropriate for applications that req uire more 
+capacity in the downstream, which is a typical char acteristic of 
+many applications.  However, if needed, the upstrea m rate 
+could be increased by dedicating more spectrum to t he 
+upstream. 
+Moreover, with the dynamic sharing model considered , the 
+secondary system can achieve extensive transmission s in large 
+areas that otherwise would be unavailable with curr ent 
+approaches to sharing with radar which is more stat ic.  For 
+example, with the base-case assumptions, a secondar y device 
+that does not adjust its transmit power as the rada r’s main 
+beam rotates must be at least 286 km from the radar  to prevent 
+harmful interference.  With the sharing model, at 2 7% of the 
+distance at which secondary transmissions will not affect a 
+radar, the secondary system can transmit all the ti me in the 
+downstream with an average data rate almost equal t o that 
+achieved in dedicated spectrum, and roughly 90% of the time 
+in the upstream with an average rate equal to 63% o f the 
+dedicated-spectrum data rate.  It is also find that  the secondary 
+system can still achieve extensive transmissions ev en when 
+key system parameters, including cell radius, radar  transmit 
+power, radar tolerable interference level and radar  rotating 
+period, change from the base-case assumptions.  
+Although average data rate is roughly the same for all file 
+sizes, because of interruptions as the radar rotate s, perceived 
+data rate fluctuates for smaller files while appear ing fairly 
+constant for larger files.  The magnitude of this f luctuation is 
+also more noticeable when a secondary device far fr om the 
+radar transmits small files.  The fluctuations in p erceived data 
+rate make sharing spectrum with radar attractive fo r 
+applications that can tolerate interruptions in tra nsmissions, 
+such as video on demand, peer-to-peer file sharing,  and 
+automatic meter reading, or applications that trans fer large 
+enough files so the fluctuations are not noticeable , such as 
+song transfers.  Moreover, even with changes in cel l radius, 
+radar transmit power, radar tolerable interference level, and 
+radar rotating period, spectrum shared with radar i s still 
+attractive to these applications.  
+Especially for video on demand, because currently t he 
+application is the fastest rising traffic class in the Internet [29], 
+it appears to be a very promising application that can share 
+spectrum with radar.  We have also found that this form of 
+sharing works well with an application such as web browsing 
+for which file transfer time rather than perceived data rate is 
+the most appropriate performance measure.  In contr ast, 
+spectrum shared with radar would be unattractive fo r 
+interactive exchanges of small pieces of data, e.g. , packets or 
+files, of which instantaneous data rate matters, su ch as VoIP. 10 -3 10 -2 10 -1 10 010 110 -2 10 -1 10 010 1
+File Size [MB]Perceived Upstream Data Rate [Mbps]Max.
+Mean 
+Min.INR = -13, -10, and -7 dB 
+10 -3 10 -2 10 -1 10 010 110 -2 10 -1 10 010 1
+File Size [MB]Perceived Upstream Data Rate [Mbps]Max.
+Mean 
+Min.From Bottom to Top: T Rd = 6, 4.7, and 4 s From Top to Bottom: T Rd = 6, 4.7, and 4 s IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 11  
+ACKNOWLEDGMENT  
+The authors would like to thank Prof. Antonio A. Mo reira, 
+of Instituto Superior Técnico, for very helpful dis cussions on 
+characteristics of radar and its antenna, and anony mous 
+reviewers for their insightful comments that help i mproving 
+the quality of this paper. 
+REFERENCES  
+[1]  J.M. Peha, “Sharing spectrum through spectrum policy reform and 
+cognitive radio,” Proc. of the IEEE , vol.97, no.4, Apr. 2009, pp.708-19, 
+(www.ece.cmu.edu/~peha/wireless.html). 
+[2]  US National Telecommunications and Information Administ ration 
+(NTIA), Presentation: spectrum with significant federal com mitments, 
+225 MHz - 3.7 GHz , 2009. 
+[3]  US NTIA, Federal Radar Spectrum Requirements , Special Publication 
+00-40, May 2000.  
+[4]  R.P. Margie, “Efficiency, predictability, and the n eed for an improved 
+interference standard at the FCC,” Proc. of 31st Telecommun. Policy 
+Research Conf. (TPRC) , Arlington, VA, USA, Sep. 2003. 
+[5]  US Federal Communications Commission (FCC), In the matter of 
+Revision of Parts 2 and 15 of the Commission’s Rule s to Permit 
+Unlicensed National Information Infrastructure (U-N II) devices in the 5 
+GHz band, MO&O , ET Docket No. 03-122, June 2006. 
+[6]  J.M. Peha, "Spectrum sharing in the gray space," to appear in 
+Telecommunication Policy Journal . 
+[7]  R. Saruthirathanaworakun, and J.M. Peha, “Dynamic pr imary-secondary 
+spectrum sharing with cellular systems,” Proc. of CrownCom , Cannes, 
+France, June 2010, (www.ece.cmu.edu/~peha/wireless.h tml).  
+[8]  M.J. Marcus, “Sharing government spectrum with privat e users: 
+opportunities and challenges,” IEEE Wireless Communications 
+Magazine , vol.16, no.3, June 2009, pp. 4-5.  
+[9]  L. Wang, J. McGeehan, C. Williams, and A. Doufexi, “ Radar spectrum 
+opportunities for cognitive communications transmissi on,” Proc. of 
+CrownCom , Singapore, May 2008. 
+[10]  M.I. Rahman, and J.S. Karlsson, “Feasibility evaluat ions for secondary 
+LTE usage in 2.7-2.9 GHz radar bands,” Proc. of IEEE PIMRC , 
+Toronto, Canada, Sep. 2011. 
+[11]  3GPP, Technical Specification 22.105: Services and servic e capabilities , 
+version 9.1.0, Release 9, Oct 2010.  
+[12]  M.I. Skolnik, Introduction to Radar Systems , 3rd International Ed., 
+McGraw-Hill, Singapore, 2001.  
+[13]  ITU-R, Rec. M.1464-1: Characteristics of radiolocation rad ars, and 
+characteristics and protection criteria for sharing  studies for 
+aeronautical radionavigation and meteorological rad ars in the 
+radiodetermination service operating in the frequen cy band 2 700-2 900 
+MHz , 2003.  
+[14]  B. Bedford and F. Sanders, “Spectrum sharing and pot ential interference 
+to radars,” Proc. of ISART , Boulder, CO, USA, Feb. 2007. 
+[15]  UK Office of Communications (Ofcom), Coexistence of S Band radar 
+systems and adjacent future services , Information Update, Dec. 2009. 
+[16]  J.M. Peha, “Cellular systems and rotating radar usin g the same 
+spectrum,” Proc. of ISART , Boulder, CO, USA, July 2011, 
+(www.ece.cmu.edu/~peha/wireless.html). 
+[17]  N.M. Jacinto, Performance gains evaluation from UMTS/HSPA+ to LTE  
+at the radio network level , M.Sc. Thesis, IST-Tech. Univ. Lisbon, 
+Portugal, 2009. 
+[18]  R.L. Hinkle, R. M. Pratt, and R. J. Matheson, Spectrum Resource 
+Assessment in the 2.7 to 2.9 GHz Band Phase II: Mea surements and 
+Model Validation (Appendix A- Antenna Characteristi c Modeling) , OT 
+Report 76-97, Office of Telecommunications, US, Aug. 1976.  
+[19]  H. Holma, P. Kinnunen, I.Z. Kovács, K. Pajukoski, K.  Pedersen, and J. 
+Reunanen, “Performance,” in H. Holma and A. Toskala ( ed.), LTE for 
+UMTS: OFDMA and SC-FDMA Based Radio Access , John Wiley & 
+Sons, UK, 2009. 
+[20]  The Netflix Blog: (http://blog.netflix.com/2008/11/e ncoding-for-
+streaming.html?CREATIVE=n&KID=k175726&USERID=618506686
+&SESSIONID=id_618506687, June 2011). 
+[21]  A. Zambelli, IIS Smooth Streaming Technical Overview , White Paper, 
+Microsoft Cooperation, USA, 2009. 
+[22]  ITU-R, Rec. P.1546-4: Method for point-to-area predictions  for 
+terrestrials services in the frequency range 30 MHz  to 3 000 MHz , 2009. [23]  T. Kurner, “Propagation Model for Macro-Cells,” in E. Damosso, and 
+L.M. Correia (ed.), COST 231 Final Report , European Communities, 
+Brussels, Belgium, 1999. 
+[24]  R. Hallahan, and J.M. Peha, “Quatifying the cost of  a nationawide public 
+safety wireless network,” Telecommunications Policy , vol.34, no.4, May 
+2010, pp. 200-20, (www.ece.cmu.edu/~peha/safety.html) .  
+[25]  ITU-R, Rec. P.1057-2: Probability distributions relevant t o radiowave 
+propagation modeling , 2007. 
+[26]  J.T. Pinto, Assessment of multilateration telecommunication sys tems 
+installed in NAV , M.Sc. Thesis, IST-Tech. Univ. Lisbon, Portugal, 2 011. 
+[27]  J.D. Parsons, The Mobile Radio propagation Channel , 2nd Ed., John 
+Wiley & Sons, Chichester, UK, 2000. 
+[28]  S. Ramachandran, Web Metrics: Size and number of resources , Google, 
+(http://code.google.com/speed/articles/web-metrics.ht ml, June 2011).  
+[29]  Cisco, Visual Networking Index: Global Mobile Data Traffic  Forecast 
+Update , 2010–2015, White Paper, Cisco, USA, Feb. 2011. 
+ 
+ 
+Rathapon Saruthirathanaworakun  (S’11) received the 
+B.Eng. and M.Eng degrees, both in electrical engine ering, 
+from Chulalongkorn University, Bangkok, Thailand.  
+Before pursuing Ph.D., he worked as an engineer for  
+TOT public limited company, formerly Telephone 
+Organization of Thailand, and was responsible for 
+spectrum management and wireless engineering. Now, he 
+is a Ph.D. candidate in Engineering and Public Poli cy, in 
+dual Ph.D. program between Carnegie Mellon Universit y, 
+Pittsburgh, PA, USA, and Instituto Superior Técnico , Technical University of 
+Lisbon, Portugal. His research topic is currently o n spectrum management, 
+spectrum sharing model, and theirs implications on re lated regulation and 
+policy.  
+ 
+Jon M. Peha (S’, M’, SM’, F’11) received the B.Sc. 
+degree from Brown University, Providence, RI, and th e 
+Ph.D. degree in electrical engineering from Stanford  
+University, Stanford, CA. 
+He is a Full Professor at Carnegie Mellon Universit y. 
+He served in the US Government in 2008-2011, first a s 
+Chief Technologist of the Federal Communications 
+Commission, and then Assistant Director of the White 
+House Office of Science & Technology Policy where h e 
+focused on Communications and Research. At Carnegie M ellon, he is a 
+Professor in the Dept. of Engineering & Public Poli cy and the Dept. of 
+Electrical & Computer Engineering, and former Associ ate Director of the 
+university's Center for Wireless & Broadband Networ king. He has served as 
+Chief Technical Officer for three high-tech compani es, and a member of 
+technical staff at SRI International, AT&T Bell Lab oratories, and Microsoft. 
+He has addressed telecom and e-commerce policy on legi slative staff in the 
+House Energy & Commerce Committee and the Senate, and he lped launch 
+and lead a US Government interagency program to assis t developing countries 
+with information infrastructure. His research spans technical and policy issues 
+of information networks, including spectrum management , broadband 
+Internet, wireless networks, video and voice over I P, communications for 
+emergency responders, universal service, secure Inte rnet payment systems, 
+online dissemination of copyrighted material, and ne twork security. He is an 
+IEEE Fellow , an AAAS Fellow , and a winner of the FCC's "Excellence in 
+Engineering Award" and the IEEE TCCN Publication Aw ard. 
+  
+Luis M. Correia (S’85, M’91, SM’03) was born in 
+Portugal, on 1958.  He received the Ph.D. in Electr ical 
+and Computer Engineering from IST-TUL (Technical 
+University of Lisbon) in 1991, where he is currentl y a 
+Professor in Telecommunications, with his work focuse d 
+in Wireless/Mobile Communications in the areas of 
+propagation, channel characterisation, radio networ ks, 
+traffic, and applications.  He has acted as a consu ltant for 
+Portuguese mobile communications operators and the 
+telecommunications regulator, besides other public an d private entities.  
+Besides being responsible for research projects at the national level, he has 
+been active in various ones within the European fra meworks of RACE, 
+ACTS, IST, ICT and COST (where he also served as ev aluator and auditor), 
+having coordinated two COST projects, and taken lea dership responsibilities 
+at various levels in many others.  He has supervised  more than 150 M.Sc. and 
+Ph.D. students, having authored more than 300 papers  in international and 
+national journals and conferences, for which he has  served also as a reviewer, 
+IEEE Journal on Selected Areas in Communications, Nov. 2012  
+ 12  
+editor, and board member, and edited 6 books.  He wa s part of the COST 
+Domain Committee on ICT.  He was the Chairman of the Te chnical 
+Programme Committee of several conferences, namely PIMRC ’2002.  He is 
+part of the Expert Advisory Group and of the Steeri ng Board of the European 
+Net!Works platform, and was the Chairman of its Worki ng Group on 
+Applications. 

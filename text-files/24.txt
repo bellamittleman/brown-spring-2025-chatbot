@@ -1,0 +1,1109 @@
+Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  1 Sharing Spectrum through Spectrum Policy Reform 
+and Cognitive Radio 1 
+ 
+Jon M. Peha 
+Carnegie Mellon University 
+ 
+ 
+Abstract 
+ 
+Traditionally, interference protection is guarantee d through a policy of spectrum 
+licensing, whereby wireless systems get exclusive a ccess to spectrum.  This is an 
+effective way to prevent interference, but it leads  to highly inefficient use of spectrum.  
+Cognitive radio along with software radio, spectrum  sensors, mesh networks, and other 
+emerging technologies can facilitate new forms of s pectrum sharing that greatly improve 
+spectral efficiency and alleviate scarcity, if poli cies are in place that support these forms 
+of sharing.  On the other hand, new technology that  is inconsistent with spectrum policy 
+will have little impact.  This paper discusses poli cies that can enable or facilitate use of 
+many spectrum-sharing arrangements, where spectrum- sharing arrangements are 
+categorized as being based on coexistence  or cooperation , and as sharing among equals  
+or primary-secondary sharing .  A shared spectrum band may be managed directly b y the 
+regulator, or this responsibility may be delegated in large part to a license-holder.  The 
+type of sharing arrangement and the entity that man ages it have great impact on which 
+technical approaches are viable and effective.  The  most efficient and cost-effective form 
+of spectrum sharing will depend on the type of syst ems involved, where systems under 
+current consideration are as diverse as television broadcasters, cellular carriers, public 
+safety systems, point-to-point links, and personal and local-area networks.  In addition, 
+while cognitive radio offers policy-makers the oppo rtunity to improve spectral efficiency, 
+cognitive radio also provides new challenges for po licy enforcement.  A responsible 
+regulator will not allow a device into the marketpl ace that might harm other systems.  
+Thus, designers must seek innovative ways to assure  regulators that new devices will 
+comply with policy requirements and will not cause harmful interference. 
+ 
+ 
+Keywords:  spectrum sharing, spectrum policy, cogni tive radio, band manager, 
+unlicensed, etiquette, opportunistic access, interr uptible access, secondary spectrum 
+market, commons 
+                                                 
+1 The author gratefully acknowledges the financial su pport of CyLab, ARO, and Intel Corp.  Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  2 I.  INTRODUCTION 
+ 
+When airplanes were new, pilots flew as they please d, without risk of midair 
+collision.  As more planes shared the skies, the ne ed grew for communications and 
+cooperation among pilots. Today, hundreds of planes  can fly just a few meters apart in 
+perfect formation through complex maneuvers, all wi thout collision.  This could never 
+occur without the technological advances that made precision flying possible, but 
+technology alone would have accomplished little.  B efore planes could be so densely 
+packed, it was necessary to invent new rules that g overn how pilots fly and interact with 
+each other. 
+ 
+Similarly, as the density or wireless transmitters grew, rudimentary coordination 
+in the form of policy became essential.  In most pr ime spectrum, licensing gave 
+communications systems exclusive access to blocks o f spectrum, thereby almost 
+eliminating the danger of harmful interference, but  leaving the majority of this spectrum 
+idle when and where the license-holder is not activ e [1].  A few bands were designated 
+for unlicensed devices with few restrictions, but w ith power limits that generally kept 
+utilization low enough to limit mutual interference  (although utilization and serious 
+interference problems sometimes grow over time).  T hese approaches were reasonably 
+effective as a means of limiting interference probl ems, and appropriate for the technology 
+of their time.  However, overwhelming demand for wi reless products and services 
+motivates us to support a greater density of wirele ss devices through adoption of new 
+technology and policy.  Emerging technology, includ ing cognitive radio [2], mesh 
+networks, location technologies, spectrum sensors, and even micropayment schemes will 
+make this possible, if and only if we simultaneousl y develop spectrum policies that make 
+effective use of the new technology. 
+ 
+Wireless technology that is irreconcilable with imp ortant policy concerns, or that 
+was implicitly designed for the wrong policy enviro nment, is of no practical value.  With 
+something as potentially revolutionary as cognitive  radio, it is easy for designers to make 
+this mistake.  For example, some cognitive radio sy stems considered by researchers are 
+based on the assumption that all devices fully coop erate to reduce interference, even 
+when these devices are owned and operated by countl ess independent users.  While this is 
+not impossible with corresponding policy reform, de signers who do not realize that they 
+are implicitly proposing a dramatic change in polic y may be disappointed in the limited 
+impact of their technical innovations.  Even when n ew technology is compatible with 
+current spectrum policy, that technology may be pro hibited because wise regulators are 
+necessarily cautious about allowing new devices tha t may have unintended impact on 
+existing systems. 
+ 
+Successful innovation requires consideration of the  entire system , where a system 
+includes wireless technology, spectrum policy, and the human beings who interact with 
+both.  This includes feasible and cost-effective te chnical mechanisms through which 
+devices can minimize the interference they cause (a nd perhaps maximize the interference 
+they tolerate).  It also includes the incentive str ucture that would convince the designers 
+and users of wireless devices to reduce the interfe rence they cause others.  Regulators Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  3 must define rules that facilitate use of those mech anisms that are effective and mutually 
+compatible, deter use of mechanisms that are ineffe ctive or incompatible with other 
+systems in the given band, and still allow enough f lexibility to encourage innovation.  At 
+the same time, regulators must ensure the rules tha t unleash new technologies while 
+controlling interference are legally and technicall y enforceable.  Otherwise, the new 
+technologies are not ready for use. 
+ 
+Increased spectrum sharing is essential to addressi ng today’s serious scarcity of 
+available spectrum.  This paper will discuss a rang e of spectrum policies that can make 
+novel forms of spectrum sharing possible, and a tax onomy to better understand those 
+forms of spectrum sharing.  We will also discuss th e implications of these policies and 
+spectrum-sharing arrangements for various technolog ies, with an emphasis on cognitive 
+radio that befits this special issue of the Proceedings of the IEEE .  Indeed, cognitive radio 
+is in part in a race with other technical approache s for ascendance in spectrum sharing.  
+Note that the pros and cons of various categories of  spectrum-sharing, as well as the 
+taxonomy proposed in this paper which defines these  categories, represent the views of 
+the author.  This paper addresses many highly conte ntious issues for which there is no 
+consensus opinion. 
+ 
+In a given spectrum band, adoption of one form of s pectrum-sharing usually 
+precludes many other sharing possibilities.  Since policy must change slowly to protect 
+legacy systems, a policy decision in favor of one f orm typically precludes the alternatives 
+for many years.  For example, allowing unlicensed d evices to operate in the “white 
+spaces” of TV spectrum [3], i.e. in a TV channel bu t far from any TV tower operating in 
+that channel, precludes the possibility of offering  licenses to those who would share with 
+TV broadcasters in a different manner [4].  Thus, t he policy and technical communities 
+must make hard choices.  The good news is that they  can (and should) make different 
+choices in different bands.   
+ 
+Section 2 will describe the basic features by which  spectrum-sharing schemes can 
+best be defined.  Section 3 uses these features to present and categorize a wide range of 
+new spectrum-sharing paradigms, and their implicati ons for both policy and technology.  
+Section 4 addresses the important question of who g overns spectrum policy within a 
+given band, which also has implications for technic al design.  Issues of policy 
+enforcement are discussed in Section 5, and the pap er is concluded in Section 6. 
+ 
+ 
+II.  DEFINING FEATURES OF SPECTRUM-SHARING 
+PARADIGMS 
+ 
+We argue that a sharing arrangement can be well cha racterized and categorized by 
+two defining features [5, 6].  The first is whether  sharing is based on cooperation or 
+coexistence.  The distinction has profound implications for both policy and technology.  
+In a model based on cooperation, even devices under  different administrative control 
+must communicate and cooperate with each other to a void mutual interference.  Among Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  4 other things, this means a common protocol must be defined, and must be supported by 
+all  systems in the band.  With a coexistence model, de vices try to avoid interference 
+without explicit signaling.  At most, devices sense  each other’s presence as interference.  
+As can be seen throughout this special issue, cogni tive radio is a powerful tool for sharing 
+based on coexistence; the ability to reconfigure a device based on the sensed interference 
+levels from neighbors is valuable when avoiding mut ual interference [7, 8, 9].  With a 
+cooperative model, devices may react to what they a re specifically told, and this ability to 
+independently sense the environment may or may not be important, depending on the 
+scheme. 
+ 
+Both approaches have their place.  Where devices ca n exchange information that 
+would otherwise be unavailable, we would expect the se devices to make more efficient 
+use of spectrum while better avoiding mutual interf erence [10].  However, cooperation 
+has its drawbacks.  Thanks to hidden terminals and other pragmatic concerns, 
+communications may not always be possible.  The nee d for interaction can also impose 
+transaction costs, including device complexity, del ay, and communications overhead, 
+perhaps even to the extent that such costs outweigh  the benefits of cooperation [11].  
+Moreover, the need for a common protocol in coopera tive sharing forces a degree of 
+homogeneity among devices that can inhibit innovati on.  This is also a problem when 
+attempting to share spectrum with legacy equipment,  which was not designed or 
+deployed with new sharing arrangements in mind.  Fo rcing systems with no trust 
+relationship to cooperate also poses complex securi ty challenges.  Such tradeoffs will be 
+further apparent in the next section, when we discu ss specific sharing models.  Further 
+research will determine when coexistence is prefera ble and when cooperation is 
+preferable.  In many cases, extensive use of one wi thin a given band makes the other 
+impractical, if not impossible.  
+ 
+The second defining feature of a spectrum-sharing a rrangement in the proposed 
+taxonomy is whether the arrangement comprises sharing among equals  or primary-
+secondary sharing [5, 6].  In the latter case, some systems have the right to operate as a 
+primary spectrum-user, and policy mandates that sec ondary devices are not allowed to 
+cause harmful interference to a primary system.  In  the former case, all devices have 
+equal rights, and typically more flexibility about how to behave in the presence of peers. 
+As a result, an important question wherever sharing  among equals takes places is whether 
+all systems have incentive to limit the interferenc e they cause to others.  Cognitive radio 
+is most often discussed as a tool for primary-secon dary sharing, but if designed in 
+accordance with an appropriate policy, cognitive ra dios may prove useful for sharing 
+among equals as well. 
+ 
+Probably the most commonly used descriptive feature  for a class of wireless 
+devices is whether they are licensed  or unlicensed .  Note that this applies to a set of 
+systems within a spectrum-sharing arrangement, and not to the arrangement itself.  As we 
+will see in Section 3, primary devices can be licen sed or unlicensed, and secondary 
+devices can be licensed or unlicensed.  A licensed system must get permission from the 
+regulator to operate within a given frequency band.   The licensing process is an 
+opportunity for the regulator to ensure exclusive a ccess to a block of spectrum if it wishes, Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  5 which is strong protection from the problems of int erference and congestion.  In contrast, 
+unlicensed devices need no permission from the regu lator to deploy a device.  Devices 
+can typically be deployed anywhere, which means the re is no limit to the number of 
+devices that might be operating in a given location .   
+ 
+ 
+III.  MODELS FOR SPECTRUM SHARING 
+ 
+This section presents the policies underlying a wid e range of spectrum-sharing 
+models.  Section 3.1 addresses the “commons” models , in which many devices are 
+allowed to share spectrum as primary users.  Sectio n 3.2 discusses how secondary 
+devices can share spectrum with a primary license-h older.  Building on Sections 3.1 and 
+3.2, the methods by which these secondary systems s hare with each other are discussed in 
+Section 3.3.  Section 3.4 discusses sharing among e quals for a limited number of regional 
+providers, rather than a potentially unlimited numb er of localized systems.  The 
+taxonomy is summarized in Section 3.5 
+ 
+A.  Sharing Among Equal Primary Devices 
+ 
+Some of the most heated debates over spectrum polic y in the last few years have 
+been over the creation of new spectrum “commons.”  In any commons model, spectrum 
+is shared, and no one is given clear priority. As d iscussed in Section 2, policy can 
+prescribe devices that cooperate or devices that me rely coexist.  While both possibilities 
+are sometimes lumped together under the ambiguous h eading of “commons,” the two are 
+fundamentally different.  (Unfortunately, this conf usion over definitions has made much 
+of the debate about spectrum commons meaningless, a s advocates and opponents based 
+their arguments on incompatible definitions.)   [5,  6].   
+ 
+The coexistence model exists today in many (but not  all) nations, and has spurred 
+tremendous innovation and productivity, as is demon strated by the popularity of WiFi 
+and cordless phones [12].  Many of these devices we re born because of the creation of 
+new unlicensed spectrum bands, or to be more precise, bands where devices are “licensed 
+by rule.”  In other words, any device that complies  with the regulator’s rules can be 
+deployed without explicit permission.  (Equivalentl y, a regulator can explicitly grant an 
+unlimited number of nonexclusive licenses with some  rules associated with these licenses, 
+such as the requirement to use contention-based alg orithms in the 3650-3700 MHz band 
+within the US [13].)  Unlicensed spectrum has many advantages [14, 15].  It requires 
+spectrum sharing, which can potentially lead to gre ater spectral efficiency than exclusive 
+access, where spectrum often sits idle because the license-holder is not transmitting.  
+Unlicensed spectrum is necessary to support entire systems that are mobile or portable, 2 
+such as a group of laptops that form an ad hoc wire less local-area network wherever they 
+                                                 
+2 This category of mobile or portable systems does n ot include systems that consist of fixed infrastruc ture, 
+and mobile devices that work only when in the area served by fixed infrastructure, e.g. cellular syste ms. Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  6 happen to be.  It is useful for inexpensive low-pow er consumer products such as cordless 
+phones, where the cost of coordination and licensin g would probably far exceed the cost 
+of the equipment, and the interference impact on ne ighbors is small.   
+ 
+Of course, a commons based on coexistence necessari ly comes with the risk of 
+mutual interference.  In today’s unlicensed bands, there is no limit to the number of 
+devices in a given location, and no limit to the po tential congestion. This is one reason 
+such bands are typically limited to low-power devic es.  Cost-effective market-based 
+methods have been suggested [16] but not adopted th at would allow the regulator to limit 
+the number of devices deployed in a nation if inter ference proves problematic, without 
+imposing additional constraints beyond the traditio nal unlicensed paradigm, but even that 
+does not prevent all of the devices in a nation fro m appearing in the same place.  
+Consequently, only applications and devices that do  not require quality of service 
+guarantees, such as wireless local-area networks, s hould be deployed in these unlicensed 
+bands.   
+ 
+Use of devices that detect each other’s presence an d change behavior accordingly, 
+such as those using cognitive radio, could reduce t he problems of mutual interference.  
+But would such techniques ever be deployed in a coe xistent commons?  The success of 
+this approach probably depends on the policies that  prevail in the band.  As described in 
+Section 2, it is not sufficient with sharing among equals for devices to have the technical 
+ability to reduce the interference they cause to ot hers.  Users and designers of these 
+devices must also have the right incentives. Some e ngineers may design “greedy” devices, 
+i.e. devices that transmit with greater power, dura tion, or bandwidth than necessary [15].  
+When choosing between improving the performance, co st, or battery life of my device, 
+versus conserving our spectrum and reducing interference inflicted on som e stranger’s 
+device, there is a natural tendency to choose the f ormer.  In the extreme, the presence of 
+greedy devices can lead to a tragedy of the commons , where many devices consume too 
+much of the shared resource, and all devices in the  band experience inadequate 
+performance as a result [17, 15, 18].  For example,  in the 1990s, the US Federal 
+Communications Commission established an unlicensed  band in which all devices must 
+comply with a “listen-before-talk” (LBT) requiremen t.  We have shown using game 
+theory that under some circumstances, devices in th is band could improve their own 
+performance by transmitting for longer durations th an necessary.  Moreover, if one 
+device chooses to be greedy in this manner, a neigh boring device would optimize its own 
+performance by being considerably more greedy than the first, potentially leading to an 
+escalation of overconsumption that severely degrade s the performance of all [15, 18].  
+Similar problems can occur when greedy devices tran smit at greater power than 
+necessary, as shown in [19], or when they use more bandwidth than necessary.   
+ 
+The dangers of greed can be addressed in two ways.  One option is to keep 
+spectrum utilization sufficiently low that performa nce is good, and there is little incentive 
+for greed.  This might be done through power limits , deployment fees, wideband 
+allocations, or other means.  The other option is t o build incentives to conserve spectrum 
+and reduce interference to neighbors into the techn ical rules of operation defined by the 
+regulator, which as shown in [15, 20, 19], has the effect of changing the game’s incentive Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  7 structure.  For example, a device that has been tra nsmitting for a long time or at high 
+power might be required to defer to other devices b y delaying its next transmission until 
+it senses the channel to be idle throughout a fairl y long monitoring period.  These 
+regulator-imposed rules, which are known as an etiquette , do not define how devices 
+must be designed, but they impose some constraints on design.  A well-designed etiquette 
+could unleash the power of cognitive radio to impro ve spectral efficiency in unlicensed 
+bands.  On the other hand, a poorly designed etique tte may lead to ineffective designs, or 
+slow technical innovation.  
+ 
+The characteristics of a commons based on cooperati on are quite different [5, 6, 
+21, 22].   In this commons, policy dictates that al l devices will actively communicate and 
+cooperate, even though they serve different owners.   At minimum, devices can negotiate 
+with each other for the right to transmit without c ollision.  For greater benefits, devices 
+might autoconfigure into a mesh network, and carry each other’s traffic.  It has been 
+shown theoretically that cooperation can lead to cooperative gain, i.e. the capacity in the 
+system can actually increase with the number of act ive devices [21, 23, 24].  As more 
+devices are added, the mean distance between device s decreases, allowing devices to 
+transmit at lower power, thereby conserving spectru m.  Thus, users of a commons based 
+on cooperation need not fear oversubscription as mu ch as users of a commons based on 
+coexistence.  Another advantage of this approach is  that when devices from many owners 
+combine to form a single infrastructure for all, th is fundamentally changes the economics 
+of wide-area coverage.  Thus, for example, a cooper ative approach might make it cost-
+effective to cover a large region in which today’s WiFi-based microcellular systems 
+would not be financially sustainable, as discussed in [25]. 
+ 
+The potential benefits of a cooperative commons are  great, and so are the 
+challenges, which transcend technology and policy.  Once again, with sharing among 
+equals, we must consider the incentives of the user s and designers of devices.  When 
+devices delay their own transmissions for another, or carry each other’s traffic, some 
+altruism is required, e.g. one device might increas e delays for its own traffic and drain its 
+own battery by transmitting a stranger’s packet.  F or example, we have shown that 
+devices can manipulate today’s routing protocols to  avoid carrying traffic for other 
+devices, thereby improving their own performance, a nd it is only possible to detect such 
+behavior with non-standard protocol modifications [ 26].  Even worse, a malicious node 
+may take deliberate steps to disrupt the network, a nd in some proposed cooperative 
+schemes, the impact of malicious behavior could be great.  Unless adequate technical and 
+policy safeguards are devised to address these prob lems, the cooperative commons will 
+have limited application. 
+ 
+Another inherent challenge that is unique to the co operative commons is that all 
+devices must share a detailed communications protoc ol.   A device should not be 
+deployed in the band unless it can communicate usin g this protocol.  Traditional 
+voluntary standards will not suffice.  Who will spe cify this protocol, and make changes to 
+it over time as technology evolves?  This difficult  challenge will be discussed further in 
+Section 5 which addresses who must be in charge, an d Section 6 which addresses 
+enforcement. Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  8  
+Note that when defining a sharing arrangement in a g iven band, one must choose 
+between cooperation and coexistence. The technologi es underlying these policies are 
+quite different, and each has its own set of techni cal challenges.  Those who champion 
+cognitive radio will probably find greater use for their ideas in a coexistence regime, 
+although there can be applications with cooperation  as well [2]. 
+ 
+B.  Sharing Between Primary and Secondary 
+ 
+Primary-secondary sharing is probably most useful w hen the primary system has 
+been given exclusive rights through licensing, as t here are generally times and/or 
+locations where other devices could transmit in thi s spectrum without causing harmful 
+interference.  Once again, sharing can take one of two forms:  cooperation or coexistence 
+[5, 6].   
+ 
+When sharing is based on coexistence, secondary dev ices are essentially invisible 
+to the primary.  Thus, all of the complexity of sha ring is borne by the secondary.   No 
+changes to the primary system are needed, which is especially good for legacy systems 
+that are difficult to change.  Before any secondary  devices can be deployed, rules must be 
+established to protect the primary.  Secondary devi ces can either be allowed to transmit at 
+such low power that they never cause harmful interf erence to the primary, as with 
+ultrawideband [27], or they can be allowed to trans mit opportunistically when and only 
+when they determine that transmissions will not cau se harmful interference [7].  
+Opportunistic access is probably inadequate for app lications that require guaranteed 
+quality of service, and therefore guaranteed prompt  access to spectrum.  However, many 
+applications can benefit from opportunistic access.  
+ 
+The challenges of opportunistic access are well sui ted to cognitive radio 
+combined with spectrum sensors.  Alternatively, it is possible to ensure that a 
+secondary transmitter is sufficiently far from prim ary receivers using a location 
+technology such as the global positioning system (G PS) in combination with a 
+database containing the locations of primary device s.  The secondary device also 
+needs a method of retrieving the inevitable changes  to this database, and the device 
+must stop all transmissions if its database is too far out of date.   This database might 
+be extended to a full radio environment map [28], w hich also includes information on 
+spectrum policy, available services, geography, and  even path loss. 
+ 
+Proponents of opportunistic access must overcome se veral technical challenges; 
+the first is proving that primary systems will be p rotected. At present, this battle is being 
+fought over opportunistic access to the “white spac e” in television spectrum.  The US 
+Federal Communications Commission (FCC) has tentati vely ruled in favor of this form of 
+sharing after the 2009 transition to digital televi sion [3], although many of the details 
+remain undecided, and for better or worse, there is  still time for a change in course.  Two 
+prototype devices have already been submitted to th e FCC for evaluation [29].   
+ Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  9 In policy circles, the debate has often focused on the technical question of 
+whether secondary devices do or do not interfere wi th television, which is clearly the 
+wrong question.  All transmissions cause interferen ce.  The appropriate question is 
+whether this interference rises to the level of harmful interference , which is not a purely 
+technical question [30].  Interference is harmful i f it is great enough to cause a significant 
+disruption in service.  This definition of harmful interference is much easier to apply 
+when the primary system operates effectively as lon g as the signal to noise ratio (SNR) 
+exceeds an established threshold, and one can demon strate that this threshold is greatly 
+exceeded.  Unfortunately, broadcast technologies li ke television do not work that way.  
+There is always an edge to coverage area, where SNR is at the minimum acceptable level.  
+The slightest interference is harmful for a receive r at that exact location. The question 
+then becomes how much coverage area can be lost bef ore interference is considered 
+harmful?  [4]  10%?  1%?  0.1%?  This is a non-tech nical and largely subjective question.  
+Moreover, the problem is compounded by the notoriou s difficulty of predicting the exact 
+contours of coverage at any given SNR threshold thro ugh predictive modeling [31]. 
+ 
+When sharing is instead based on cooperation, the p rimary and secondary systems 
+interact.  For example, a secondary device may ask the primary for permission to use 
+spectrum before transmitting.  This exchange provid es an opportunity for the primary to 
+guarantee quality of service for the secondary, whi ch is an important advantage of 
+cooperation over coexistence for the secondary devi ce.  This is also an opportunity for 
+the license-holder to demand payment, which is an a dvantage of cooperation for the 
+primary spectrum-user.  If payment is demanded, thi s is a form of secondary spectrum 
+market, but one that operates in real time [32].  T here has been discussion about creating 
+a secondary market where these blocks of spectrum c an be “rented” out for months or 
+years [33].  It is important to note that more dyna mic forms of sharing, where spectrum is 
+given out for minutes or milliseconds, are also pos sible, and in some countries, legal [34].  
+An important variation on this model is that of band manager [5, 34].  The regulation is 
+similar; one entity is given a license to control a  block of spectrum, and the rights to grant 
+temporary access for a fee through a secondary mark et.  Again, access might be allowed 
+for a short period, as in [35], or for a very long period.  The difference in models is that 
+unlike the cellular provider discussed above, the b and manager has no need for spectrum 
+other than to rent it out.   
+ 
+Whether the primary has its own need for spectrum o r not, access to spectrum 
+may be granted for free, for a fixed fee, or throug h some form of auction.  Auctions 
+allocate resources to those who value those resourc es the most, which is one reason many 
+countries now assign long-term spectrum licenses th rough auctions [14].  It has been 
+suggested that a policy that allows a real-time auc tion for spectrum could yield similar 
+benefits [36], and many papers have been written re cently to address related technical 
+issues.  Indeed, sufficiently dynamic real-time auc tions can play a role similar to 
+technical congestion control mechanisms, and under some circumstances, are almost (but 
+not quite) as effective at relieving congestion [37 ].  While there are certainly benefits to 
+auctions, there are greater challenges when auction s are used for real-time allocation, 
+especially if one is auctioning the right to transm it for a small time period or a small 
+geographic area.  First, auctions are effective whe n multiple parties want the same thing, Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  10 and granting access to one bidder means denying acc ess to the others.  Unless all devices 
+are collocated, this is not necessarily the case wi th spectrum, and this greatly complicates 
+the problem.  Second, multiple parties can bid in a n auction when their need for spectrum 
+occurs at the same time, but not when requests for spectrum are sporadic and 
+unsynchronized, as might be the case.  Finally, in contrast to a simple commons model, 
+auctions require an auctioneer, and associated infr astructure [15].  The problem gets 
+easier if one increases the granularity of the spec trum being auctioned in both time and 
+geographic area, but this comes at the cost of spec tral inefficiency. 
+ 
+A cooperative model is also useful for systems that  need guaranteed quality of 
+service, but use the spectrum infrequently.  For ex ample, an infrastructure built 
+exclusively for public safety agencies (e.g. firefi ghters, police, providers of emergency 
+medical services) might be given primary rights to a block of spectrum.  This spectrum 
+could be used the vast majority of the time by comm ercial service providers, but they 
+would only be granted interruptible access to this spectrum, so public safety agencies 
+have ample spectrum during major emergencies [38].   
+ 
+The US Federal Communications Commission recently a dopted a sharing policy 
+that takes advantage of these characteristics, alth ough it is the sharing of infrastructure 
+and spectrum rather than the sharing of spectrum al one that is the focus [39].  Under this 
+FCC plan, it is envisioned that a commercial licens e-holder and a public safety 
+organization would each be allocated adjacent spect rum bands nationwide.  The 
+commercial provider would build out a common broadb and infrastructure, such that both 
+the spectrum and the infrastructure will be used by  both public safety agencies and the 
+general public.  In the initial auction, no commerc ial company was interested in making a 
+bid beyond the required minimum.  It remains to be seen what will happen in this band. 
+ 
+As with primary-secondary coexistence, the practica lity of the cooperative 
+approach depends on the applications involved, and other factors.  For example, the 
+primary system needs devices throughout the service  area that can provide admission 
+control and possibly toll collection, which is much  easier when the primary system is a 
+cellular system rather than a broadcaster.  Indeed,  this approach may someday prove 
+commercially attractive to cellular carriers.   We have analyzed scenarios where 
+extensive communications among secondaries is possi ble with little impact on the 
+primary, for a case where the primary license-holde r is a commercial cellular system [32].  
+Effective spectrum-sharing was facilitated by a var iety of technologies, including 
+location technology which was used to enhance frequ ency reuse, and secure 
+micropayment technology so that primary systems can  receive payments from previously 
+unknown secondary devices [40].   
+ 
+C.  Sharing Among Equal Secondaries Devices 
+ 
+It is sometimes assumed that secondary devices must  be unlicensed.  Actually, 
+like primary users of spectrum, secondary users can  be licensed or unlicensed. Both 
+licensed and unlicensed secondaries are prohibited from causing harmful interference to Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  11 the primary.  One difference is that a licensed sec ondary system need not worry about 
+interference from other secondaries.  Thus, quality  of service can be guaranteed for the 
+secondary when (and only when) activities of the pr imary do not get in the way.  
+Moreover, because there is only one entity causing interference to the primary, it may be 
+easier to ensure that interference never reaches a level that would be harmful.  This may 
+also make it possible to safely use much higher-pow er secondary devices.  On the other 
+hand, if access is unlicensed, many more systems ma y make use of the spectrum.   
+ 
+This policy debate is currently most relevant to th e TV white space.  As discussed 
+in Section 3.2, the FCC has tentatively concluded t hat devices may operate in the white 
+space, but one of the issues left undecided is whet her those devices should be licensed or 
+unlicensed [3].  Should white space be licensed for  use by commercial cellular 
+companies?  (With 3-4 TV channels, a carrier could cover the nation [4, 41].)  Or should 
+it be unlicensed devices that use cognitive radio, such as the prototypes that Philips and 
+Microsoft have recently unveiled [42, 43, 29]?  In the end, the decision may depend on 
+what kinds of products and applications are in grea test demand by the public, and views 
+on this could easily differ from country to country .   
+ 
+If multiple systems are allowed to operate as secon dary users, they can (as usual) 
+coexist or cooperate with each other.  Coexistence is technically simpler in many ways.  
+Early successes such as [44, 45] of using cognitive  radio to avoid interference with a 
+primary system are coming from devices that determi ne on their own whether it is safe to 
+transmit.  Of course, that does not solve the probl em of mutual interference among 
+secondary devices, for whom all of the dangers of a  simple commons discussed in 
+Section 3.1 remain, including harmful interference,  overconsumption of spectrum due to 
+greedy designs, and even the tragedy of the commons .  Clearly, imposing a primary 
+system on top of what would otherwise be a commons cannot make the usual problems of 
+a commons any easier. 
+ 
+When there is only coexistence between primaries an d secondaries, there are good 
+technical reasons to want cooperation among seconda ry devices.  Having more devices 
+capable of sensing the primary and exchanging measu rements is a good defense against 
+hidden terminals, exposed terminals, and imprecise sensor measurements.  Cooperation 
+among secondaries could ensure that multiple device s will not combine to cause 
+interference that is harmful to the primary.  Moreo ver, cooperation may allow secondary 
+devices to more effectively avoid interfering with each other.  For example, after 
+coordinating on a designated signaling channel, fre quency-agile devices might switch to 
+bands that are less congested.  Thus, the IEEE 802. 22 standards group [46, 47] and a 
+number of researchers (e.g. [48, 43, 49, 50]) have considered cooperative mechanisms for 
+secondary devices.   
+ 
+However, the success of some cooperative approaches  may depend on significant 
+policy changes.  It is easy to envision cooperation  among homogenous devices in the 
+same administrative domain, but will heterogeneous devices with different owners 
+cooperate effectively, and will all systems still w ork efficiently and effectively if 
+cooperation breaks down?  A technical “solution” th at works only if devices all cooperate, Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  12 without the technical and policy means to ensure co operation, is useless at its best and 
+dangerous at its worst; such a system may convince policy-makers to allow something 
+that will ultimately lead to harmful interference.  There may be good reasons for 
+cooperation even if there is no way to force all de vices to cooperate, but in this case, 
+protection against harmful interference must be gua ranteed even in the absence of 
+cooperation.  There are policy reforms that can req uire full cooperation of all devices, but 
+this comes at a cost, and we must assess whether th ose policy reforms are worthwhile. 
+ 
+As with the cooperative commons discussed in Sectio n 3.1, the problem is 
+compounded by the fact that devices may be amply re warded for providing 
+misinformation to neighbors [26], perhaps convincin g those neighbors to switch to 
+another band by falsely claiming that the primary s ystem is active.  If it is necessary that 
+all devices must follow the same cooperative algori thms, then someone must define those 
+algorithms, enforce them on all secondary devices d eployed in the band, and handle 
+violations.  Once again, voluntary standards will n ot suffice, and this profoundly affects 
+which technical designs are viable.  The question o f who is in charge of defining 
+algorithms is discussed in Section 4, and challenge s of enforcement are discussed in 
+Section 5. 
+ 
+D.  Sharing Among Equal Regional Infrastructures 
+ 
+Another form of spectrum sharing among equals occur s when a handful of 
+regional service-providers share spectrum.  Each se rvice-provider is seeking cost-
+effective ways to deploy infrastructure and exploit  spectrum resources so as to cover its 
+entire service area.  This raises many of the same challenges as the sharing-among-equal 
+models discussed in Section 3.1, but because of the  smaller number of players and the 
+large investment in wide-area infrastructure, this scenario deserves separate consideration. 
+ 
+As Hatfield and Tenhula have pointed out, one of th e first great success stories for 
+dynamic spectrum sharing comes from the land mobile  radio (LMR) systems used for 
+public safety [51].  In the US, many thousands of p ublic safety agencies have their own 
+communications infrastructure [38], even when cover age areas substantially overlap.  
+(This is one reason the number of transmission towe rs used by public safety agencies in a 
+US county depends more on the number of municipal g overnments in that county than on 
+area or population [52].)  Giving each public safet y agency its own dedicated 
+communications channel leads to tremendous spectral  inefficiencies.  To avoid a 
+spectrum shortage, trunking  was introduced, whereby LMR systems share channels  
+dynamically, either in a centralized or decentraliz ed manner.  The latter can be seen as a 
+forerunner of cognitive radio, in that systems dyna mically access spectrum after sensing 
+its availability [51].  With trunked LMR, there hav e been relatively few complaints about 
+the usual problem with sharing among equals - that some users claim more of the shared 
+resource than needed.  Indeed, trunking may have re duced this very problem, since it 
+reduced the incentive for public safety agencies to  permanently horde spectrum that they 
+do not (yet) need.  Such selfless behavior is encou raging, although there is reason to be 
+more hopeful in this scenario than most.  It is alw ays the same small number of public Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  13 safety agencies that share a given spectrum pool, i .e. a “repeated game,” and each public 
+safety agency has a genuine interest in the success  of the agencies with whom it shares 
+spectrum.    
+ 
+The benefits of sharing are also great for commerci al cellular systems, but the 
+incentives are different.  Consider the case where several cellular carriers have collocated 
+transmitters to serve the same cell.  At a given ti me, one provider may be at peak capacity, 
+and therefore forced to block any additional calls.   Meanwhile, other providers may have 
+idle spectrum at that moment that could be used for  the new call.  We have shown that if 
+these providers shared spectrum, they could reduce blocking probability for all providers, 
+or equivalently, they could achieve the same blocki ng probabilities with much less 
+spectrum [53]. Moreover, although it is less obviou s, simulations show that the benefits 
+of sharing are as good or better when towers are no t collocated.   So why has this not 
+occurred?  The problem is that these carriers would  not have incentive to share spectrum 
+in a selfless manner.  Some may simply transmit whe n transmission is unnecessary, to 
+deprive their rivals of spectrum.  Even if this can  be avoided, the bigger problem may 
+occur in infrastructure deployment.  Any cellular c arrier can improve spectral efficiency 
+by deploying more towers and thereby reducing cell size, but this significantly increases 
+costs.  A carrier has little incentive to accept th e full burden of this cost when the 
+resulting benefits of spectral efficiency are share d with its rivals; if each carrier pursues 
+its own self-interest independently, this can lead to poor performance for all [53]. 
+ 
+A combination of technology and spectrum policy ref orm is needed to solve this 
+problem   One policy solution is to grant each of t he carriers the presumption of control 
+over a portion of the spectrum, and the right to ne gotiate for highly dynamic access to 
+each other’s spectrum, as proposed for the Dynamic Radio for IP-Services in Vehicular 
+Environments (DRIVE) system [54, 55].  Such negotia tion might allow each carrier 
+comparable incursions into the other’s spectrum, or  the carrier making greater use of its 
+neighbor’s spectrum might pay for the privilege.  A nother viable policy is to use a variant 
+of the band manager described in Section 3.2, where in the band manager would give one 
+of several cellular carriers temporary access to a shared band dynamically for a fee [14, 
+56, 57].  This approach has commercial promise, and  is already legal in a few countries 
+[34].   
+ 
+E.  Sharing Among Equal Regional Infrastructures 
+ 
+ In Section 2, we defined spectrum sharing arrangem ents as sharing among 
+equals or primary-secondary sharing, and as based o n cooperation or coexistence, 
+yielding four possibilities.  Figure 1 presents exa mples of each of these four 
+possibilities (along with the section above which d iscusses the model underlying this 
+example in greater detail).  Also, as noted in Sect ion 2, there is sometimes confusion 
+between the spectrum-sharing arrangement and the de termination of a set of devices 
+as either licensed or unlicensed.  These policy dec isions are certainly related, but it is 
+important to separate them.  The more effective cho ice depends in part on the 
+applications involved.  To demonstrate this, Figure  2 shows examples of primary-Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  14 secondary sharing we have considered in research wh ere secondaries are licensed, 
+and examples where secondaries are unlicensed. 
+ 
+ 
+ 
+ Sharing Among Equals Primary-Secondary Sharing 
+Coexistence All devices share a block of 
+unlicensed spectrum. 
+(Section 3.1) 
+ 
+Unlicensed secondary 
+devices share spectrum with 
+each other when and where 
+it is not used by primary 
+users. (Section 3.3) 
+ 
+LMR public safety 
+communications systems 
+share spectrum through 
+distributed trunking.  
+(Section 3.4) Secondary devices use 
+cognitive radio to 
+opportunistically share 
+spectrum with primary 
+spectrum users. (Section 3.2) 
+ 
+Secondary devices use GPS 
+and a database of transmitter 
+locations to access spectrum 
+where primary uses do not 
+operate.  (Section 3.2) 
+ 
+Secondary devices use 
+ultrawideband technology to 
+share spectrum with primary 
+users. (Section 3.2) 
+Cooperation Unlicensed devices all use 
+prescribed common 
+protocols and carry each 
+other’s traffic in a 
+cooperative commons 
+managed by a regulator or 
+license-holder.  (Section 3.1) 
+ 
+Unlicensed secondary 
+devices all communicate and 
+cooperate to prevent 
+interference to primary 
+spectrum users and each 
+other. (Section 3.3) 
+ 
+LMR public safety 
+communications systems 
+share spectrum through 
+centralized trunking (Section 
+3.4) Secondary devices explicitly 
+request permission from a 
+license-holder whenever 
+they wish to transmit in a 
+real-time secondary market.  
+(Section 3.2) 
+ 
+An interruptible system has 
+exclusive rights to spectrum 
+until or unless a primary user 
+(such as public safety) 
+temporarily preempts this 
+system. (Section 3.2) 
+ 
+One cellular carrier 
+experiencing excessive call 
+volume coordinates with 
+another to briefly use the 
+latter’s spectrum for a fee.  
+(Section 3.4) 
+ 
+Figure 1:  Examples of spectrum-sharing models of e ach type. Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  15  
+ 
+ Secondary is unlicensed Secondary is licensed 
+Coexistence between 
+primary and secondary           Primary system:  
+Licensed TV broadcasters . 
+          Secondary systems:  
+Opportunistic devices with 
+no quality of service 
+guarantees            Primary system:  
+Licensed TV broadcasters  
+          Secondary system:  
+Microcellular or cellular 
+network which defers to 
+primary, but does not share 
+with other secondaries.  
+Cooperation between 
+primary and secondary           Primary system: 
+Cellular   
+          Secondary systems:  
+Devices that get temporary 
+quality of service guarantees 
+in a real-time secondary 
+market            Primary system: 
+Public safety   
+          Secondary system:  
+Cellular network with 
+exclusive but interruptible 
+access to spectrum  
+ 
+Figure 2:  Examples of licensed and unlicensed seco ndary systems. 
+ 
+IV.  REGULATOR OR LICENSE-HOLDER IN CONTROL 
+ 
+All of the sharing schemes described in Section 3 f ail unless there is some 
+entity that establishes the sharing rules.  For exa mple, how much interference are 
+secondary devices allowed to impose on the primary system?  Must secondary 
+devices cooperate when sensing the primary, and if so, using what mechanisms?  
+What etiquette must devices follow in a commons bas ed on coexistence?  Is each 
+device required to sense other devices in the band and respond in some way, or is 
+there simply a limit on maximum transmit power that  does not depend on activity in 
+the band?  Traditional voluntary standards organiza tions have important roles to play, 
+but they do not and should not have the authority t o mandate requirements that are 
+not voluntary; they were not constructed to be effe ctive for that very different purpose.   
+ 
+Such decisions for a given band will be made either  by the regulator, or by a 
+license-holder to whom the regulator has granted su fficient authority.  Traditionally, 
+this has been the sole responsibility of the regula tor.  Some countries have now given 
+license-holders sufficient latitude in some bands s o that they too could play this role 
+[34], but many countries have not.  In return for m anaging the spectrum, the license-
+holder might charge a fee to all devices that use t he spectrum.  This could be a one-
+time fee when the device is first deployed, or the fee might be usage-based.  
+Alternatively, the license-holder might be a manufa cturer that will only allow its own 
+devices to operate, thereby ensuring a degree of te chnical homogeneity. 
+ 
+Whether a regulator or license-holder is in charge has a significant impact on 
+technology, especially for sharing arrangements tha t require highly detailed technical Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  16 rules of interaction.  Such rules must be changed o ver time as technology evolves.  
+Regulatory bodies are designed to make decisions in  a slow and methodical process 
+that is transparent to everyone, and to promote com promise among competing 
+interests.   Such processes are great at avoiding c orruption and favoritism, but not 
+well suited to reacting quickly to exploit a new te chnology, or to repair a newly 
+visible interference problem or security vulnerabil ity.  Thus, where a regulator is in 
+charge, all else being equal, there are more reason s to select a commons model or a 
+primary-secondary sharing model based on coexistenc e. 
+ 
+A band where the license-holder is in charge is mor e conducive to complex 
+cooperative approaches where homogeneity is importa nt, such as a commons based 
+on cooperation, or primary-secondary sharing based on cooperation. For example, a 
+cellular carrier with a spectrum license that wants  to allow secondary users (for a fee) 
+can more easily choose between a coexistence model such as [58] or a cooperation 
+model such as [32].  Similarly, the manufacturer of  devices that could constitute the 
+building blocks of a cooperative commons may get a nationwide license for its own 
+devices, and those it deems compatible.  This may l imit opportunities for competitors, 
+but it also reduces the dangers of incompatibility.  
+ 
+Many nations are making the transition from analog to digital television, and 
+freeing up prime spectrum in the process.  Perhaps we will see manufacturers or new 
+kinds of service providers obtain a license for som e of this spectrum, and move some 
+of the more complex spectrum-sharing approaches fro m theory to practice. 
+ 
+Another difference between a regulator and a privat e license-holder is that the 
+regulator has the ability to influence all spectrum , rather than just one small block.  
+This too has technical implications.  Some technolo gies under consideration are only 
+viable if they can be deployed nationwide (or throu ghout multiple nations).  For 
+example, mobile consumer devices cannot easily be r estricted to one portion of the 
+country where spectrum is available.  A regulator c an more easily clear a spectrum 
+band nationwide and ensure consistent rules through out the band.  A private entity 
+can also provide consistent rules once it has a nat ionwide license, but getting a 
+nationwide license for this purpose may be difficul t without involvement from the 
+regulator [59]. 
+ 
+The most obvious difference between the regulator a nd license-holder is in 
+objectives; regulators are supposed to make decisio ns to advance the long-term public 
+interest, although they may not always succeed, whe reas a private license-holder is 
+likely to maximize its own profit.  If the license- holder is the only entity that can 
+provide spectrum for certain applications or device s, e.g. there is one and only one 
+band where a license-holder has the authority to ac t as band manager or to provide a 
+high-power fixed-wireless broadband service, then i t may use its monopoly power in 
+ways that harm the public interest, such as imposin g excessive fees on certain 
+applications [60].  However, this can be avoided if  the license-holder faces sufficient 
+competition, or at least the realistic fear that su fficient competition will emerge if it 
+exploits its monopoly position.  In this case, a pr ofit-seeking license-holder will be Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  17 rewarded for granting access to as many potential s pectrum users (customers) as 
+possible, and meeting their technical requirements to the maximum extent possible.  
+Thus, the license-holder should act to improve spec tral efficiency wherever possible, 
+at least over the time horizons considered by profi t-seeking companies, which 
+unfortunately may be shorter than the time horizons  considered by regulators [14]. 
+ 
+ 
+V.  POLICY ENFORCEMENT 
+ 
+Emerging technology is making enforcement of spectr um policy more and 
+more challenging.  Any technology that assumes comp liance with an unenforceable 
+policy will never be viable.  Thus, it may be neces sary to alter designs to ensure that 
+devices will comply with established rules and to d emonstrate that compliance to 
+regulators, even when doing so increases the comple xity and cost of devices. 
+ 
+A number of the sharing models discussed in Section  3 involve unlicensed 
+devices.  After deployment, it is technically diffi cult to determine when some 
+unlicensed device is violating the rules of the ban d in which it operates, and even 
+more difficult to determine which is the offending device.  Consequently, policies are 
+enforced primarily be preventing the deployment of devices that are capable of 
+violating these rules rather than detecting and pun ishing violators afterwards.  To do 
+this, regulators test and approve products before t hey can be widely distributed. 
+ 
+The technology behind software radios and some soft ware-defined radios greatly 
+complicates the problem of ensuring a priori that a  device will not cause harmful 
+interference to its neighbors.  Although such conce rns are further in the future, 
+nanotechnology has the potential to create a simila r challenge.  The problem is that after a 
+device has been certified as safe, its functionalit y can be changed with relative ease.  A 
+promising approach to address this problem is to cr eate a limiter  in hardware (e.g. [61]) 
+or in the operating system (e.g. [62]) that cannot be altered simply by downloading new 
+software.  The regulator can then authorize a produ ct based on the effectiveness of its 
+limiter with little concern about the rest of the d evice.  One can even make a limiter that 
+imposes different policies depending on current loc ation and frequency band.  Moreover, 
+it is possible to accommodate policies that change over time by requiring that the limiter 
+be updated periodically [63].  If the limiter has n ot been updated sufficiently recently, it 
+must prevent all transmissions until it can be upda ted. 
+ 
+The technology behind cognitive radios creates anot her set of complications, 
+even for cognitive radios developed entirely in har dware.  The more a device alters its 
+behavior in accordance with what it senses from nei ghboring devices, or its current 
+location, or other dynamic factors, the harder it i s to exhaustively test that behavior.  
+Thus, the risk of undetected faults is greater.  De vices designed for a cooperative 
+model will also be hard to test.  For example, cons ider the possibility of secondary 
+devices that cooperatively sense whether the primar y system is using the spectrum.  
+How can the regulator or license-holder be sure tha t the devices cannot cause harmful Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  18 interference if these devices fully cooperate?    H ow can one be sure that such devices 
+will fully cooperate?   
+ 
+It will be incumbent on the creators of novel syste ms that share spectrum to 
+find innovative ways to make testing simple for the  regulator or license-holder that 
+must grant permission before a new device can use a  given spectrum band.   (Of 
+course, this problem is easier if the designer of t he device is also the entity that must 
+give permission, i.e. the license-holder.) 
+ 
+The choice of sharing model and licensing regime al so have indirect 
+implications for enforcement.  A licensed device wi th exclusive or primary rights to a 
+block of spectrum has greater incentive to take act ion when neighboring devices 
+violate spectrum policies than a device that shares  spectrum with peers.  With sharing 
+among equals, the benefits of such action fall to e veryone who is using the band 
+appropriately, but none may want to assume the enti re burden of reporting violations.  
+This also demonstrates that this burden should be k ept as small as possible. 
+ 
+ 
+VI.  CONCLUSION 
+ 
+Scarcity of available spectrum is limiting the grow th of wireless products and 
+services.  This scarcity comes largely from our use  of outdated spectrum policies and 
+wireless technologies.  Traditional spectrum licens ing prevents harmful interference at 
+the cost of spectral efficiency.  Unlicensed bands for low-power devices allow more 
+sharing, but often rely on low utilization to limit  the effects of mutual interference.  New 
+technology could make more forms of spectrum sharin g practical, thereby substantially 
+alleviating today’s spectrum scarcity, if and only if spectrum policy is reformed to match 
+the technology.  Conversely, new technology should be developed in part to address 
+policy concerns if it is to have any impact. 
+ 
+Overly simplistic spectrum policy debates sometimes  pit the perspective of 
+operators of wide-area wireless systems (e.g. telev ision, radio, commercial cellular, or 
+public safety LMR) against the perspective of desig ners of localized wireless devices (e.g. 
+local-area networks, point-to-point links, cordless  phones).  In an ideal (and dangerously 
+unrealistic) world, the latter would like to deploy  any technology they choose with 
+minimal constraints.  Thus, they generally prefer g etting access to spectrum directly from 
+a regulator (who charges no fees and imposes few co nstraints) rather than a license-
+holder.  They envision either a completely unconges ted unlicensed band where their 
+device is primary, or a primary-secondary arrangeme nt where their secondary device 
+must contend with the primary system but no other s econdary devices.  However, the 
+ability to deploy any technology you want comes wit h either the necessity to coexist with 
+any technology others choose to deploy, or a mandat e from the regulator that everyone 
+will use your chosen technology, either of which te nds to destroy the impracticable allure 
+of the vision.  There is also the problem that unco ngested bands with easy entry can grow 
+congested over time, especially if devices have inc entive to adopt greedy designs.  Thus, Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  19 it is not surprising to see an interest group fight  for easy access to a block of spectrum 
+initially, and then later fight to keep newcomers o ut. 
+ 
+On the other side, wide-area service providers enjo y the quality of service 
+guarantees that come from being a primary license-h older.  They would prefer to have 
+unlimited flexibility within the bands they use, an d no danger of interference.  They have 
+little interest in the creation of commons, and if secondary devices are allowed at all, they 
+believe the owners of those devices should explicit ly negotiate for access with the 
+license-holder rather than the regulator.  This arr angement works well for some 
+applications, and poorly for others.  (It is unwork able in TV white spaces, since by 
+definition, there is no license-holder to grant acc ess in the white space.)  Moreover, this 
+approach may fail to exploit cognitive radio’s abil ity to make use of spectrum that would 
+otherwise sit idle.   
+ 
+A much wider range of policies and sharing arrangem ents are possible, and 
+deserve serious consideration.  It is pointless to look for the “best” form of sharing, as 
+this is highly dependent on the types of applicatio ns involved.  Thus, we should hope that 
+different forms of sharing will emerge in different  bands.  Nevertheless, within a given 
+band, adoption of one form of sharing often preclud es other forms.  Given that 
+opportunities to redefine the policies of a given b and occur infrequently, policy-makers 
+must make difficult decisions.   
+ 
+This paper has argued that most sharing arrangement s can be well described and 
+categorized as based on coexistence  or cooperation , and as sharing among equals  or 
+primary-secondary sharing .  Within a given band, there may be multiple shari ng 
+arrangements of different kinds.  For example, ther e may be primary and secondary 
+systems that merely coexist with each other, while the secondary systems cooperate 
+amongst themselves.  For primary-secondary sharing,  we must seek technical assurance 
+that the primary system will never experience harmf ul interference, despite inevitable 
+uncertainties over path loss, and hidden terminals.   For sharing among equals, we must 
+address whether technology gives designers and user s the means to avoid serious 
+interference and congestion problems, and whether p olicy combined with technology 
+give them the motivation to do so. 
+ 
+Many factors must be considered when deciding to ad opt a particular spectrum-
+sharing arrangement, including potential gains in s pectral efficiency, and the ability to 
+meet the needs of the most likely applications with  respect to interference protection, 
+congestion, support for mobility, and more.  A less  obvious factor that might preclude use 
+of an otherwise attractive technology is the abilit y to ensure that spectrum policies can be 
+enforced.  It is therefore incumbent on developers of novel technology, especially 
+software radio and cognitive radio, to include feat ures that facilitate conclusive testing.  
+ 
+The importance of cognitive radio depends somewhat on which policies prevail, 
+and conversely, the pace at which cognitive radio d evelops may influence policy 
+decisions.  Cognitive radio is already seen as a va luable tool for primary-secondary 
+sharing based on coexistence.  It may also be a val uable tool for sharing among equals Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  20 based on coexistence, e.g. a coexistent commons, if  policies are adopted that would 
+motivate use of cognitive radio.  Where sharing is based on cooperation, cognitive radio 
+may or may not have as large a role to play. 
+ 
+In many countries, the transition to digital televi sion will make prime spectrum 
+available for other purposes, potentially under a n ovel spectrum policy that allows new 
+forms of sharing.  There may even be the possibilit y of spectrum bands where private 
+license-holders set the rules rather than regulator s.  For example, a new band manager or 
+a consortium of wireless device manufacturers could  obtain a license, which might 
+facilitate use of more complex rules of interaction .   
+ 
+ 
+VII.  REFERENCES 
+ 
+[1] US Federal Communications Commission Spectrum P olicy Task Force, Report of the 
+Spectrum Efficiency Working Group , Nov. 2002, 
+www.fcc.gov/sptf/files/SEWGFinalReport_1.pdf  
+[2] J. Mitola and G. Q. Maguire, “Cognitive Radio: Making Software Radios More Personal,” 
+IEEE Personal Communications, Vol. 6, No. 4, pp. 13-18, Aug. 1999. 
+[3] US Federal Communications Commission, FCC 06-15 6, First Report and Order, In the 
+Matter of Unlicensed Operation in the TV Broadcast Bands, ET Docket No. 04-186, Oct. 18, 2006. 
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/F CC-06-156A1.pdf   
+[4] J. M. Peha, “The Debate Over TV 'White Space' S pectrum,” (slides), IEEE International 
+Conference on Cognitive Radio Oriented Wireless Net works and Communications 
+(Crowncom),  July 2007.  www.ece.cmu.edu/~peha/wireless.html   
+[5] J. M. Peha, “Approaches to Spectrum Sharing,” IEEE Communications , Vol. 43, No. 2, 
+Feb. 2005 .  www.ece.cmu.edu/~peha/wireless.html  
+[6] J. M. Peha, "Emerging Technology and Spectrum P olicy Reform," Proceedings of United 
+Nations International Telecommunication Union (ITU)  Workshop on Market Mechanisms 
+for Spectrum Management , Geneva, Switzerland, Jan. 2007. 
+www.ece.cmu.edu/~peha/policy.html   
+[7] US Federal Communications Commission, Spectrum Policy Task Force  Report, ET Docket 
+No . 02-135, Nov. 2002, www.fcc.gov/sptf/reports.html   
+[8] P. J. Kolodzy, “Dynamic Spectrum Policies: Prom ises and Challenges,” Digital Migration 
+Symposium , Jan. 2004. 
+[9] S. Haykin, “Cognitive Radio: Brain-Empowered Wi reless Communications,” IEEE Journal  
+on  Selected Areas in Communications, vol. 23, no. 2, pp. 201-220, Feb. 2005. 
+[10] D. Raychaudhuri and J. Xiangpeng  , “ A Spectrum Etiquette Protocol For Efficient 
+Coordination Of Radio Devices In Unlicensed Bands,”  Proc. IEEE Personal Indoor Mobile 
+Radio Conference , Sept. 2003 , pp. 172-6. 
+[11] A. Tonmukayakul and M. Weiss, “A Transaction C ost Analysis of Secondary vs. 
+Unlicensed Spectrum Use” Proc. 34th Telecommunications Policy Research Confe rence 
+(TPRC), Sept. 2006.  www.tprc.org  Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  21 [12] US Federal Communications Commission, Spectrum  Policy Task Force, Report of the 
+Unlicensed Devices and Experimental Licenses Workin g Group, Nov. 2002.  
+http://www.fcc.gov/sptf/files/E&UWGFinalReport.pdf  
+[13] US Federal Communications Commission, Public No tice DA-07-4605, Wireless 
+Telecommunications Bureau Announces Start Date for L icensing and Registration Process 
+for the 3650-3700 MHz Band , Nov. 14, 2007. 
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/D A-07-4605A1.pdf   
+[14]  J. M. Peha, “Spectrum Management Policy Optio ns ,” IEEE Communications Surveys , 
+Fourth Quarter 1998, www.ece.cmu.edu/~peha/wireless.html   
+[15]  D. P. Satapathy and J. M. Peha, ”Spectrum Sha ring Without Licensing:  Opportunities and 
+Dangers,” in Interconnection and the Internet:  Selected Papers From the 1996 
+Telecommunications Policy Research Conference , G. L. Rosston and D. Waterman editors, 
+Lawrence Erlbaum Associates, Inc., 1997, pp. 49-75,  
+www.ece.cmu.edu/~peha/wireless.html   
+[16] J. M. Peha, "Unrestricted Permits for Ultrawid eband Devices," comments on the Federal 
+Communications Commission's Rules Regarding Ultrawi deband Transmission Systems, 
+FCC Docket 98-153, June 30, 2000.  www.ece.cmu.edu/~peha/wireless.html   
+[17] G. Hardin, “The Tragedy of the Commons,” Science, Vol. 168, No. 3859, pp. 1243-8, Dec. 
+1968. 
+ [18] D. P. Satapathy and J. M. Peha, "Performance of Unlicensed Devices with a Spectrum 
+Etiquette," Proceedings of IEEE Globecom,  Nov. 1997 pp. 414-8. 
+[19] D. P. Satapathy and J. M. Peha, “A Novel Co-exi stence Algorithm for Unlicensed Variable 
+Power Devices,” Proc. IEEE International Conference on Communicatio ns (ICC), June 
+2001, pp. 2845-9, www.ece.cmu.edu/~peha/wireless.html   
+[20] D. P. Satapathy and J. M. Peha, “Etiquette Mod ifications For Unlicensed Spectrum: 
+Approach and Impact,” Proceedings of IEEE Vehicular Technology Conference  (VTC-98), 
+May 1998, pp. 272-6. 
+[21] D. Reed, “Comments for FCC Spectrum Task Force  on Spectrum Policy,” July 10, 2002, 
+www.reed.com/OpenSpectrum/FCC02-135Reed.html  
+[22] Y. Benkler, “Overcoming Agoraphobia: Building the Commons of the Digitally Networked 
+Environment ,” Harvard J. Law & Tech , Winter 1997-8. 
+[23] A. Agarwal and P. R. Kumar, ``Capacity bounds for ad-hoc and hybrid wireless networks.'' 
+ACM SIGCOMM Computer Communications Review, pp. 71- 81, Vol. 34, No. 3, July 
+2004. 
+[24] F. X. Plarre and P. R. Kumar, "Scaling Laws fo r Ad Hoc Wireless Networks: An 
+Information Theoretic Approach," NOW Publishers, Del ft, The Netherlands, 2006. 
+http://black.csl.uiuc.edu/~prkumar/ps_files/06-07-1 8-scaling-laws.pdf  
+[25] J. M. Peha, B. E. Gilden, R. J. Savage, S. She ng, B. L. Yankiver, "Finding an Effective 
+Sustainable Model for a Wireless Metropolitan-Area Network: Analyzing the Case of 
+Pittsburgh," Proc. 35th Telecommunications Policy Research Confe rence (TPRC) , Sept. 
+2007.  www.ece.cmu.edu/~peha/wireless.html   
+[26] H. J. Kim and J. M. Peha, “Detecting Selfish B ehavior in a Cooperative Commons,” 
+Proceedings of IEEE Dyspan, Oct. 2008.  www.ece.cmu.edu/~peha/wireless.html   
+[27]  US Federal Communications Commission, First Report and Order , Revision of Part 15 of 
+the Commission’s Rules Regarding Ultra-Wideband Tra nsmission Systems, ET Docket 98-Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  22 153, February 14, 2002, http://hraunfoss.fcc.gov/edocs_public/attachmatch/F CC-02-
+48A1.pdf   
+[28] Y. Zhao, J H Reed, S Mao, K K Bae, “Overhead A nalysis for REM-Enabled CR 
+Networks,” Proc IEEE Workshop on Networking Technolog ies for Software Defined 
+Radios, Sept 2006. 
+[29] US Federal Communications Commission, Office o f Engineering and Technology, Initial 
+Evaluation of the Performance of Prototype TV-Band White Space Devices , Report 
+FCC/OET 07-TR-1006, July 31, 2007. 
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/D OC-275666A1.pdf   
+[30] R. P. Margie, “Efficiency, Predictability, and  the Need for an Improved Interference 
+Standard at the FCC,” Proc. 31 st  Telecommunications Policy Research Conference (TPR C), 
+Sept. 2003.  www.tprc.org   
+[31] D. N. Hatfield and P. J. Weiser, Property Righ ts in Spectrum: Taking the Next Step, 
+Proceedings of  IEEE Dyspan , Nov.  2005, pp. 43-55.  
+[32] J. M. Peha, S. Panichpapiboon, “Real-Time Seco ndary Markets for Spectrum,” 
+Telecommunications Policy,  Vol. 28, No. 7-8, pp. 603-18, Aug. 2004, 
+www.ece.cmu.edu/~peha/wireless.html  
+[33] US Federal Communications Commission, Promotin g Efficient Use of Spectrum Through 
+Elimination of Barriers to the Development of Secon dary Markets, Report And Order And 
+Further Notice Of Proposed Rulemaking, WT Docket No. 00-230, Oct 2003.  
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/F CC-03-113A1.pdf  
+[34] US Federal Communications Commission, Promotin g Efficient Use of Spectrum Through 
+Elimination of Barriers to the Development of Secon dary Markets, Second Report And 
+Order, WT Docket No. 00-230, Sept.2004.  
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/F CC-04-167A1.PDF  
+[35] V. Brik, E. Rozner, S.  Banerjee, , and P. Bah l, “DSAP: a Protocol for Coordinated 
+Spectrum Access,” Proceedings of  IEEE Dyspan , Nov.  2005, pp. 611-4. 
+[36] E. M. Noam, “Taking the Next Step Beyond Spectru m Auctions:  Open Spectrum Access,”  
+IEEE Communications, Vol. 33, No. 12, pp. 66-73, Dec. 1995. 
+[37] J. M. Peha, "Dynamic Pricing as Congestion Con trol in ATM Networks," Proceedings of 
+IEEE Globecom , pp. 1367-72 , Nov. 1997. www.ece.cmu.edu/~peha/pricing.html   
+[38] J. M. Peha, "Fundamental Reform in Public Safe ty Communications Policy," Federal 
+Communications Bar Journal , Vol. 59, No. 3, pp. 517-45, June 2007 , 
+www.ece.cmu.edu/~peha/safety.html   
+[39] US Federal Communications Commission, Second R eport and Order, in the Matter of 
+Service Rules for the 698-746, 747-762 and 777-792 MHz Bands, WT Docket No. 06-150, 
+August 10, 2007.   http://hraunfoss.fcc.gov/edocs_public/attachmatch/F CC-07-132A1.pdf   
+[40] J. M. Peha and I. M. Khamitov, "PayCash: A Sec ure Efficient Internet Payment System," 
+Electronic Commerce Research and Applications Journ al, Vol. 3, No. 4, pp. 381-8, Winter 
+2004. www.ece.cmu.edu/~peha/ecommerce.html   
+[41] C. L. Jackson and D. Robyn, “Encouraging Broad band Internet Access 
+in the TV White Space: The Licensed Option,” Proc. 35th Telecommunications Policy 
+Research Conference (TPRC) , Sept. 2007.  www.tprc.org  
+[42] C. Cordeiro, K. Challapali, “C-MAC: A Cognitiv e MAC Protocol for Multi-Channel 
+Wireless Networks,” Proc .IEEE Dyspan , April 2007, pp. 147-57. Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  23 [43] Y. Yuan, P. Bahl, R. Chandra, P. A. Chou, J. I . Ferrell, T. Moscibroda, S. Narlanka, Y. Wu, 
+“KNOWS: Cognitive Radio Networks Over White Spaces,” Proc. IEEE Dyspan , April 
+2007, pp. 416-27. 
+[44] F. W. Seelig, “A Description of the August 200 6 XG Demonstrations at Fort A.P. 
+Hill,” Proc/ IEEE Dyspan , April 2007, pp. 1-12. 
+[45] P. Tenhula, F. Perich, and M. McHenry, “Policy -Based Spectrum Access Control 
+and Management for Multi-Band Cognitive Radio Syste ms for Public Safety 
+Communications,” Proc. 35th Telecommunications Policy Research Confe rence 
+(TPRC) , Sept. 2007.  www.tprc.org  
+[46] IEEE 802.22 Working group, http://www.ieee802.org/22  
+[47] C Cordeiro, K. Challapali, D. Birru, and N. S. Shankar, “IEEE 802.22: The First 
+Worldwide Wireless Standard Based On Cognitive Radi os,” Proc. IEEE Dyspan , Nov.  
+2005, pp. 328-337. 
+[48] S. M. Mishra, A. Sahai, and R. W. Brodersen, “ Cooperative Sensing among Cognitive 
+Radios,” Proc. IEEE International Conference  on Communications , June 2006, pp. 1658-
+63 .  
+ [49] M. Sharma, A. Sahoo, and K. D. Nayak, “Channel  Selection Under Interference 
+Temperature Model in Multi-Hop Cognitive Mesh Networ ks,” Proc. IEEE Dyspan , April 
+2007, pp. 133-6. 
+[50] X. Liu and Z. Ding, “ESCAPE: A Channel Evacuat ion Protocol for Spectrum-Agile 
+Networks,” Proc. IEEE Dyspan , April 2007, pp. 292-302. 
+[51] D. N. Hatfield and P. A. Tenhula, “The Potenti al Value of Decentralized Trunking as 
+Regulatory Precedent for the Introduction of Dynami c Spectrum Access Technology,” 
+Proc. IEEE Dyspan , April 2007, pp. 597-605. 
+ [52] J. M. Peha, "How America's Fragmented Approac h to Public Safety Wastes Spectrum and 
+Funding," Proc. 33rd Telecommunications Policy Research Conference (TPRC) , Sept. 
+2005.  www.ece.cmu.edu/~peha/safety.html  
+[53] H. Salgado, M. A. Sirbu, and J. M. Peha, "A Nar row Band Approach to Efficient PCS 
+Spectrum Sharing Through Decentralized DCA Access P olicies," IEEE Personal 
+Communications,  Vol. 4, No. 1, pp. 24-34, Feb. 1997.  
+www.ece.cmu.edu/~peha/wireless.html   
+ [54] L. Xu, R. Tonjes, T. Paila, W. Hansmann, M. F rank, and M. Albrecht, "DRiVE-ing to the 
+Internet: Dynamic Radio for IP Services in Vehicula r Environments,” Proc. IEEE 
+Conference on Local Computer Networks , Nov. 2000.  http://www.ist-
+drive.org/papers/Lcn2000/LCN2000.pdf   
+[55] Dynamic Radio for IP-Services in Vehicular Env ironments Project, www.ist-drive.org 
+[56] M. M. Buddhikot, P. Kolodzy, S. Miller, K. Rya n, and J. Evans, “DIMSUMnet: new 
+Directions In Wireless Networking Using Coordinated  Dynamic Spectrum,”  Proc. IEEE 
+Symposium on World of Wireless Mobile and Multimedi a Networks , pp. 78-85, June 2005. 
+[57] A. P. Subramanian, H.  Gupta, S. R.  Das, M. M .  Buddhikot, “Fast Spectrum Allocation in 
+Coordinated Dynamic Spectrum Access Based Cellular Networks,” Proc. IEEE Dyspan , 
+April 2007, pp. 320-330. 
+ [58] H. R. Karimi, L. T. W. Ho, H. Claussen, L. G.  Samuel, “Evolution Towards Dynamic 
+Spectrum Sharing in Mobile Communications,”  Proc. IEEE Personal Indoor Mobile Radio 
+Conference , Sept. 2006 , pp. 1-5. Proceedings of the IEEE , vol. 97, no. 4, pp. 708-19, April 2009.  
+  24 [59] M. A. Heller, “The Tragedy of the Anticommons:  Property in the Transition from Marx to 
+Markets,” Harvard Law Review , Vol. 111, No. 3, pp. 621-88, Jan., 1998. 
+[60] J. M. Peha, "The Benefits and Risks of Mandati ng Network Neutrality, and the Quest for a 
+Balanced Policy," International Journal of Communication , pp. 709-16, 2007.  
+www.ece.cmu.edu/~peha/policy.html   
+[61] N. Jesuale and B. C. Eydt, “A Policy Proposal t o Enable Cognitive Radio for Public Safety 
+and Industry in the Land Mobile Radio Bands,” Proc. IEEE Dyspan , April 2007, pp. 66-77. 
+[62] F. Perich, “Policy-Based Network Management for  NeXt Generation Spectrum Access 
+Control,” Proc. IEEE Dyspan , April 2007, pp. 496-506. 
+[63] J. Chapin and W. H. Lehr, “Time-Limited Leases  for Innovative Radios,” Proc. IEEE 
+Dyspan , April 2007, pp. 606-19. 
+ 
+ 
+ 
+ABOUT THE AUTHOR 
+ 
+Jon M. Peha received the B.Sc. degree from Brown Un iversity, Providence, RI, and the Ph.D. 
+degree in electrical engineering from Stanford Univ ersity, Stanford, CA. He is Chief 
+Technologist of the U.S. Federal Communications Com mission and a full Professor in the 
+Department of Engineering and Public Policy and the  Department of Electrical and Computer 
+Engineering, Carnegie–Mellon University, Pittsburgh , PA, where he has served as Associate 
+Director of the university’s Center for Wireless an d Broadband Networking. He has been Chief 
+Technical Officer of three high-tech startups and a  member of Technical Staff with SRI 
+International, AT&T Bell Laboratories, and Microsof t. He has also addressed telecom and e-
+commerce issues on legislative staff in the U.S. Co ngress and helped launch a U.S. government 
+interagency program to assist developing countries with information infrastructure. He consults 
+for industry and government agencies around the wor ld. His research spans technical and policy 
+issues of communications networks, including spectr um management, broadband Internet, 
+wireless networks, video and voice over IP, communi cations for emergency responders, 
+universal service, secure Internet payment systems,  dissemination of copyrighted material, e-
+commerce, and network security.  He is an IEEE Fellow and an AAAS Fellow. 

@@ -1,0 +1,94 @@
+January 14, 2025 27 CommentsMicrosoft: Happy 2025. Here’ s 161 Security
+Updates
+Microsoft  today unleashed updates to plug a whopping 161 security vulnerabilities in Windows
+and related software, including three “zero-day” weaknesses that are already under active attack.
+Redmond’ s inaugural Patch Tuesday of 2025 bundles more ﬁxes than the company has shipped
+in one go since 2017.
+  3/5/25, 10:27 AM Microsoft: Happy 2025. Here’s 161 Security Updates – Krebs on Security
+https://krebsonsecurity.com/2025/01/microsoft-happy-2025-heres-161-security-updates/ 1/9Rapid7 ‘s Adam Barnett  says January marks the fourth consecutive month where Microsoft has
+published zero-day vulnerabilities on Patch Tuesday without evaluating any of them as critical
+severity at time of publication. Today also saw the publication of nine critical remote code
+execution (RCE) vulnerabilities.
+The Microsoft ﬂaws already seeing active attacks include CVE-2025-21333 , CVE-2025-21334
+and, you guessed it– CVE-2025-21335 . These are sequential because all reside in Windows
+Hyper-V , a component that is heavily embedded in modern Windows 1 1 operating systems and
+used for security features including device guard and credential guard.
+Tenable’ s Satnam Narang  says little is known about the in-the-wild exploitation of these ﬂaws,
+apart from the fact that they are all “privilege escalation” vulnerabilities. Narang said we tend to
+see a lot of elevation of privilege bugs exploited in the wild as zero-days in Patch Tuesday
+because it’ s not always initial access to a system that’ s a challenge for attackers as they have
+various avenues in their pursuit.
+“As elevation of privilege bugs, they’re being used as part of post-compromise activity , where an
+attacker has already accessed a target system,” he said. “It’ s kind of like if an attacker is able to
+enter a secure building, they’re unable to access more secure parts of the facility because they
+have to prove that they have clearance. In this case, they’re able to trick the system into believing
+they should have clearance.”3/5/25, 10:27 AM Microsoft: Happy 2025. Here’s 161 Security Updates – Krebs on Security
+https://krebsonsecurity.com/2025/01/microsoft-happy-2025-heres-161-security-updates/ 2/9Several bugs addressed today earned CVSS (threat rating) scores of 9.8 out of a possible 10,
+including CVE-2025-21298 , a weakness in Windows that could allow attackers to run arbitrary
+code by getting a target to open a malicious .rtf ﬁle, documents typically opened on Ofﬁce
+applications like Microsoft W ord. Microsoft has rated this ﬂaw “exploitation more likely .”
+Ben Hopkins  at Immersive Labs  called attention to the CVE-2025-2131 1, a 9.8 “critical” bug in
+Windows NTLMv1  (NT LAN Manager version 1), an older Microsoft authentication protocol that
+is still used by many organizations.
+“What makes this vulnerability so impactful is the fact that it is remotely exploitable, so attackers
+can reach the compromised machine(s) over the internet, and the attacker does not need
+signiﬁcant knowledge or skills to achieve repeatable success with the same payload across any
+vulnerable component,” Hopkins wrote.
+Kev Breen  at Immersive points to an interesting ﬂaw ( CVE-2025-21210 ) that Microsoft ﬁxed in its
+full disk encryption suite Bitlocker  that the software giant has dubbed “exploitation more likely .”
+Speciﬁcally , this bug holds out the possibility that in some situations the hibernation image created
+when one closes the laptop lid on an open Windows session may not be fully encrypted and could
+be recovered in plain text.
+“Hibernation images are used when a laptop goes to sleep and contains the contents that were
+stored in RAM at the moment the device powered down,” Breen noted. “This presents a
+signiﬁcant potential impact as RAM can contain sensitive data (such as passwords, credentials
+and PII) that may have been in open documents or browser sessions and can all be recovered
+with free tools from hibernation ﬁles.”
+Tenable’ s Narang also highlighted a trio of vulnerabilities in Microsoft Access  ﬁxed this month
+and credited to Unpatched.ai, a security research ef fort that is aided by artiﬁcial intelligence
+looking for vulnerabilities in code. Tracked as CVE-2025-21 186, CVE-2025-21366 , and CVE-
+2025-21395 , these are remote code execution bugs that are exploitable if an attacker convinces a
+target to download and run a malicious ﬁle through social engineering. Unpatched.ai was also
+credited with discovering a ﬂaw in the December 2024 Patch Tuesday release ( CVE-2024-49142 ).
+“Automated vulnerability detection using AI has garnered a lot of attention recently , so it’ s
+noteworthy to see this service being credited with ﬁnding bugs in Microsoft products,” Narang
+observed. “It may be the ﬁrst of many in 2025.”
+If you’re a Windows user who has automatic updates turned of f and haven’t updated in a while,
+it’s probably time to play catch up. Please consider backing up important ﬁles and/or the entire
+hard drive before updating. And if you run into any problems installing this month’ s patch batch,
+drop a line in the comments below , please.
+Further reading on today’ s patches from Microsoft:
+Tenable blog3/5/25, 10:27 AM Microsoft: Happy 2025. Here’s 161 Security Updates – Krebs on Security
+https://krebsonsecurity.com/2025/01/microsoft-happy-2025-heres-161-security-updates/ 3/9LATEST WARNINGS THE COMING STORM TIME TO PATCH
+ADAM BARNETT BEN HOPKINS BITLOCKER CVE-2024-49142 CVE-2025-21186 CVE-2025-21210
+CVE-2025-21298 CVE-2025-21311 CVE-2025-21333 CVE-2025-21334 CVE-2025-21335 CVE-2025-
+21366 CVE-2025-21395 KEV BREEN MICROSOFT ACCESS MICROSOFT PATCH TUESDAY JANUARY
+2025 RAPID7 SATNAM NARANG UNPATCHED.AI WINDOWS 11 WINDOWS HYPER-V WINDOWS
+NTLMV1SANS Internet Storm Center
+Ask W oody
+This entry was posted on Tuesday 14th of January 2025 05:50 PM
+27 thoughts on “ Microsoft: Happy 2025. Here’ s 161 Security Updates ”
+Based on the wording from Microsoft, CVE-2025-21298 doesn’t appear to require users to
+actually open the R TF ﬁles as currently-worded in this article (such as those that arrive as an
+email attachment). The vulnerability seems to be related to OLE such that Outlook is af fected, so
+all the attacker needs to do is send a specially-crafted email to a target that uses Outlook. This is
+a somewhat important distinction (speciﬁc user interaction not being required) and I believe is
+part of why it’ s rated at a 9.8.Oliver
+January 14, 2025
+Speaking of Microsoft, there is a current article about some dodgy code in the 6.13 kernel
+submitted by a Microsoft engineer that could have caused serious issues with some systems.
+A funny headline about the issue: “Microsoft pulls a Windows as it breaks Linux on Intel CPUs
+and angers AMD in the process”
+I just bought a Lenovo neo 50t. It runs Ubuntu Pro 24.04, but sometimes it has to by force when
+it comes to Windows. It is a dual boot machine, with Windows 1 1 Pro on another partition. On
+install, and now apparently on Update Tuesday , 11 Pro decides to diddle with the boot sequence
+in UEFI and place itself ﬁrst. That forces me to go back into UEFI and change the boot
+sequence. Even with a supervisor password on UEFI.Uncle Jack
+January 14, 2025
+Happy Jack
+-
+January 14, 2025
+-Catwhisperer
+-
+January 18, 20253/5/25, 10:27 AM Microsoft: Happy 2025. Here’s 161 Security Updates – Krebs on Security
+https://krebsonsecurity.com/2025/01/microsoft-happy-2025-heres-161-security-updates/ 4/9

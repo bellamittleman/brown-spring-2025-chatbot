@@ -1,0 +1,650 @@
+Published in Proceedings of The Telecommunications Policy Research Conference (TPRC), 1996.
+Also to appear  in Selected Papers From The 1996 Telecommunications Policy Research Conference ,
+Rosston, G., & Waterman, D. (Eds.),  Mahwah, NJ: Lawren ce Erlbaum Associates.
+Spectrum Sharing Without Licenses:  Opportunities and Dangers 1
+Durga P. Satapathy2 and Jon M. Peha3
+Carnegie Mellon University
+Department of Electrical and Computer Engineering
+Abstract
+The current spectrum management policy typically gives exclusive and unlimited access to license-holders
+within their domain, and offers meager transmission opportunities for non-license-holders.  This paperaddresses spectrum management techniques in which no licensing is required and individual devices havereal-time access to shared spectrum.  An example is the 30 MHz of unlicensed spectrum allocated by theFederal Communications Commission in the new Personal Communications Services band, and industryis already requesting hundreds of MHz more of the same.  Such spectrum has several advantages.  Iteliminates the delays of the licensing process.  It facilitates mobility, as a license is not required wherevera system may operate.  It also promotes spectrum sharing, as one device may transmit while others in thearea are idle.  This paper discusses some of the challenges to be overcome.  Foremost among these is aninherent Tragedy of the Commons resulting from the fact that device designers lack an incentive toconserve the shared spectrum resource.  This phenomenon is quantitatively demonstrated in a practicalscenario.  Some options for this problem are also discussed.
+1    Introduction
+The primary method of spectrum allocation today is based on licenses granted by the Federal
+Communications Commission (FCC) which give recipients exclusive  rights  to spectrum for a limited
+duration.  It has also been suggested that these temporary licenses be replaced with permanent deeds, likeproperty (Pressler, 1996).  This too is a spectrum management policy in which users are given exclusive
+rights to spectrum.  Generally, those with exclusive rights to a given block of spectrum have exclusive
+access  at all times.
+There are wireless applications that cannot be supported efficiently under a system based on permanent
+exclusive access to spectrum, but would be well served with real-time access to spectrum, even if thatspectrum is shared (Peha, 1994-95).  Such applications include mobile wireless applications that woulddesire the ability to access spectrum anywhere within a wide area, but require much smaller coverage atany given time, such as a mobile wireless Local Area Network (LAN), or a wireless Private BranchExchange (PBX).  Granting permanent exclusive access to such a device for any location at which itmight ever be operated would be grossly inefficient.  Other applications that are poorly served withexclusive access are those that need only sporadic access to spectrum, and can tolerate widely varyingaccess delays, like a wireless electronic mail service.  These applications can share spectrum with minimalpenalty.  For any application, sharing spectrum is inherently more efficient (Peha, 1997; Salgado-Galicia,1995,1997).  For example, consider the case where 8 PBXs are sharing enough spectrum to support 32simultaneous calls.  Calls arrive according to a Poisson process, and their duration is exponentially
+                              
+                         
+1We gratefully acknowledge the support of Bellcore through Carnegie Mellon University's Information
+Networking Institute.  However, the views expressed in this paper are those of the authors, and do not necessarilyreflect the views of Bellcore.
+2Doctoral Candidate; Email: durga@ece.cmu.edu; http:// www.contrib.andrew.cmu.edu/usr/ dsaq/home.html
+3Assistant Professor; Address: Department of Electrical and Computer Engineering,
+Carnegie Mellon University, Pittsburgh, PA 15213-3890; Email: peha@ece.cmu.edu;
+http://www.ece.cmu.edu/afs/ece/usr/peha/peha.html.2distributed.  If they share the spectrum, they can sustain a traffic load of 68.9 % while blocking only 1% of
+the calls (Peha, 1997), where a call is blocked when no channels are free at the time the call is attempted.In contrast, if each of the 8 PBXs is given exclusive access to 4 channels, the 1% blocking probability isnot achievable with a load over 21.7 % (Peha, 1997).  Thus, sharing makes it possible to carry over threetimes as many calls.  Finally, there are also novel and rapidly evolving applications and technologies forwhich experimentation is important.  Such applications are poorly served in a system where access tospectrum involves long administrative delays.
+Consequently, there is a need for shared spectrum that allows real-time access.  Real-time sharing is made
+difficult by three problems.  The first is that, as devices do not have exclusive access, they may interferewith each other's transmissions.  To deal with this mutual interference, a set of rules are required whichdictate when, where, and how devices may transmit.  The second problem is that, since shared spectrumwith real-time access would be valuable for a wide variety of applications and devices, there is motivationto create bands supporting diverse applications rather than create many different bands of sharedspectrum.  These applications may vary greatly in terms of average data rate, transmission duration, oreven the technology used.   Such variations make it difficult to enforce efficient utilization for allapplications.  The third problem is that, since spectrum is shared, there is no inherent incentive to use thespectrum efficiently, which may result in a tragedy of the commons ( Hardin, 1968; Hundt, 1995; Peha,
+1997).  This problem made the Citizen Band radio service highly inefficient and undependable in crowdedregions, where users wasted spectrum with high-power transmitters.  This problem can occur if too manydevices are deployed in shared spectrum, or if individual devices waste spectrum.  In the former case, theproblem is relatively easy to avoid by requiring a fee to be paid for each device deployed, and for a numberof reasons, this is a good policy (Peha,1996).  However, in the latter case, the problem is more difficult.
+There are three possible approaches to offer real-time access for shared spectrum.  One is unlicensed
+spectrum .  This spectrum is under FCC control, and any device is allowed to use it - a public park for
+wireless devices.  The other possible approaches are appropriate for either licensed spectrum or spectrumfor which there are property rights.  In these cases, the profit-driven license-holder or spectrum-ownerwould demand compensation for the use of spectrum, and there are two ways to do this.  The first isusage-based pricing, where each device is charged a fee that depends on how much spectrum it uses(Noam, 1995).  The second option is that a one-time fee be charged for each device deployed, independentof how much spectrum the device actually uses (Peha, 1997).
+In a system with usage-based pricing, a centralized authority must monitor, control, and regulate usage.
+Devices must explicitly obtain permission from this centralized authority before transmitting, and wherethere is conflict, those that are willing to pay more will gain access.  As in wired networks like theInternet (Wang, 1996, 1997), this approach has two advantages.  First, since fees depend on the amount ofspectrum resources consumed, there is an incentive to conserve spectrum. Thus usage-based pricing canprevent a tragedy of the commons.  Second, when there is conflict, resources go to applications whosevalue exceeds the price.  However, there are many complications in implementing usage-based pricing forreal-time access to shared spectrum.  One problem is that it is difficult to avoid mutual interference in asystem with centralized control, unless each device has the ability to convey signal measurements to thecentral controller.  Another problem is that supporting a diversity of devices increases the systemcomplexity, since the central controller would need to support a variety of  wireless communicationinterfaces to enable communication with different devices.  Most importantly, in order to have mobileapplications communicate with the access provider over a wireless link from anywhere in the accessprovider’s region of coverage, a highly complex and massive infrastructure would be needed.  This wouldraise the transaction costs so high that usage-based pricing for spectrum access would be impractical.
+The other two schemes for spectrum sharing, unlicensed spectrum and one-time deployment fees to a
+license-holder, are quite similar.  Both employ decentralized control, i.e., both require the devices tofollow an etiquette  to determine when, where and how they may transmit.  An example is the etiquette set
+forth by the FCC for unlicensed operation in the 2 GHz Personal Communication Services (PCS) band(FCC, 1994; Steer, 1994).  An etiquette solves the problem of mutual interference, and its possible that a3well-designed etiquette can help alleviate a tragedy of the commons.  The difference between the two
+schemes lies in the motivation of the entity in control; the FCC is motivated to serve the public good, anda license-holder is motivated by profit.  Profit-seeking entities tend to be more efficient, but there are twodangers to be addressed.  One is that, since revenues come from devices at deployment time, a profit-seeking entity has less incentive to protect the performance of devices that have already been deployed.  Itmay therefore change the etiquette to favor new devices over those already deployed.  The other danger isthat a profit-seeking entity that controls a critical resource may engage in anti-competitive behavior.  Forexample, it may exclude devices from some manufacturers in return for suitable compensation from theircompetitors, or it may overcharge.  This danger may be mitigated through competition, but only ifmultiple identical bands of this type can be created and controlled by different profit-seeking entities.Besides these differences, the two schemes are essentially the same, so we will discuss the problems ofreal-time sharing with distributed control in the context of unlicensed spectrum for the rest of the paper.
+Given the significant advantages and potential problems of real-time sharing in unlicensed spectrum, it is
+important to evaluate whether allocating additional unlicensed spectrum is justified.  The opportunitycosts of allocating spectrum for unlicensed use are high, as shown by the billions of dollars fetched by therecent PCS auctions (Pressler, 1996).  The FCC has already allocated 30 MHz of unlicensed spectrum inthe 2 GHz PCS band (1910-1930 MHz, 2390-2400 MHz), and is now considering additional allocations inthe 5 GHz range (FCC, 1996) and at 59-64 GHz (Marcus, 1994, 1996).  These allocations would not bejustified if the utilization of unlicensed spectrum is likely to be highly inefficient.  Although  many spreadspectrum devices have been developed for unlicensed use in the Industry, Science and Medicine (ISM)bands (902-908 MHz, 2.4-2.48 GHz and 5.725-5.85 GHz),  it remains  to be seen whether or not a diversegroup of unlicensed systems can coexist efficiently, even with an etiquette.  It is therefore important toevaluate whether the provisions present in the etiquette are sufficient to prevent the tragedy of thecommons.  It is equally important to evaluate whether these provisions are necessary, since an overlyrestrictive etiquette can both reduce the spectral efficiency and increase the cost of unlicensed devices.  Inthis paper, we will demonstrate that there is a potential risk of the tragedy of the commons occurring inunlicensed spectrum, and suggest possible techniques to avoid the problem through modifications to thespectrum etiquette if required.
+In Section 2, we discuss proposals for real-time access to shared spectrum with distributed control that
+have been previously suggested.  Section 3 discusses the strategies that designers may adopt for unlicenseddevices that might result in a tragedy of the commons. In Section 4, we demonstrate the potential risk of atragedy of the commons through analysis and simulation.  In Section 5, we suggest etiquette modificationsthat may be used to deal with a tragedy of the commons if required. Finally, we present our conclusions inSection 6.
+2    Previous Proposals for Real-time Sharing with Distributed Control
+In this section, we will look at four previous proposals for real-time sharing with distributed control, and
+examine their potential to avoid a tragedy of the commons.  The most far-reaching plan is based on thepremise that emerging technology will eliminate spectrum scarcity, thereby eliminating both the need forlicenses for exclusive access, and the potential for a tragedy of the commons.  Instead of getting licenses,users will access spectrum through frequency-nimble devices that allow them to find spectrum as neededwithout having a band exclusively reserved for them ( Gilder, 1994).  This approach is inappropriate, at
+least at this time, for two reasons.  One is that the technology required for this plan to work is still tooexpensive ( McGarty, 1994), and the other is that even though technical innovations are constantly
+increasing the effective availability of spectrum, demand for spectrum is also increasing rapidly.  Thereare no signs that supply will surpass demand.
+Spectrum sharing with real-time access is possible without such radical change.  There are existing
+unlicensed bands within the current licensed system.  The Industrial, Scientific and Medical (ISM) bandsare the simplest, where unlicensed devices are allowed secondary access, and they have to share the bandswith licensed devices that have primary access.  Unlicensed devices must not cause harmful interference4to licensed devices, and must accept any interference from licensed devices as well as other unlicensed
+devices.  Unlicensed operation in this band is restricted to devices using spread spectrum modulation only,and the maximum transmission power of these devices is restricted to 1 Watt.  The low signal energydensity of spread spectrum modulation and the limit on power reduce interference to some extent, butdevices are always at risk of unmitigated interference from licensed devices and unavoidable interferencefrom unlicensed devices.  There is obviously no scope for diversity, since only spread spectrum devices areallowed access.  The only provision to deal with the risk of the tragedy of the commons is an upper limiton power, which is a solution with limitations.  Although an upper limit prevents excessive use beyond thelimit, it provides no incentive to use only what is necessary.  Devices may therefore choose to alwaystransmit at the maximum power to achieve a high signal-to-noise ratio (SNR), even if lesser power wouldbe adequate.  In this case the power limit is low.  This solves some problems, but creates inefficiency forother reasons, since devices cannot transmit at greater power even when no interference or spectrumcontention would result.
+The other form of unlicensed band involves the use of an etiquette, as used in the 2GHz PCS band.  This
+etiquette (FCC, 1994) uses a  ``Listen Before Talk'' (LBT) approach, which  requires devices to first sensethe channel for a specified time and determine whether there is a transmission underway.  If the receivedpower is sufficiently low that they are unlikely to experience or cause interference, they can transmit.  TheLBT feature inherently provides much better protection from interference than a system of power limitswhere there is no sensing.  The etiquette has no restriction on the technologies that devices may useexcept that they must follow the etiquette, and therefore it supports more diversity.  (However, theetiquette has an inherent limitation that it cannot distinguish between applications of low value and ofhigh value, and restricts all applications equally.)  The etiquette also includes many provisions to improvespectrum efficiency.  For example, under one such provision, devices requiring bandwidth less than 625kHz in the isochronous band must search the band from left to right, which reduces inefficiencies due tospectrum fragmentation.  A few features of the FCC etiquette were also designed to inhibit excessive useof spectrum, thereby reducing the potential for a tragedy of the commons.  For instance, the etiquetteencourages operation at low power by raising the threshold used to determine whether a channel is free ornot for low power transmissions, thereby reducing the access delay.  Features that inhibit excessive use ofspectrum often complicate access strategy design, like the requirement that transmission in theisochronous band must cease if an acknowledgment has not been received within the last 30 seconds.Whether the restrictions in the etiquette are necessary for efficient operation, or are sufficient for efficientoperation, remains to be seen.
+The issue of promoting efficient spectrum sharing with real-time access has been addressed using an
+approach similar to that of the unlicensed PCS band, but it does so in the more limited case of commoncarriers offering the same service using cellular infrastructure (Salgado-Galicia, 1995, 1997).   As withthe FCC etiquette for unlicensed PCS,  all devices are required to follow a specific protocol in acquiringaccess to spectrum.  In this case, the etiquette is based on Dynamic Channel Allocation (DCA), throughwhich channels are dynamically shared amongst the competing operators on a call by call basis.  Alldevices search channels in the same order, and the first channel that meets the minimum Carrier-to-Interference (C/I) ratio is selected.  This approach was found to offer far more efficient spectrumutilization than a traditional licensing approach based on exclusive access to spectrum, provided that all ofthe firms were willing to invest in equipment that would enhance spectral efficiency.  Unfortunately, thissharing also led to a tragedy of the commons.  The reason is that as channels saturate due to increasedusage, cells should be made smaller to increase system capacity through frequency reuse.  However, as thespectrum is shared, the operator investing in a new cell site bears all the costs, but the benefits are sharedby all.  Consequently, there is little incentive to increase effective capacity of a given spectrum block.  Theauthors of this approach addressed this problem by limiting the number of transceivers deployed perbroadcast tower.  This helps to alleviate the risk of a tragedy of the commons in this particular scenario,but is not applicable for all types of devices, so another approach is needed in unlicensed spectrumsupporting greater diversity.  Section 5 will focus on suitable provisions for the unlicensed spectrumetiquette.53    What Causes the Tragedy of the Commons?
+In all wireless systems, design decisions are exclusively based on the self-interest of the users of the device
+being designed.   The design of the access strategy involves a trade-off between competing goals andinterests.  One goal is to conserve spectrum; others might be to reduce equipment and operating costs, orto optimize some measure of performance like access delay or reception quality.  In licensed spectrum,where the spectrum consumed is typically the exclusive domain of the users of the device, the goal ofconserving spectrum is important to device designers.  What sets unlicensed spectrum apart is that,although conservation of spectrum is no less important from a system perspective, there is considerablyless incentive to design individual devices to conserve the shared spectrum, as mentioned in Section 1.Thus, in unlicensed spectrum, it is more likely that the best design decision from the selfish perspective ofthe designer of a given device is also a  greedy  approach, where the more a device is designed to waste
+shared spectrum unnecessarily in favor of its own goals, the more we consider it to be greedy.  Theamount of resources a device consumes with a transmission depends on three factors: the transmissionduration, bandwidth, and coverage area, the latter of which is a function of transmission power.  Thus, thetransmissions of a greedy device have greater duration, bandwidth, or power, than is necessary.  We willrefer to these three factors as the three dimensions along which devices may manifest greedy behavior.We will now present examples where designers of unlicensed devices have motivation to be greedy alongeach of these three dimensions and the tradeoffs involved, beginning with transmission duration.
+If a device could always access spectrum within an acceptable delay, there would be no reason for it to
+transmit longer than necessary.  However, in unlicensed spectrum, there can be no such guarantees andthe access delay may vary considerably.  Devices may therefore be designed to transmit longer just toavoid the access delay whenever they have a message to transmit again.  For example, consider a wirelessbridge operating in the PCS unlicensed band that connects two wired Local Area Networks (LANs).Whenever a packet must be forwarded from one LAN to the other, the bridge has to wait for a givenmonitoring time before it may begin transmission as per the Listen Before Talk (LBT) protocol.  Insteadof releasing the channel at the end of packet transmission, the bridge may be greedy by continuing totransmit even if it has nothing to send.  This way all packets that arrive after the first one are spared theaccess delay imposed by the LBT rule.  Essentially, the device is hoarding spectrum that it may or may notneed later.  The bridge may continue to hold the channel for as long as the etiquette permits.  However,there is a cost in doing so.  The greedy bridge prevents other unlicensed devices from using the channel,and the queue of packets awaiting transmission at the other devices would grow.  Thus, when the bridgefinally releases the channel, it may take much longer to reclaim it.  Consequently, this form of greed canbe beneficial to the user, but isn't always.
+We now consider greed in the bandwidth dimension.  Application designers may be attracted to higher
+bandwidth choices because of the cost advantage of inefficient modulation schemes, or for improvedperformance such as better video quality.  However, the disadvantage of using more bandwidth is thatthere would be a low probability of finding the needed bandwidth free since spectrum is shared.Consequently, as with the duration dimension, greed in the bandwidth dimension may or may not benefitthe user.
+Devices may likewise be designed to transmit at a higher transmission power than necessary in order to
+improve the signal-to-noise ratio (SNR), which in a digital transmission, decreases the bit error rate.Transmitting at a higher power also reduces the frequency reuse in the system.  However, for a givendevice for which power consumption is not an issue, there would be no disadvantages to high powerunless those disadvantages are imposed by the etiquette.  As mentioned in Section 2, under the currentFCC etiquette, the LBT noise threshold by which a device determines whether a channel is busy or free isa function of the transmit power.  Consequently, if a device increases its transmit power, its noisethreshold would be lower, resulting in greater access delay for the device.  Of course, battery powereddevices would have the additional disadvantage of a reduced battery life if they transmit at high power.6To evaluate the potential for a tragedy of the commons, we need to determine whether unlicensed
+applications will be designed to be greedy, and if so, to what extent and how greed would be manifested bydifferent applications.  If the potential greedy behavior of devices significantly degrades systemperformance, there is cause for concern and etiquette modifications to discourage greedy behavior wouldbe necessary.
+4    An Example of a Tragedy of the Commons
+In this section we will consider a practical scenario where devices may be designed to be greedy in the
+duration dimension. In Section 4.1 we provide a description of this scenario and specify how devices maybe greedy.  Unfortunately, this is a difficult system to analyze.  Section 4.2 gives a closed-form analysisthat approximates the greedy behavior model well in many scenarios, particularly when the devices aregreedy.   Simulations are used in Section 4.3 to demonstrate the accuracy of this approximation.  Section4.4 discusses the implications of our findings.
+4.1    Our Scenario
+In this scenario, two devices compete for access to a wireless channel in the 2 GHz unlicensed PCS band.
+Devices are sufficiently close together that each device receives the other's transmissions, and nofrequency reuse is possible.  The devices follow the isochronous band etiquette, and their transmissionsrequire the same bandwidth.  Transmission power and bandwidth would therefore have no impact ondevice performance.  We assume that messages arrive at the devices  for transmission according to aPoisson process, and that the message lengths are exponentially distributed.  Messages are queued in abuffer of infinite length until they can be transmitted.  Devices may be greedy in the duration dimensionby holding on to the channel longer than necessary, as discussed in Section 3.   Nongreedy devices releasethe channel as soon as they transmit the last message in their queue, whereas a greedy device with a greedof duration T  holds the channel for duration of at least T even if it has no messages to send.  At the end of
+duration T, the greedy device releases the channel once its queue becomes empty.
+If greed can improve performance, then equipment designers will select their greedy strategy based on
+their projections of the extent to which they will share spectrum with competing devices, and the extent towhich those competing greedy devices will also be greedy.  Since the strategies employed in one devicecan influence the optimal design for another device, a useful measure of resulting behavior is the reaction
+function  
+rTij()  for each device  i, which gives the optimal greed for a device in response to that of the
+other device.  If Device 1 has a greed of T1 , then  rT21()  is the greed that minimizes Device 2's delay.
+Such dynamic reactions to another device's greed may occur in one of two ways.  It is possible that greed
+on some devices can be adjusted by a system administrator, the way one might change the maximumpacket length in a LAN.  In other systems, the extent of greed will be fixed when the device ismanufactured.  However, greed can change over time when equipment is replaced.  For example, if mostCB radios in use have a power of P, then someone buying a new radio will buy one with power r(P), and
+generation after generation, the power levels will change.
+4.2    How Greed Affects Performance
+We will use analysis and then simulation to demonstrate the potential tragedy of the commons in this
+scenario.  We will show that if one device is designed to be greedy, it increases the average queuing delayfor the messages transmitted by the other device.  Furthermore, this other device can always reduce itsdelay by increasing its own greed.  This degrades performance for the first device, and it can reduce itsown delay by increasing its greed again, thereby continuing the process whereby each device alwaysresponds with more greed than the other.
+To make analysis tractable, we use a  fluid-flow  model (Anick, 1982; Tucker, 1988) for message arrivals
+where messages arrive at a constant rate.  More precisely, the amount of data received in any period of7duration τ is exactly ρτ.  In practice, the arrival rate fluctuates, causing the delay calculated by the fluid-
+flow model to have an error in the range of a few message transmission times.  Therefore, whenever thedelay caused by waiting for the other device to release the channel is much greater than the delay causedby the arrival rate fluctuations, the error percentage would be small, and the fluid flow model wouldtherefore be a good approximation.  As a result this model should be more accurate when devices aregreedy.
+We will now define the variables we use for our analysis.  Let
+ρi be the load of Device  i.  We
+assume ρρ ρ ρ12 1 200 1>> + <,,  and , i.e., the total message arrival rate at both devices does not
+exceed the total capacity.  Device  ii : ∈{, }12 has a greed of duration  Ti, and it holds the channel for a
+period of duration Hi, where H Tii≥ .  For a period of XX Hii i : ≤ , Device ihas messages queued
+and is transmitting at the maximum rate possible.  Devices are required by the FCC etiquette to start
+transmission only if they find the channel to be free for a duration M.  We assume devices sense the
+channel with persistence, i.e., devices continuously monitor the channel until they detect it to be idle(Vukovic, 1996).  Figure 1 shows Device 1's unfinished work  as it varies over time, where unfinished work
+is the amount of time it would take to transmit all currently queued messages.  We define time 
+0 to be the
+time when Device 2 starts monitoring the channel.  At that time, Device 1 has just relinquished thechannel, and presumably has emptied its queue of messages.  Device 2 finds the channel free and begins
+transmission at time M.  It then releases the channel at time
+H M2+ .  Device 1's queue increases from
+time 0 until H M22+ , when Device 1 begins transmission after monitoring the channel for duration M.
+Its unfinished work built up at this time is given by ρ122()M H+ .  Device 1's queue length then starts
+decreasing and reaches zero at time 221 M H X ++ .  The device continues to hold the channel,
+transmitting messages as quickly as they arrive until time 221 M H H ++ .  The process is then repeated.
+The following theorems characterize the potential greedy behavior in this system.  (See Appendix for
+proofs.)  Theorem 1 shows the holding times H1* and H2* for devices 1 and 2 respectively, when neither
+device is greedy.  Note that Device iis never greedy if T Hii≤*, because the device always holds the
+channel for at least Hi* anyway.  Therefore, delays are identical for any T Hii≤*.  Theorem 2 shows the
+general reaction  functions.  Theorem 3 shows that even if device iis nongreedy, if H Mi*<2 , then the
+other device is better off being greedy.  To determine the ultimate results of these reaction functions, let
+Device 2 select an initial greed T20().  Devices 1 and 2 will then take turns responding to each other's
+greed, i.e., for i>0,  T rTii
+11 21 () ( )()=− and T rTii
+22 1() ()()= .  Theorem 4 shows that if one device is
+greedy, it will cause both devices to escalate their greed to infinity.  Theorem 5 shows that whenever a
+device’s greed is increased, delay increases for the other device.
+Theorem 1: If T T12 0  == , then HM
+11
+122
+1*=−−ρ
+ρρ and HM
+22
+122
+1*=−−ρ
+ρρ
+Theorem 2: rT12() = max{ , } TM2212
+2−ρ
+ρ- 2M
+ rT21() = max{ , } TM1211
+1−ρ
+ρ- 2M
+Theorem 3: If T H11<* and H M12*<  then rT H21 2()*>
+If T H22<* and H M22*<  then rT H12 1()*>
+Theorem 4: If  then  and T H T Tii
+ii
+20
+22 1() * ( ) ( )lim lim >= ∞ = ∞→∞ →∞8Theorem 5:∂
+∂∂
+∂D
+HD
+H1
+22
+100〉〉 and  
+All together, these theorems show the potential for a tragedy of the commons.  If HM12*<  or
+HM22*< , which occurs when ρρ ρ ρ12 1 2 1 ++ < min{ , } , then it will inevitably lead to an escalation
+of greed until both devices hold the channel as long as possible, and neither has adequate performance.
+4.3    Results from Simulations
+Of course, as described in Section 4.2, the results of a fluid-flow approximation are accurate only when
+the delay caused by waiting for the other device to release the channel significantly exceeds the delaycaused by fluctuations in the arrival rate of the messages.  This is certainly the case when the greed ofboth devices is significant, but may not be when devices are not greedy.  We will test these results throughsimulation.
+We first present the case when each device has a load of 40 % and an average message transmission time
+of 0.5 ms.  Device 1 then varies its greed from zero to eight hours while Device 2 remains nongreedy.Figure 2 shows that the greed of Device 1 results in increased delay for both devices.  As predicted by theanalytic approximation, Device 1’s own delay is minimized at a greed of 0, so there is no incentive tomake it greedy.  If this were always true, there would be no risk of a tragedy of the commons.  However,when the devices are less heavily loaded at 10 % load, each having an average message transmission timeof 0.5 ms, we see in Figure 3 that Device 1’s performance does benefit from being greedy.  Again, thisresult was predicted through analysis.  The delay of Device 1 is minimized at 160 ms, whereas the delayof Device 2 increases monotonically with the greed of Device 1.  Thus, there is incentive to make Device 1greedy in this case, and Device 2’s performance will suffer as a result.  Indeed, as Figure 4 shows, in somecases a device can decrease its delay by an order of magnitude through greed.
+We saw in Section 4.2 that in a fluid-flow model, if one device is made greedy, the other device will as
+well, and greed will escalate.  Figure 5 shows that this phenomenon also occurs as predicted.  This figureshows the reaction functions when both devices have a load of 10 % and the average messagetransmission length is 0.5 ms.  When the greed chosen for Device 1 significantly exceeds monitoring
+time, Device 2’s delay is reduced by making it more greedy, by about 
+11
+19−=ρ
+ρ  times as much, as
+predicted in Theorem 2.  For example, if the devices start with greed indicated by point A on Figure 5,
+they will progress to points B, C, D, etc.  Eventually they reach point H, where both hold the channel for 8hours at a time, which is the maximum transmission duration allowed by the FCC etiquette.  Note thatthis is the only point where the reaction functions intersect, so it is the only equilibrium.  If there were nosuch upper limit imposed by the etiquette, our analysis predicts that the greed of devices would tend toinfinity.  Figure 6 shows that as the greed of devices escalates from zero to 8 hours, the average delayincreases monotonically.  This is a tragedy of  the commons.  We have similarly observed thisphenomenon in other reaction functions that were derived through simulation.
+4.4    Implications
+As described in Section 4.1, the reaction functions employed in Sections 4.2 and 4.3 are applicable when
+there are two devices competing for spectrum, and greed for each device is chosen independently.Initially, there will be few unlicensed devices competing for spectrum.  Consequently, the first set ofunlicensed devices produced by the industry are less likely to be designed greedy.  As usage of theunlicensed PCS bands increases, and more devices compete with each other for access to spectrum, theirperformance would decrease.  The reaction of equipment designers would depend to a large extent on thediversity of devices using unlicensed spectrum, and the corresponding industry structure.  At one extreme,consider the case where a single manufacturer produces all of these unlicensed devices.  Thismanufacturer would only produce nongreedy devices, as there is nothing to be gained from a tragedy of9the commons between two or more of its own customers.  As we see in Figure 7, if there are two devices
+that have the same greed, their delay increases monotonically with their greed.  However, the situation isvery different if all manufacturers have so little market share that two devices from the same manufacturerrarely compete for spectrum.  In this case, greedy devices will emerge and spectral efficiency will bereduced.  Of course, reality is somewhere in between, and it will be explored in future work, as will theimpact of greed when there are more than two competing devices.
+The way to prevent manufacturers from marketing greedy devices would be to discourage greedy behavior
+through modifications to the FCC etiquette.  We will provide examples of modifications that may be usedto discourage greedy behavior in the following section.
+5    Ways to Avoid the Tragedy of the Commons
+One way to control greed is to set upper limits on each of the dimensions of greedy behavior, i.e., one
+might impose a maximum duration, power, or bandwidth.  However, there are problems with thisapproach.  For example, setting a time limit on a voice conversation would not be desirable as phone callsmay then be prematurely terminated.  Also, an upper limit may result in spectrum inefficiency unless it ischosen appropriately.  As discussed in Section 2, a device may be designed to use as much of a resource asis allowed by the upper limit even if it is not necessary for adequate performance. Hence a higher thanoptimal limit would be inefficient.  A lower limit may restrain the use of resources to the extent thatspectrum is unnecessarily made unusable for some applications.  Another option is to have a slightly moreflexible form of upper limit.  As mentioned in Section 3, the maximum transmitted power allowed by theFCC etiquette is a function of bandwidth.  Narrow bandwidth applications are permitted higher powerspectral density, which provides an incentive for devices to not use excessive bandwidth.  Although thereis some flexibility in the dimension of resource consumption a device chooses, this is still an upper limit,and there is no incentive to do better than the limit requires.  Upper limits are indeed a blunt instrument todeal with such a delicate problem.
+To produce further incentives, we might give devices that consume less spectrum some form of priority in
+accessing spectrum.  For incentives to be effective, they must be based on parameters that strongly affectthe device performance.  We will now provide examples of such parameters.  In the current etiquette, adevice must monitor the channel before transmitting to ensure that detected power remains below athreshold throughout the monitoring period.  Altering either  monitoring time  or power threshold  would
+affect a device's chances of accessing spectrum.  For example, if two devices begin monitoring  at thesame time, the one with the smaller monitoring period will get access. (Currently, monitoring period isfixed in both bands, but threshold is a function of transmit power.)  Thus,  factors like monitoring timeand power threshold  can be used to provide incentives; if devices seeking a large bandwidth wereassigned a large monitoring time, there would be more incentive to use efficient modulation.  Anotherfactor that influences access to spectrum is inter-burst gap , which is the minimum amount of time a
+device must wait to transmit after completing a transmission.  For example, if a need is discovered toinduce a device to end its transmission early, the inter-burst gap following a long transmission could bemade large compared to the monitoring times of other devices, whereas a short transmission can berewarded with short inter-burst gaps.  In the current etiquette, inter-burst gap also does not depend onresources consumed.  It is 10 ms in the isochronous band, and it is selected randomly in the asynchronousband, where the distribution depends only on the number of previously unsuccessful attempts to access thespectrum.  Another parameter which affects a device’s performance is the back-off period , which is the
+minimum time a device has to wait before attempting to access a channel again once the channel isdetected busy.  Making the back-off period depend on the spectrum resources consumed by the devicesmight provide an incentive to design devices that conserve spectrum.  Our future work will address andquantify the extent to which such parameters affecting access to spectrum can be used to induce efficientutilization of the spectrum resource.106    Conclusion
+Some wireless applications are not well-served under a system of exclusive rights to spectrum, and are
+better off in shared spectrum supporting real-time access.  Real-time sharing has several advantages.  Itsupports mobility of wireless applications, allows spectrum sharing, and facilitates experimentation andinnovation.  Unlicensed spectrum offers the potential to realize these benefits.  However, as there is littleinherent incentive for individual devices to be designed to use unlicensed spectrum efficiently, they mayengage in greedy behavior, i.e., device designers may sacrifice the goal of spectrum efficiency to meetother design goals.  In this paper we have demonstrated, in a simple scenario, that greedy behavior issometimes rewarded, and it can lead to a tragedy of the commons.  The severity of this problem will bedetermined in future work, which will consider more complex models.  For example, we will considermore complicated wireless applications, other forms of greed, the result of competition for spectrumamong more than two devices, and the impact of industry and market structure.  If the tragedy of thecommons proves to be significant, the most practical way to reduce the risk of a tragedy of the commons isoffered by the etiquette for unlicensed spectrum.  We have suggested examples of etiquette modificationsthat may prove effective in discouraging greedy behavior.  These will be addressed in more detail in futurework.
+Meanwhile, demand for more unlicensed spectrum is high, and the FCC is moving forward.  At this point,
+there is still little evidence that provisions in the current FCC etiquette are both necessary and sufficient.It is possible that a tragedy of the commons will lead to poor performance in this band, and it is alsopossible that many existing restrictions in the etiquette could be relaxed without penalty, therebysimplifying designs.  Little has been published on this issue, and the industry groups backing unlicensedspectrum have kept their work mainly proprietary.  Consequently, before industry invests significantly inthe manufacture of unlicensed devices, and before the FCC releases more large blocks of unlicensedspectrum, caution is advised until more is known.
+7    APPENDIX
+Theorem 1:
+If TT12 0  == , then HM
+11
+122
+1*=−−ρ
+ρρ and HM
+22
+122
+1*=−−ρ
+ρρ
+Proof for Theorem 1:
+When TT12 0  == , both devices are nongreedy, so HX HX11 22**== and .
+Device 1 has ρ11 22()**MH H++  unfinished work built up during the period from
+0212  to MH H++**, which it transmits in time H1*.  Therefore we have
+H M HH H M HH11 1 2 22 1 2 22** * * * *() ()=+ + =+ +ρρ  and  from symmetry.
+The solutions to the above equations are given by
+HM
+11
+122
+1*=−−ρ
+ρρ and HM
+22
+122
+1*=−−ρ
+ρρ(1)
+Theorem 2:
+rT T M M12 22
+2212 ( ) max{ , }=−−ρ
+ρ, and rT T M M21 11
+1212 ( ) max{ , }=−−ρ
+ρ
+Proof for Theorem 2:
+Device 1 responds with the greed Tr T11 2=()  that minimizes Device 1's delay.  The total unfinished work
+ρ12 12()MH X++  built up by Device 1 during the period from 0221  to MH X++  is transmitted in
+duration X1, so XM H X11 21 2 =+ +ρ() , i.e.,11XMH
+112
+12
+1=+
+−ρρ .  Similarly, XMH
+221
+22
+1=+
+−ρρ (2)
+The average delay D1 for Device 1's messages is its average unfinished work divided by ρ1.  As Figure 1
+shows, Device 1's average unfinished work during the period from 0221  to MH X++  when it has
+queued messages is 05 212.( )ρMH+ .  The fraction of time Device 1 has queued messages is
+2
+221
+21MH X
+MH H++
+++, so DM HMH X
+MH H1221
+210522
+2=+++
+++.( ) (3)
+We will consider two cases: TX TX22 22>≤ and .
+Case 1:  TX22> , so Device 2's holding time is HT22= , independent of T1.  Consequently,
+∂
+∂D
+HMTMT X
+MT H1
+1221
+2120522
+2=− +++
+++.( )()  which is always negative.  Thus, as long as
+TXMH
+22 21
+22
+1>=+
+−ρρ, Device 1 would choose to increase H1, which it can do by increasing
+T1 .
+Case 2:  TX22≤ , so HX22=  and Device 1's average delay is
+DM XMX X
+MX H1221
+210522
+2=+++
+++.( )   where 
+XMXXMH
+112
+1221
+22
+12
+1=+
+−=+
+−ρρρρ and .
+Differentiating, we get∂
+∂ρρ ρ
+ρρD
+HMH H M M
+MH1
+112 2 1 2
+12 1205 2 2 2 1
+11 2=++ − −
+−− +.( ) [ ( ) ( ) ]
+() () ( ).
+∂
+∂ρρD
+HHM M1
+121 2 02 2 1>+ > − if and only if , () ( )  or equivalently,
+if  XMHM221
+22
+12 =+
+−>ρ
+ρ().  Thus, in the case where TX22< , Device 1 would choose to
+increase H1 (and thus T1)  if XM22< , decrease H1 if XM22> ,  and leave H1 unchanged
+if XM22= .
+Considering both cases, we see that Device 1 would choose an H1 at which XT M22 2 =max{ , }  if
+possible. (It may be that H1 will be larger than this even if Device 1 is nongreedy.)  Consequently, we set
+T1 equal to this value of H1, and by Equation 2, we have
+Tr T TM M11 2 22
+2212 ==−− () , max{ }ρ
+ρ(4)
+By symmetry, Tr T T M M22 1 11
+1212 ==−− () , max{ }ρ
+ρ(5)
+Theorem 3:
+If TH11<* and HM12*<  then rT H21 2()*>
+If TH22<* and HM22*<  then rT H12 1()*>12Proof for Theorem 3:
+Let TH11<* and HM12*< .  From Theorem 2, we have
+rT T M M M21 11
+11
+1212212() ,=−−=−max{ }ρ
+ρρ
+ρ as TM12< .
+From Theorem 1, HM
+11
+122
+1*=−−ρ
+ρρ
+As HM12*< , 2
+121
+12MMρ
+ρρ−−< .
+Multiplying both sides by 11
+1−ρ
+ρ and subtracting 2M, we get 2
+12122
+121
+1MMρ
+ρρρ
+ρ −−<−
+, i.e.,
+Hr T22 1*()< .  Hence if TH11<* and HM12*<  then rT H21 2()*>
+By symmetry, if TH22<* and HM22*<  then rT H12 1()*>
+Theorem 4: If  then  and TH T Tii
+ii
+20
+22 1() * ( ) ( )lim lim >= ∞ = ∞→∞ →∞
+Proof for Theorem 4:
+Let ST20
+20 () ()= .  We define fS S M fS S M12 22
+221 11
+11212 () ()=−−=−−ρ
+ρρ
+ρ and .
+Note that ∂
+∂∂
+∂f
+Sf
+S1
+22
+100〉〉 and , i.e., ff12 and  are monotonically increasing functions.
+Let Sf S Sf S f f Sii i i i
+11 21
+22 1 2 1 21 () ( ) () () ( )() ( )( ()== =−− and .   Likewise,  let
+Tr T Tr T r r Tii i i i
+11 21
+22 1 2 1 21 () ( ) () () ( )() ( ) ( ()== =−− and .
+By Theorem 2, rT fT M M fT12 122
+212 212 ( ) max{ ( ), } ( )=−−≥ρ
+ρ (6)
+and rT fT M M fT21 211
+121 212 ( ) max{ ( ), } ( )=−−≥ρ
+ρ(7)
+We will first prove three propositions, which we use to prove Theorem 4.
+Proposition 1: TS iii
+22 0() ()≥∀ ≥  
+Proof:  We will prove proposition 1 by induction.
+Basis: Let i=0.  TSii
+22() ()≥  becomes TS20
+20 () ()≥  which is true as TS20
+20 () ()= .
+Inductive step:  If TSii
+22() ()≥  for a given i, we show  TSii
+21
+21 () ()++≥ .
+From Equation 7 we have Tr r T f r Tii i
+21
+21 2 21 2( ) () ()(( ) ) (( )+=≥ .  From Equation 6 we have
+rT fTii
+12 12() ()() ()≥ .  Since f2 is monotonically increasing, fr T f fTii
+21 2 2 1 2(( ) ) ( ( ) )() ()≥ .  Therefore
+Tf f Tii
+21
+212() ( )(( ) )+≥ .   Since f1 is also monotonically increasing, and TSii
+22() ()≥ , we have
+fT fSii
+12 12() ()() ()≥  and therefore ff T ff Sii
+212 212(( ) ) (( ) )() ()≥ .  We thus have
+Tf f Tf f SSiii i
+21
+212 212 21 () ( ) ( ) ()(( ) ) (( ) )++≥≥= , i.e., TSii
+21
+21 () ()++≥ .
+Hence TSii
+22() ()≥  ∀≥ i0.13Proposition 2: SS H H iii
+212
+1220
+22 110() ( ) * *() ( )=+−−−+ ∀ ≥ρρ
+ρρ  
+Proof :  We will prove this by induction.
+Basis: When i=0, SS H Hii
+212
+1220
+22 11() ( ) * *() ( )=+−−−+ρρ
+ρρ becomes
+SSH H S20
+20
+22 20 () () * * ()=− + =  which is true.
+Inductive step:  If proposition 2 is true for a given i, then we show it is true for i+1.  Assume that
+SS H H iii
+212
+1220
+22 11() ( ) * *() ( ) .=+−−−+ρρ
+ρρ for some 
+By definition, fS S M fS S M12 22
+221 11
+11212 () ()=−−=−−ρ
+ρρ
+ρ and .  Therefore, we have
+S f fS fS M SMii i i
+21
+212 121
+11
+12
+22
+11211 2( ) () () ()(( ) ) ( )+==−−=−−−ρ
+ρρ
+ρρ
+ρρ.
+From Equation 1 we have
+SS H
+SHH
+SHH HH
+SHHii
+i
+i
+i21 12
+122212
+12
+12
+12222
+12
+1212
+1220
+22 22
+12
+121
+20
+22111
+11
+1111
+11() ( ) *
+() * *
+() * * * *
+() * *()
+() ( )() [ () ( ) ]() ( )+
++=+−−−−−
+=+−−−+
+=+−−+−−−+ −+
+=+−−−+ρρ
+ρρρρ
+ρρ
+ρρ
+ρρ
+ρρ
+ρρρρ
+ρρ
+ρρ
+ρρ
+Hence SS H H iii
+212
+1220
+22 110() ( ) * *() ( )=+−−−+ ∀ ≥ρρ
+ρρ  .  
+Proposition 3:  If  then  and SH S Sii
+ii
+20
+22 1() * ( ) ( )lim lim >= ∞ = ∞→∞ →∞
+Proof:   From Proposition 2, we have SS H H iii
+212
+1220
+22 110() ( ) * *() ( )=+−−−+ ∀ ≥ρρ
+ρρ  
+Since ρρρρ
+ρρ1212
+121111 +< +−−> , .  Also, SH20
+20() *−> .
+Consequently,  () ( )() *1112
+1220
+2 +−−−∞ ∞ρρ
+ρρiSH i  approaches  as  approaches  
+and so does Si
+2().  We have  Sf S S Mii i
+11 21
+21 2
+212() ( ) ( )()==−−−− ρ
+ρ.
+Thus if Si Sii
+21
+1() ( )−∞∞  goes to  as  goes to ,  must do the same.  
+Hence if  then  and SH S Sii
+ii
+20
+22 1() * ( ) ( )lim lim >= ∞ = ∞→∞ →∞ .14We now prove Theorem 4.  From Proposition 3 we see that
+if  then SH Sii
+20
+22() * ( )lim >= ∞→∞.  From Proposition 1 we have TS iii
+22 0() ()≥∀ ≥  .  Therefore
+lim()
+iiT→∞ =∞2.  We have Tr T T M Mii i
+11 21
+21 2
+2212() ( ) ( )() m a x {, }==−−−− ρ
+ρ.
+Thus if Ti Tii
+21
+1()−∞∞  goes to  as  goes to , so does ().  As TS20
+20 () ()= , we get
+if  then  and TH T Tii
+ii
+20
+22 1() * ( ) ( )lim lim ≥= ∞ = ∞→∞ →∞.
+Theorem 5:
+∂
+∂∂
+∂D
+HD
+H1
+22
+100〉〉 and  
+Proof for Theorem 5:
+As shown in the proof of Theorem 2, Device 1's delay is given by
+DM HMH X
+MH H1221
+210522
+2=+++
+++.( )  where XM H11
+1212 =−+ρ
+ρ() .
+Therefore DM HMH MH
+MH T MH1221
+12
+211
+12052212
+212=+++−+
+++−+.( )()
+max{ , ( )}ρ
+ρ
+ρ
+ρ
+If TX D M HD
+H11 1 21
+2052 05 <= + = then  and .( ) .∂
+∂
+If TX11> then DM HMH MH
+MH T1221
+12
+21052212
+2=+++−+
+++.( )()ρ
+ρ
+and ∂
+∂ρD
+HMH MH T
+MH T1
+2122 1
+21205
+122 2
+2=−++ +
+++.( ) ( )
+()
+Since MH TD
+H>> > >00 0 0211
+2,   and  we have ,,∂
+∂.  By symmetry, the same is true for ∂
+∂DH2
+1.
+This shows that greed always hurts the other device.
+References
+Anick, D., Mitra, D., & Sondhi, M. M. (1982).  Stochastic Theory of a Data-Handling System with
+Multiple Sources.  Bell Sys. Tech. Journal, 61 , 8, 1871-1894.
+FCC.  (1994).  Amendment of the Commission's Rules to Establish New Personal CommunicationsServices.  Memorandum Opinion and Order , FCC 94-144
+, Gen. Docket No. 90-314 .
+FCC. (1996).  NII/SUPERnet at 5 GHz.  Notice of Proposed Rulemaking, FCC 96-193 , ET Docket No.
+96-102.
+Gilder, G. (1994).  Auctioning the Airways.  Forbes ASAP Supplement, 153 , 8, 99-112.
+Hardin, G. (1968).  The Tragedy of the Commons.  Science, 162 , 1243-1248.15Hundt, R. E & Rosston, G. L. (1995).  Spectrum Flexibility Will Promote Competition and the Public
+Interest.  IEEE Communications, 33 , 12, 40-43.
+Marcus, M. J. (1994).  Millimeter Wave Spectrum Management.  Applied Microwave & Wireless, 6 , 98-
+106.
+Marcus, M. J. (1996).  Recent Progress in U.S. Millimeter Wave Spectrum Management Policy.  IEEE
+MTT-S International Microwave Symposium Digest, 2 , 505-507.
+McGarty, T. P., & Medard, M. (1994).  Wireless Architectural Alternatives: Current Economic
+Valuations versus Broadband Options, The Gilder Conjectures Proc.  22nd Telecommunications Policy
+Research Conference.
+Noam, E. M. (1995).  Taking the Next Step Beyond Spectrum Auctions: Open Spectrum Access.  IEEE
+Communications, 33 , 12, 66-73.
+Peha, J. M. (1994-95).  Seamless Wireless Networks:  Motivation and Challenges.   International
+Engineering Consortium Annual Review of Communications, 48 , 553-556.
+Peha, J. M. (1997).  Developing Equipment and Services for Shared Spectrum: Is It A Good Gamble? To
+appear in International Engineering Consortium Annual Review of Communications, 50 .
+Peha, J. M. (1996). A Proposed New Spectrum Management Policy.
+http:// www.ece.cmu.edu/afs/ece/ usr/peha/peha.html.
+Pressler, L. (1996).  Spectrum Reform Discussion Draft.  Congressional Record (Senate) . S4928-S4936.
+Salgado- Galicia, H., Sirbu, M., & Peha, J. M. (1995).  Spectrum Sharing Through Dynamic Channel
+Assignment For Open Access To Personal Communications Services.  Proc. IEEE International
+Conference on Communications (ICC), June, 417-422.
+Salgado-Galicia, H., Sirbu, M., & Peha, J. M. (1997).  A Narrow Band Approach to Efficient PCS
+Spectrum Sharing Through Decentralized DCA Access Policies. IEEE Personal Communications, 4 , 1,
+24-34.
+Steer, D. G. (1994).  Wireless Operation in the Unlicensed Band.  IEEE Personal Communications, 1 , 4,
+36-43.Tucker, R. C. F. (1988).  Accurate Method for Analysis of a Packet-Speech Multiplexer with Limited
+Delay.  IEEE Trans. Commun .,36
+, 4, 479-483.
+Vukovic, I., & McKown, J. (1996).  Spectrum Sharing Under The Asynchronous UPCS Etiquette:  The
+Performance of Collocated Systems Under Heavy Load.  Proceedings of ACM Mobicom, Nov, 67-72.
+Wang, Q., Peha, J. M., & Sirbu, M. (1997).  Optimal Pricing for Integrated-Services networks with
+Guaranteed Quality of Service.  In J. Bailey and L. McKnight (Eds.) Internet Economics, (pp. 353-376).
+MIT Press.
+Wang, Q., Sirbu, M., & Peha, J. M. (1996).  Dynamic Pricing for Integrated Services Networks. In G. W.
+Brock & G. L. Rosston (Eds.), The Internet and Telecommunications Policy: Selected Papers From The
+1995 Telecommunications Policy Research Conference, (pp. 65-78). Mahwah, NJ: Lawrence Erlbaum
+Associates.16H + 2M Time 0ρ
+1
+M H +M
+2 2H + H  +2M
+1 2X12(H +2M)
+M  = Monitoring time of 10 ms
+H  = Time channel is held by Device 1
+when it is transmitting 100% of the time H  = Time channel is held by Device 22
+1
+X  = Time to transmit Device 1's queued messages1Device 1's Unfinished work
+Figure 1:  Device 1’s unfinished work as a function of time under a fluid-flow model for message
+transmissions.17101102103104105106107108101102103104105106107108
+Device 1 Greed in msDelay in ms
+Device 1Device 2
+Figure 2:  Delay of each device as a function of Device 1’s greed.  Device 2 is nongreedy.  Each device has
+a load of 40% and an average message transmission time of 0.5 ms.  Monitoring time = 10 ms.
+101102103104105106107108100101102103104105106107108
+Device 1 Greed in msDelay in ms
+Device 1Device 2
+Figure 3:  Delay of each device as a function of Device 1’s greed.  Device 2 is nongreedy.  Each device hasa load of 10 %, and an average message transmission time of 0.5 ms.  Monitoring time = 10 ms.18103104105106107108101102103104105106107108
+Device 1 Greed in msDelay in ms
+Device 1Device 2
+Figure 4:  Delay of each device as a function of Device 1’s greed.  Device 2’s Greed = 10,000 ms.  Each
+device has 10 % load and an average message transmission time of 0.5 ms. Monitoring time = 10 ms.
+101102103104105106107108101102103104105106107108
+Device 2 Greed in msDevice 1 Greed in msDevice 1
+Device 2
+AB
+CD
+EF
+GH
+Figure 5:  Reaction Function for two devices at 10 % load each.  Average message transmission time is
+0.5 ms. Monitoring time = 10 ms.19101102103104105106107108100101102103104105106107108
+Device 2 Greed in msDevice 1 delay in ms at optimal greed
+Figure 6:  Device 1’s delay at its optimal greed vs. Device 2’s greed.  Devices are each at 10 % load and
+an average message transmission time of 0.5 ms.  Monitoring time = 10 ms.
+0 50 100 150 200 250 3000102030405060708090100
+Greed in msDelay in msDevice 1
+Device 2
+Figure 7:  Delay of each device as a function of greed.  Devices have equal greed.  Each has a load of over10 % and an average message transmission time of 0.5 ms.  Monitoring time = 10 ms.

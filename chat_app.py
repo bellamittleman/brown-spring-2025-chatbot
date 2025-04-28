@@ -1,15 +1,7 @@
 import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
-from pathlib import Path
-import os
-
-# Load environment variables
-dotenv_path = Path(__file__).parent / ".env"
-load_dotenv(dotenv_path=dotenv_path)
 
 # Setup OpenAI client
-import streamlit as st
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Your fine-tuned model ID
